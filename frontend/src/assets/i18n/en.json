@@ -1,0 +1,9 @@
+{
+  "CORE": {
+    "APP_NAME": "Map of Pi"
+  },
+  "HOME": {
+    "ADD_MY_BUSINESS": "Add my business",
+    "SEARCH_BAR_PLACEHOLDER": "Search Business..."
+  }
+}
