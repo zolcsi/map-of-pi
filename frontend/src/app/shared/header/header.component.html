@@ -1,3 +1,7 @@
-<p>header works!</p>
-
-<app-language-switcher></app-language-switcher>
+<mat-toolbar class="justify-between">
+  <button mat-icon-button>
+    <mat-icon>home</mat-icon>
+  </button>
+  <span>{{ 'CORE.APP_NAME' | translate }}</span>
+  <app-language-switcher></app-language-switcher>
+</mat-toolbar>
