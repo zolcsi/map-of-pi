@@ -63,7 +63,7 @@ This will bring you to the App Dashboard, from this screen you can continue the 
 
 ## 3. Run the frontend development server
 
-Setup the frontend app following the [Pi Demo App Frontend documentation](../frontend/README.md).
+Setup the frontend app following the [Pi Demo App Frontend documentation](../frontend-orig/README.md).
 
 
 ## 4. Run the backend development server

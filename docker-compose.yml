@@ -19,7 +19,7 @@ services:
       - ${DATA_DIRECTORY}/reverse-proxy/etc-letsencrypt:/etc/letsencrypt/
 
   frontend:
-    build: ./frontend
+    build: frontend-orig
     environment:
       BACKEND_URL: ${BACKEND_URL}
 

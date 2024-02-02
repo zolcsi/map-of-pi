@@ -40,7 +40,7 @@ User authentication consists of two steps:
 `onIncompletePaymentFound` is a function that connects both Authorization and Payments flows. To preview example implementation, proceed to [`onIncompletePaymentFound`](#onincompletepaymentfound) section.
 
 ```typescript
-// frontend/src/shop/index.ts
+// frontend-orig/src/shop/index.ts
 
 const signIn = async () => {
   const scopes = ["username", "payments"];
@@ -105,7 +105,7 @@ To request a payment from the current user to your app's account, use the `Pi.cr
 To learn more about `Pi.createPayment()` method and its arguments, please refer to [Pi SDK Docs](https://github.com/pi-apps/pi-platform-docs/blob/master/SDK_reference.md#payments)
 
 ```typescript
-// frontend/src/Shop/index.ts
+// frontend-orig/src/Shop/index.ts
 
 const orderProduct = async (memo: string, amount: number, paymentMetadata: MyPaymentMetadata) => {
   if (user == null) {
@@ -131,7 +131,7 @@ const orderProduct = async (memo: string, amount: number, paymentMetadata: MyPay
 It is called when the payment identifier (`paymentId`) is obtained from Pi Servers.
 
 ```typescript
-// frontend/src/Shop/index.ts
+// frontend-orig/src/Shop/index.ts
 
 const onReadyForServerApproval = (paymentId: string) => {
   console.log("onReadyForServerApproval", paymentId);
@@ -162,7 +162,7 @@ app.post('/approve', async (req, res) => {
 It is called when the user has submitted the transaction to the Pi blockchain.
 
 ```typescript
-// frontend/src/Shop/index.ts
+// frontend-orig/src/Shop/index.ts
 
 const onReadyForServerCompletion = (paymentId: string, txid: string) => {
   console.log("onReadyForServerCompletion", paymentId, txid);
@@ -193,7 +193,7 @@ app.post('/complete', async (req, res) => {
 It is called when the payment is canceled - this can be triggered by a user action, programmatically or automatically if your app's backend doesn't approve the payment within 60 seconds.
 
 ```typescript
-// frontend/src/Shop/index.ts
+// frontend-orig/src/Shop/index.ts
 
 const onCancel = (paymentId: string) => {
   console.log("onCancel", paymentId);
@@ -211,7 +211,7 @@ Otherwise, only the first argument will be provided.
 `onError` callback is provided for informational purposes only and doesn't need to be passed and handled on the backend side of your app.
 
 ```typescript
-// frontend/src/Shop/index.ts
+// frontend-orig/src/Shop/index.ts
 
 const onError = (error: Error, payment?: PaymentDTO) => {
   console.log("onError", error);
@@ -227,7 +227,7 @@ const onError = (error: Error, payment?: PaymentDTO) => {
 `onIncompletePaymentFound` connects both Authentication and Payment flows. It is the second argument required by `Pi.authenticate()` SDK method, which checks for the user's incomplete payment each time the user is authenticated. If an incomplete payment is found, `onIncompletePaymentFound` callback will be invoked with the payment's [PaymentDTO](https://github.com/pi-apps/pi-platform-docs/blob/master/platform_API.md#paymentdto) object and the corresponding payment must be completed inside of your app. For more details about `onIncompletePaymentFound` please refer to [SDK Docs](https://github.com/pi-apps/pi-platform-docs/blob/master/SDK_reference.md#onincompletepaymentfound)
 
 ```typescript
-// frontend/src/Shop/index.ts
+// frontend-orig/src/Shop/index.ts
 
 const onIncompletePaymentFound = (payment: PaymentDTO) => {
   console.log("onIncompletePaymentFound", payment);
