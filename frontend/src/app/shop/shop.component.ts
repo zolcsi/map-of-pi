@@ -1,9 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ShopInfoComponent } from './shop-info/shop-info.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { LoyaltyInfoComponent } from './loyalty-info/loyalty-info.component';
-import { UiStateService } from '../core/service/ui-state.service';
 
 @Component({
   selector: 'app-shop',
@@ -11,12 +10,5 @@ import { UiStateService } from '../core/service/ui-state.service';
   imports: [ShoppingCartComponent, ShopInfoComponent, ProductListComponent, LoyaltyInfoComponent],
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ShopComponent {
-  constructor(
-    private readonly uiStateService: UiStateService,
-  ) {
-    this.uiStateService.setShowBackButton(true);
-  }
-}
+export class ShopComponent {}

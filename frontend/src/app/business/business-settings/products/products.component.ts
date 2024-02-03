@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { ProductsSettingsComponent } from './products-settings/products-settings.component';
 import { ProductComponent } from './product/product.component';
 
@@ -8,6 +8,5 @@ import { ProductComponent } from './product/product.component';
   imports: [ProductsSettingsComponent, ProductComponent],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductsComponent {}

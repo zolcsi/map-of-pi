@@ -1,7 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
-import { UiStateService } from './core/service/ui-state.service';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +8,7 @@ import { UiStateService } from './core/service/ui-state.service';
   imports: [RouterOutlet, HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   title = 'map-of-pi';
-
-  constructor(private readonly uiStateService: UiStateService) {
-    this.uiStateService.setShowBackButton(false);
-  }
 }

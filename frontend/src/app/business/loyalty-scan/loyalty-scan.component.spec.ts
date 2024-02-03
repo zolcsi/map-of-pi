@@ -8,9 +8,10 @@ describe('LoyaltyScanComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LoyaltyScanComponent],
-    }).compileComponents();
-
+      imports: [LoyaltyScanComponent]
+    })
+    .compileComponents();
+    
     fixture = TestBed.createComponent(LoyaltyScanComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
