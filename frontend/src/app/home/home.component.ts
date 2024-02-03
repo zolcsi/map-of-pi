@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { MapComponent } from './map/map.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -10,6 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { AsyncPipe } from '@angular/common';
 import { map, Observable, startWith } from 'rxjs';
 import { Router } from '@angular/router';
+import { UiStateService } from '../core/service/ui-state.service';
 
 @Component({
   selector: 'app-home',
@@ -28,13 +29,19 @@ import { Router } from '@angular/router';
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent implements OnInit {
   searchBarControl = new FormControl('');
   options: string[] = ['R', 'Re', 'Res', 'Rest', 'Resta', 'Restau', 'Restaur', 'Restaura', 'Restauran', 'Restaurant'];
   filteredOptions$!: Observable<string[]>;
 
-  constructor(private readonly router: Router) {}
+  constructor(
+    private readonly uiStateService: UiStateService,
+    private readonly router: Router,
+  ) {
+    this.uiStateService.setShowBackButton(false);
+  }
 
   ngOnInit() {
     this.filteredOptions$ = this.searchBarControl.valueChanges.pipe(

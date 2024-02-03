@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
@@ -16,6 +16,7 @@ export interface LangMenuItem {
   imports: [MatButtonModule, MatIconModule, MatMenuModule, AsyncPipe, MatOption],
   templateUrl: './language-switcher.component.html',
   styleUrl: './language-switcher.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LanguageSwitcherComponent {
   protected readonly languages: LangMenuItem[] = [
