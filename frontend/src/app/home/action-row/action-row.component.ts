@@ -5,6 +5,7 @@ import { GeolocationService } from '../../core/service/geolocation.service';
 import { Router } from '@angular/router';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { TranslateModule } from '@ngx-translate/core';
+import { SnackService } from '../../core/service/snack.service';
 
 @Component({
   selector: 'app-action-row',
@@ -20,6 +21,7 @@ export class ActionRowComponent {
   constructor(
     private readonly geolocationService: GeolocationService,
     private readonly router: Router,
+    private readonly snackService: SnackService,
   ) {}
 
   locateMe(): void {
@@ -31,8 +33,8 @@ export class ActionRowComponent {
         this.geolocationCoordinates = position.coords;
         this.geoLoading.set(false);
       },
-      error: (error: GeolocationPosition) => {
-        console.error('Error getting geolocation:', error);
+      error: (error: GeolocationPositionError) => {
+        this.snackService.showError(`Geolocation error: ${error?.message}`);
         this.geoLoading.set(false);
       },
     });
