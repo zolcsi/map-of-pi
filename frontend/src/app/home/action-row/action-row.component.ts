@@ -1,11 +1,10 @@
-import { Component, signal } from '@angular/core';
+import { Component, Signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { GeolocationService } from '../../core/service/geolocation.service';
 import { Router } from '@angular/router';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { TranslateModule } from '@ngx-translate/core';
-import { SnackService } from '../../core/service/snack.service';
 
 @Component({
   selector: 'app-action-row',
@@ -15,29 +14,17 @@ import { SnackService } from '../../core/service/snack.service';
   styleUrl: './action-row.component.scss',
 })
 export class ActionRowComponent {
-  geoLoading = signal<boolean>(false);
-  geolocationCoordinates: GeolocationCoordinates | undefined;
+  geoLoading: Signal<boolean>;
 
   constructor(
     private readonly geolocationService: GeolocationService,
     private readonly router: Router,
-    private readonly snackService: SnackService,
-  ) {}
+  ) {
+    this.geoLoading = this.geolocationService.geoLoading;
+  }
 
   locateMe(): void {
-    this.geoLoading.set(true);
-    this.geolocationService.getCurrentPosition().subscribe({
-      next: (position: GeolocationPosition) => {
-        console.log('Latitude:', position.coords.latitude);
-        console.log('Longitude:', position.coords.longitude);
-        this.geolocationCoordinates = position.coords;
-        this.geoLoading.set(false);
-      },
-      error: (error: GeolocationPositionError) => {
-        this.snackService.showError(`Geolocation error: ${error?.message}`);
-        this.geoLoading.set(false);
-      },
-    });
+    this.geolocationService.triggerGeolocation();
   }
 
   navigateToBusiness(): void {

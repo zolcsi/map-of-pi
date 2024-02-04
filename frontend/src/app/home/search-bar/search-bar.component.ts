@@ -3,17 +3,30 @@ import { AsyncPipe } from '@angular/common';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { map, Observable, startWith } from 'rxjs';
-import { GeolocationService } from '../../core/service/geolocation.service';
 import { UiStateService } from '../../core/service/ui-state.service';
-import { Router } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { TranslateModule } from '@ngx-translate/core';
+import { MatButton, MatMiniFabButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
+import { MatProgressSpinner } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-search-bar',
   standalone: true,
-  imports: [FormsModule, MatFormFieldModule, MatInputModule, MatAutocompleteModule, ReactiveFormsModule, AsyncPipe, TranslateModule],
+  imports: [
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    AsyncPipe,
+    TranslateModule,
+    MatButton,
+    MatIcon,
+    MatMiniFabButton,
+    MatProgressSpinner,
+  ],
   templateUrl: './search-bar.component.html',
   styleUrl: './search-bar.component.scss',
 })
@@ -22,11 +35,7 @@ export class SearchBarComponent implements OnInit {
   options: string[] = ['R', 'Re', 'Res', 'Rest', 'Resta', 'Restau', 'Restaur', 'Restaura', 'Restauran', 'Restaurant'];
   searchBarControl = new FormControl('');
 
-  constructor(
-    private readonly geolocationService: GeolocationService,
-    private readonly uiStateService: UiStateService,
-    private readonly router: Router,
-  ) {
+  constructor(private readonly uiStateService: UiStateService) {
     this.uiStateService.setShowBackButton(false);
   }
 
