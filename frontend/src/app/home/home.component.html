@@ -1,28 +1,5 @@
 <app-map></app-map>
 
-<div class="flex justify-center">
-  <form class="search-bar">
-    <mat-form-field class="w-full">
-      <mat-label>{{ 'HOME.SEARCH_BAR_PLACEHOLDER' | translate }}</mat-label>
-      <input type="text" matInput [formControl]="searchBarControl" [matAutocomplete]="auto" />
-      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-        @for (option of filteredOptions$ | async; track option) {
-          <mat-option [value]="option">{{ option }}</mat-option>
-        }
-      </mat-autocomplete>
-    </mat-form-field>
-  </form>
-</div>
+<app-search-bar></app-search-bar>
 
-<div class="w-full fixed bottom-8 left-0">
-  <div class="flex justify-around items-end">
-    <button mat-flat-button color="accent" (click)="navigateToBusiness()">
-      <mat-icon>add_circle</mat-icon>
-      {{ 'HOME.ADD_MY_BUSINESS' | translate }}
-    </button>
-
-    <button mat-mini-fab color="accent" (click)="locateMe()">
-      <mat-icon>location_searching</mat-icon>
-    </button>
-  </div>
-</div>
+<app-action-row></app-action-row>
