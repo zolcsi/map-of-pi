@@ -10,9 +10,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .optional-controls { display:flex; align-items: center; }
 
 // define custom dark theme colors
-$dark-primary: mat.define-palette(mat.$indigo-palette);
-$dark-accent: mat.define-palette(mat.$amber-palette);
-$dark-warn: mat.define-palette(mat.$deep-orange-palette);
+$dark-primary: mat.define-palette(mat.$amber-palette);
+$dark-accent: mat.define-palette(mat.$purple-palette);
+$dark-warn: mat.define-palette(mat.$yellow-palette);
 
 // define dark mode theme
 $angular-dark-theme: mat.define-dark-theme((
