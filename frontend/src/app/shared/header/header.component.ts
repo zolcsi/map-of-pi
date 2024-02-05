@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Signal, ViewChild } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -18,7 +18,7 @@ import { UiStateService } from '../../core/service/ui-state.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
-
+  @ViewChild(DarkModeTogglerComponent) darkModeToggler!: DarkModeTogglerComponent;
   showBackButton: Signal<boolean>;
 
   constructor(
