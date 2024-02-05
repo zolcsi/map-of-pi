@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { AsyncPipe } from '@angular/common';
 import { MatOption } from '@angular/material/autocomplete';
+import { TranslateService } from '@ngx-translate/core';
 
 export interface LangMenuItem {
   code: string;
@@ -25,7 +26,9 @@ export class LanguageSwitcherComponent {
     { code: 'hu', name: 'Hungarian' },
   ];
 
+  constructor(private readonly translateService: TranslateService) {}
+
   switchLanguage(key: string): void {
-    console.log('# key: ', key);
+    this.translateService.use(key);
   }
 }

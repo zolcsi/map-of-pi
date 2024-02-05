@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LanguageSwitcherComponent } from './language-switcher.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('LanguageSwitcherComponent', () => {
   let component: LanguageSwitcherComponent;
@@ -8,7 +9,7 @@ describe('LanguageSwitcherComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LanguageSwitcherComponent],
+      imports: [LanguageSwitcherComponent, TranslateModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(LanguageSwitcherComponent);
