@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { DarkModeTogglerService } from './dark-mode-toggler.service';
+import { DarkModeTogglerService } from './dark-mode.service';
 
 describe('DarkModeTogglerService', () => {
   let service: DarkModeTogglerService;

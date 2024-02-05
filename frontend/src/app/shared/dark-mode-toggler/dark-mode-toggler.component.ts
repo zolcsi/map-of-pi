@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, HostBinding } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { DarkModeTogglerService } from './dark-mode-toggler.service';
+import { DarkModeTogglerService } from '../../core/service/dark-mode.service';
 
 @Component({
   selector: 'app-dark-mode-toggler',

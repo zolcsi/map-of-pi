@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HeaderComponent } from './header.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { DarkModeTogglerService } from '../dark-mode-toggler/dark-mode-toggler.service';
+import { DarkModeTogglerService } from '../../core/service/dark-mode.service';
 import { BehaviorSubject } from 'rxjs';
 
 describe('HeaderComponent', () => {

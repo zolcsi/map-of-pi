@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DarkModeTogglerComponent } from './dark-mode-toggler.component';
-import { DarkModeTogglerService } from './dark-mode-toggler.service';
+import { DarkModeTogglerService } from '../../core/service/dark-mode.service';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { BehaviorSubject } from 'rxjs';
@@ -12,6 +12,7 @@ describe('DarkModeTogglerComponent', () => {
 
   beforeEach(async () => {
     darkModeService = jasmine.createSpyObj('DarkModeTogglerService', ['toggleDarkMode']);
+    darkModeService.darkMode$ = new BehaviorSubject<boolean>(false);
 
     await TestBed.configureTestingModule({
       imports: [DarkModeTogglerComponent, MatIconModule, MatButtonModule],
@@ -33,13 +34,12 @@ describe('DarkModeTogglerComponent', () => {
   });
 
   it('should subscribe to darkMode$ from DarkModeTogglerService', () => {
-    const mockDarkModeSubject = new BehaviorSubject<boolean>(false);
-    darkModeService.darkMode$ = mockDarkModeSubject.asObservable();
-
     fixture.detectChanges();
     expect(component.isDarkMode).toBe(false);
 
-    mockDarkModeSubject.next(true);
+    darkModeService.darkMode$.next(true);
+    
+    fixture.detectChanges();
     expect(component.isDarkMode).toBe(true);
   });
 
