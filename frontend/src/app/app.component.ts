@@ -12,8 +12,6 @@ import { UiStateService } from './core/service/ui-state.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  title = 'map-of-pi';
-
   constructor(private readonly uiStateService: UiStateService) {
     this.uiStateService.setShowBackButton(false);
   }

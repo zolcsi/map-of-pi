@@ -9,6 +9,12 @@ module.exports = {
       width: {
         88: '22rem',
       },
+      spacing: {
+        17: '4.25rem',
+      },
+      zIndex: {
+        500: '500',
+      },
     },
   },
   plugins: [],
