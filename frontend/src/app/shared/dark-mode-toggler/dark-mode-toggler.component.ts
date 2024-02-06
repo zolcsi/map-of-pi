@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, HostBinding } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { DarkModeTogglerService } from '../../core/service/dark-mode.service';
@@ -11,17 +11,8 @@ import { DarkModeTogglerService } from '../../core/service/dark-mode.service';
   styleUrl: './dark-mode-toggler.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-
 export class DarkModeTogglerComponent {
-  @HostBinding('class.dark-mode') isDarkMode = false;
-
-  constructor(private darkModeService: DarkModeTogglerService) { }
-
-  ngOnInit(): void {
-    this.darkModeService.darkMode$.subscribe(darkMode => {
-      this.isDarkMode = darkMode;
-    });
-  }
+  constructor(private darkModeService: DarkModeTogglerService) {}
 
   toggleDarkMode() {
     this.darkModeService.toggleDarkMode();

@@ -16,6 +16,12 @@ export class DarkModeTogglerService {
   }
 
   toggleDarkMode(): void {
-    this.darkModeSubject.next(!this.darkModeSubject.value);
+    const isDarkMode = !this.darkModeSubject.value;
+    this.darkModeSubject.next(isDarkMode);
+    if (isDarkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
   }
 }
