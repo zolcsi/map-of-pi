@@ -4,7 +4,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
-import { DarkModeTogglerService } from '../../core/service/dark-mode.service';
+import { DarkModeService } from '../../core/service/dark-mode.service';
 import { DarkModeTogglerComponent } from '../dark-mode-toggler/dark-mode-toggler.component';
 import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
 import { UiStateService } from '../../core/service/ui-state.service';
@@ -24,7 +24,7 @@ export class HeaderComponent {
   constructor(
     private readonly location: Location,
     private readonly uiStateService: UiStateService,
-    public readonly darkModeTogglerService: DarkModeTogglerService
+    public readonly darkModeService: DarkModeService
   ) {
     this.showBackButton = this.uiStateService.showBackButton;
   }

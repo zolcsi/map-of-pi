@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { DarkModeTogglerService } from '../../core/service/dark-mode.service';
+import { DarkModeService } from '../../core/service/dark-mode.service';
 
 @Component({
   selector: 'app-dark-mode-toggler',
@@ -12,7 +12,7 @@ import { DarkModeTogglerService } from '../../core/service/dark-mode.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DarkModeTogglerComponent {
-  constructor(private darkModeService: DarkModeTogglerService) {}
+  constructor(private darkModeService: DarkModeService) {}
 
   toggleDarkMode() {
     this.darkModeService.toggleDarkMode();

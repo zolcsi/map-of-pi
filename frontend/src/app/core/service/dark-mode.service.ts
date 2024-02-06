@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 
 /* the service provides a centralized and reusable way to manage dark mode functionality throughout the app. */
-export class DarkModeTogglerService {
+export class DarkModeService {
   private darkModeSubject: BehaviorSubject<boolean>;
   public darkMode$: Observable<boolean>;
 

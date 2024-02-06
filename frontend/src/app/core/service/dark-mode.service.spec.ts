@@ -1,14 +1,14 @@
 import { TestBed } from '@angular/core/testing';
-import { DarkModeTogglerService } from './dark-mode.service';
+import { DarkModeService } from './dark-mode.service';
 
-describe('DarkModeTogglerService', () => {
-  let service: DarkModeTogglerService;
+describe('DarkModeService', () => {
+  let service: DarkModeService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [DarkModeTogglerService]
+      providers: [DarkModeService]
     });
-    service = TestBed.inject(DarkModeTogglerService);
+    service = TestBed.inject(DarkModeService);
   });
 
   it('should be created', () => {
@@ -16,15 +16,19 @@ describe('DarkModeTogglerService', () => {
   });
 
   it('should toggle dark mode', () => {
-    const initialToggleValue = service.getDarkMode();
-    expect(initialToggleValue).toBe(false);
+    let currentToggleValue: boolean | undefined;
+
+    // subscribe to the darkMode$ observable to track changes
+    service.darkMode$.subscribe(value => {
+      currentToggleValue = value;
+    });
+
+    expect(currentToggleValue).toBe(false);
 
     service.toggleDarkMode();
-    const afterFirstToggleValue = service.getDarkMode();
-    expect(afterFirstToggleValue).toBe(true);
+    expect(currentToggleValue).toBe(true);
 
     service.toggleDarkMode();
-    const afterSecondToggleValue = service.getDarkMode();
-    expect(afterSecondToggleValue).toBe(false);
+    expect(currentToggleValue).toBe(false);
   });
 });

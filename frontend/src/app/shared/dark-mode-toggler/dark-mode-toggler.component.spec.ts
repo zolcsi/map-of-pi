@@ -1,23 +1,21 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { DarkModeTogglerComponent } from './dark-mode-toggler.component';
-import { DarkModeTogglerService } from '../../core/service/dark-mode.service';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { BehaviorSubject } from 'rxjs';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { DarkModeTogglerComponent } from './dark-mode-toggler.component';
+import { DarkModeService } from '../../core/service/dark-mode.service';
 
 describe('DarkModeTogglerComponent', () => {
   let component: DarkModeTogglerComponent;
   let fixture: ComponentFixture<DarkModeTogglerComponent>;
-  let darkModeService: jasmine.SpyObj<DarkModeTogglerService>;
+  let darkModeService: jasmine.SpyObj<DarkModeService>;
 
   beforeEach(async () => {
-    darkModeService = jasmine.createSpyObj('DarkModeTogglerService', ['toggleDarkMode']);
-    darkModeService.darkMode$ = new BehaviorSubject<boolean>(false);
+    darkModeService = jasmine.createSpyObj('DarkModeService', ['toggleDarkMode']);
 
     await TestBed.configureTestingModule({
       imports: [DarkModeTogglerComponent, MatIconModule, MatButtonModule],
       providers: [
-        { provide: DarkModeTogglerService, useValue: darkModeService }
+        { provide: DarkModeService, useValue: darkModeService }
       ]
     }).compileComponents();
 
@@ -29,21 +27,7 @@ describe('DarkModeTogglerComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should initially set dark mode to false', () => {
-    expect(component.isDarkMode).toBe(false);
-  });
-
-  it('should subscribe to darkMode$ from DarkModeTogglerService', () => {
-    fixture.detectChanges();
-    expect(component.isDarkMode).toBe(false);
-
-    darkModeService.darkMode$.next(true);
-    
-    fixture.detectChanges();
-    expect(component.isDarkMode).toBe(true);
-  });
-
-  it('should call toggleDarkMode() method from DarkModeTogglerService', () => {
+  it('should call toggleDarkMode() from DarkModeService', () => {
     component.toggleDarkMode();
     expect(darkModeService.toggleDarkMode).toHaveBeenCalled();
   });
