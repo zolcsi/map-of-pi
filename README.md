@@ -1,31 +1,54 @@
-# Pi Demo App
+<h1 align="center" style="color: #5C2A7C;">Map of Pi</h1>
 
-Pi Demo App is an example of how you can implement the various required flows in your app's code.
-It aims to show you how to use Pi Platform API on the backend side and Pi SDK on the frontend side of your app.
+<div align="center">
 
+[![Hackathon](https://img.shields.io/badge/hackathon-PiCommerce-purple.svg)](https://github.com/pi-apps/PiOS/blob/main/pi-commerce.md)
+![Status](https://img.shields.io/badge/status-active-success.svg)
+![License](https://img.shields.io/badge/license-PIOS-blue.svg)
 
-It is composed of two major parts:
+</div>
 
-* **backend**: a backend app (a very simple JSON API built using Node and ExpressJS)
-* **frontend**: a single-page frontend app (built using React and create-react-app)
+<div>
+    <p align="justify"><b>Map of Pi</b> is a mobile application developed to help Pi community members easily locate local businesses that accept Pi as payment. This project was initiated as part of the Pi Commerce Hackathon with the goal of facilitating Pi transactions and connecting businesses with the Pi community.</p>
+</div>
 
+<div>
 
-## Initial Development
+## Design Concept
 
-Read [`doc/development.md`](./doc/development.md) to get started and learn how to run this app in development.
+| App Logo  | App Icon |
+| ------------- |:-------------:|
+| <img src="https://i.ibb.co/XCspKfr/map-of-pi-logo-revised-2.png" alt="map-of-pi-logo-revised-2" border="0">     | <img src="https://i.ibb.co/8Ngm6Ls/map-of-pi-app-icon-revised-2-transparent.png" alt="map-of-pi-app-icon-revised-2-transparent" border="0">
 
-> **WARNING**
->
-> The demo app uses express session cookies which, in the Sandbox environment, are not correctly saved on the client on some browsers.
-> To properly test all of the features of the Demo App, we recommend you to open the sandbox app using Mozilla Firefox.
+</div>
 
+## Tech Stack
 
-## Deployment
+- **Frontend**: Angular, TypeScript, HTML, SCSS, CSS
+- **Backend**: Node.js
+- **Database**: MongoDB
+- **DevOps**: Dockerfile, Shell
 
-Read [`doc/deployment.md`](./doc/deployment.md) to learn how to deploy this app on a server using Docker and docker-compose.
+## Team
 
+### Project Manager
+- Philip Jennings
 
-## Flows
+### Solution Design / UX
+- Femma Ashraf
+- Oluwabukola Adesina
+- Folorunsho Omotunde
 
-To dive into the implementation of the flows that support the demo app features, please refer to
-[Pi Demo App Flows](./FLOWS.md).
+###  Frontend Developers
+- Zoltan Magyar
+- Daniel Lee
+
+### Backend Developers
+- Rokundo Soleil
+- Dhaval Bhatti
+
+## Contributions
+
+<div>
+    <p align="justify">We welcome contributions from the community to improve the Map of Pi project.</p>
+</div>
