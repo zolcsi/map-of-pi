@@ -1,9 +1,41 @@
-<p>business-settings works!</p>
+<div class="container-wrapper">
+  <div class="container">
+    <div class="pt-8 text-center italic min-h-16">
+      <p>{{ businessForm.controls.name.value }}</p>
+    </div>
+    <div class="pb-8 text-center">
+      <h1>Contact information</h1>
+    </div>
 
-<app-products></app-products>
+    <form [formGroup]="businessForm">
+      <div class="input-field">
+        <mat-form-field class="w-full">
+          <mat-label>Business name</mat-label>
+          <input matInput formControlName="name" />
+        </mat-form-field>
+      </div>
 
-<app-loyalty-program></app-loyalty-program>
+      <div class="input-field">
+        <mat-form-field class="w-full">
+          <mat-label>Business type</mat-label>
+          <mat-select>
+            @for (businessType of businessTypes; track businessTypes) {
+              <mat-option [value]="businessType">{{ businessType }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
 
-<app-business-photos></app-business-photos>
+      <div class="input-field">
+        <mat-form-field class="w-full">
+          <mat-label>Location</mat-label>
+          <input matInput />
+        </mat-form-field>
+      </div>
 
-<app-qr-code></app-qr-code>
+      <div class="w-full pt-8 text-center">
+        <button mat-flat-button color="primary">Primary</button>
+      </div>
+    </form>
+  </div>
+</div>
