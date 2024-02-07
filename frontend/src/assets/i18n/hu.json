@@ -5,5 +5,14 @@
   "HOME": {
     "ADD_MY_BUSINESS": "Saját üzlet hozzáadása",
     "SEARCH_BAR_PLACEHOLDER": "Üzletkereső..."
+  },
+  "BUSINESS": {
+    "BUSINESS_SETTINGS": {
+      "CONTACT_INFORMATION": "Üzletadatok",
+      "BUSINESS_NAME": "Üzlet neve",
+      "BUSINESS_TYPE": "Tevékenység",
+      "LOCATION": "Cím",
+      "CONFIRM": "Mentés"
+    }
   }
 }

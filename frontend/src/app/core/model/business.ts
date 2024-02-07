@@ -1,5 +1,5 @@
 export interface Business {
   name: string;
-  category: string;
+  busineesType: string;
   address: string;
 }

@@ -5,5 +5,14 @@
   "HOME": {
     "ADD_MY_BUSINESS": "Add my business",
     "SEARCH_BAR_PLACEHOLDER": "Search Business..."
+  },
+  "BUSINESS": {
+    "BUSINESS_SETTINGS": {
+      "CONTACT_INFORMATION": "Contact information",
+      "BUSINESS_NAME": "Business name",
+      "BUSINESS_TYPE": "Business type",
+      "LOCATION": "Location",
+      "CONFIRM": "Confirm"
+    }
   }
 }

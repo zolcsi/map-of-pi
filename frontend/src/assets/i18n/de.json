@@ -5,5 +5,14 @@
   "HOME": {
     "ADD_MY_BUSINESS": "Mein Geschäft hinzufügen",
     "SEARCH_BAR_PLACEHOLDER": "Geschäft suchen..."
+  },
+  "BUSINESS": {
+    "BUSINESS_SETTINGS": {
+      "CONTACT_INFORMATION": "Kontaktinformationen",
+      "BUSINESS_NAME": "Geschäftsname",
+      "BUSINESS_TYPE": "Hauptgeschäftsfeld",
+      "LOCATION": "Adresse",
+      "CONFIRM": "Speichern"
+    }
   }
 }
