@@ -4,20 +4,20 @@
       <p>{{ businessForm.controls.name.value }}</p>
     </div>
     <div class="pb-8 text-center">
-      <h1>{{ 'BUSINESS.BUSINESS_SETTINGS.CONTACT_INFORMATION' | translate }}</h1>
+      <h1>{{ 'BUSINESS.CONTACT_INFORMATION' | translate }}</h1>
     </div>
 
     <form [formGroup]="businessForm">
       <div class="input-field">
         <mat-form-field class="w-full">
-          <mat-label>{{ 'BUSINESS.BUSINESS_SETTINGS.BUSINESS_NAME' | translate }}</mat-label>
+          <mat-label>{{ 'BUSINESS.BUSINESS_NAME' | translate }}</mat-label>
           <input matInput formControlName="name" />
         </mat-form-field>
       </div>
 
       <div class="input-field">
         <mat-form-field class="w-full">
-          <mat-label>{{ 'BUSINESS.BUSINESS_SETTINGS.BUSINESS_TYPE' | translate }}</mat-label>
+          <mat-label>{{ 'BUSINESS.BUSINESS_TYPE' | translate }}</mat-label>
           <mat-select formControlName="businessType">
             @for (businessType of businessTypes; track businessTypes) {
               <mat-option [value]="businessType">{{ businessType }}</mat-option>
@@ -28,13 +28,19 @@
 
       <div class="input-field">
         <mat-form-field class="w-full">
-          <mat-label>{{ 'BUSINESS.BUSINESS_SETTINGS.LOCATION' | translate }}</mat-label>
+          <mat-label>{{ 'BUSINESS.LOCATION' | translate }}</mat-label>
           <input matInput formControlName="address" />
         </mat-form-field>
       </div>
 
+      <div class="input-field">
+        <button mat-flat-button color="primary" class="w-full" [routerLink]="['/business/products']">
+          {{ 'BUSINESS.PRODUCTS.TITLE' | translate }}
+        </button>
+      </div>
+
       <div class="w-full pt-8 text-center">
-        <button mat-flat-button color="primary" class="w-1/2" (click)="send()">{{ 'BUSINESS.BUSINESS_SETTINGS.CONFIRM' | translate }}</button>
+        <button mat-flat-button color="primary" class="w-1/2" (click)="send()">{{ 'BUSINESS.CONFIRM' | translate }}</button>
       </div>
     </form>
   </div>

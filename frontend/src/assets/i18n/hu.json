@@ -7,12 +7,16 @@
     "SEARCH_BAR_PLACEHOLDER": "Üzletkereső..."
   },
   "BUSINESS": {
-    "BUSINESS_SETTINGS": {
-      "CONTACT_INFORMATION": "Üzletadatok",
-      "BUSINESS_NAME": "Üzlet neve",
-      "BUSINESS_TYPE": "Tevékenység",
-      "LOCATION": "Cím",
-      "CONFIRM": "Mentés"
+    "CONTACT_INFORMATION": "Üzletadatok",
+    "BUSINESS_NAME": "Üzlet neve",
+    "BUSINESS_TYPE": "Tevékenység",
+    "LOCATION": "Cím",
+    "CONFIRM": "Mentés",
+    "PRODUCTS": {
+      "TITLE": "Termékek",
+      "PRODUCTS_ON": "Termékek megjelenítése",
+      "IS_PI_PAYMENT_ENABLED": "PI Tranzakciók engedélyezése",
+      "CAN_ORDER_WITHOUT_PAYMENT": "Online Rendelések PI fizetés nélkül"
     }
   }
 }
