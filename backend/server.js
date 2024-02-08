@@ -6,16 +6,17 @@ const session = require("express-session");
 const logger = require("morgan");
 const cors = require("cors");
 const MongoStore = require("connect-mongo");
-const cookieParser = require("cookie-parser"); 
+const cookieParser = require("cookie-parser");
 const dotenv = require("dotenv");
 
-dotenv.config()
+dotenv.config();
 
 // routes
-const userRoutes = require("./handlers/users");
-const paymentRoutes = require("./handlers/payments");
-const transactionRoutes = require("./handlers/transactions");
-
+// const userRoutes = require("./handlers/users");
+// const paymentRoutes = require("./handlers/payments");
+// const transactionRoutes = require("./handlers/transactions");
+const userRoutes = require("./routes/userRoutes");
+const shopRoutes = require("./routes/shopRoutes");
 const app = express();
 
 app.use(express.json());
@@ -41,31 +42,19 @@ app.use(
   })
 );
 
-// app.use(
-//   session({
-//     secret: "SoleilApp",
-//     resave: false,
-//     saveUninitialized: true,
-//     cookie: { maxAge: 60000 * 10 },
-//     store: MongoStore.create({
-//       mongoUrl: "mongodb://localhost:27017/SoleilAppDB",
-//       ttl: 60000 * 10,
-//       autoRemove: "native",
-//     }),
-//   })
-// );
-
 app.use("/user", userRoutes);
 app.use("/payments", paymentRoutes);
 app.use("/transactions", transactionRoutes);
 
-mongoose.connect(`${process.env.MONGODB_URL}`).then(() => {
-  app.listen(process.env.PORT, () => {
-    console.log(
-      `Succesfuly connected to db ${process.env.MONGODB_URL} and app running on port ${process.env.PORT}`
-    );
+mongoose
+  .connect(`${process.env.MONGODB_URL}`)
+  .then(() => {
+    app.listen(process.env.PORT, () => {
+      console.log(
+        `Succesfuly connected to db ${process.env.MONGODB_URL} and app running on port ${process.env.PORT}`
+      );
+    });
+  })
+  .catch((err) => {
+    console.log("error while connectiong to db");
   });
-}).catch(err => {
-  console.log("error while connectiong to db")
-});
-
