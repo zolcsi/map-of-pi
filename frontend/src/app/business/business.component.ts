@@ -3,6 +3,7 @@ import { BusinessSettingsComponent } from './business-settings/business-settings
 import { OrdersComponent } from './orders/orders.component';
 import { LoyaltyScanComponent } from './loyalty-scan/loyalty-scan.component';
 import { UiStateService } from '../core/service/ui-state.service';
+import { Business } from '../core/model/business';
 
 @Component({
   selector: 'app-business',
@@ -13,6 +14,7 @@ import { UiStateService } from '../core/service/ui-state.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BusinessComponent {
+  business: Business | undefined;
 
   constructor(private readonly uiStateService: UiStateService) {
     this.uiStateService.setShowBackButton(true);
