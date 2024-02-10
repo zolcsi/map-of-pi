@@ -21,4 +21,8 @@ $angular-dark-theme: mat.define-dark-theme((
   )
 ));
 
-.dark-mode { @include mat.all-component-colors($angular-dark-theme); }
+.dark-mode { 
+  @include mat.all-component-colors($angular-dark-theme); 
+  background-color: #2b2b2b;
+  color: white;
+}
