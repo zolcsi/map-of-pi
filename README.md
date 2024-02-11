@@ -20,14 +20,11 @@
 - [Team](#team)
 - [Contributions](#contributions)
 
-
 ## <a name='brand-design'></a>Brand Design
 
 | App Logo  | App Icon |
 | ------------- |:-------------:|
-| <img src="https://i.ibb.co/XCspKfr/map-of-pi-logo-revised-2.png" alt="map-of-pi-logo-revised-2" border="0">     | <img src="https://i.ibb.co/8Ngm6Ls/map-of-pi-app-icon-revised-2-transparent.png" alt="map-of-pi-app-icon-revised-2-transparent" border="0">
-
-</div>
+| <img src="https://i.ibb.co/GTRWzSb/map-of-pi-logo-revised-3.png" alt="map-of-pi-logo-revised-3" border="0">     | <img src="https://i.ibb.co/4FQqXTG/map-of-pi-app-icon-revised-3b-transparent.png" alt="map-of-pi-app-icon-revised-3b-transparent" border="0">
 
 ## <a name='tech-stack'></a>Tech Stack 📊
 
@@ -35,7 +32,6 @@
 - **Backend**: Node.js
 - **Database**: MongoDB
 - **DevOps**: Dockerfile, Shell
-
 
 ## <a name='frontend-local-execution'></a>Frontend Local Execution
 
