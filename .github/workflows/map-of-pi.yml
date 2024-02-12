@@ -26,15 +26,13 @@ jobs:
 
       - name: Install Node
         uses: actions/setup-node@v1
-        with:
-          node-version: 20
 
         # Frontend CI/CD Process
       - name: Install Dependencies for Frontend
         run: cd frontend && npm install
 
       - name: Build Frontend
-        run: cd frontend && npm run build -- --prod
+        run: cd frontend && npm run build -- --configuration=production
 
       - name: Execute Tests for Frontend
         run: cd frontend && npm run test -- --include="*.spec.ts"
