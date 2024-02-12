@@ -29,6 +29,9 @@ jobs:
       - name: Install Dependencies for Frontend
         run: cd frontend && npm install
 
+      - name: Add Angular CLI to PATH
+        run: echo "::add-path::$(pwd)/frontend/node_modules/@angular/cli"  
+
       - name: Build Frontend
         run: cd frontend && ng build --prod
 
