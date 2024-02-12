@@ -9,6 +9,7 @@ on:
       - dev
       - initiate-ci-cd-attempt # Testing purposes
   pull_request:
+    branches:
       - main
       - dev
 
@@ -36,4 +37,4 @@ jobs:
 
         # Backend CI/CD Process
       - name: Install Dependencies for Backend
-        run: cd frontend && npm install
+        run: cd backend && npm install
