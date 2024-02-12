@@ -22,18 +22,22 @@ jobs:
     # The sequence of tasks that will be executed as part of the job
     steps:
       - name: Checkout code
-        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
         uses: actions/checkout@v3
+
+      - name: Install Node
+        uses: actions/setup-node@v1
+          with:
+            node-version: 14
 
         # Frontend CI/CD Process
       - name: Install Dependencies for Frontend
         run: cd frontend && npm install
 
       - name: Build Frontend
-        run: cd frontend && $(npm bin)/ng build --prod
+        run: cd frontend && ng build -- --prod
 
       - name: Execute Tests for Frontend
-        run: cd frontend && $(npm bin)/ng test -- --include="*.spec.ts"
+        run: cd frontend && ng test -- --include="*.spec.ts"
 
         # Backend CI/CD Process
       - name: Install Dependencies for Backend
