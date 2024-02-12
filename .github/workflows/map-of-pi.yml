@@ -38,7 +38,7 @@ jobs:
 
         # https://github.com/karma-runner/karma-browserstack-launcher/issues/195
       - name: Patch Karma Testing for GitHub Actions
-        run: sed -i -z "s/ removeAllListeners()\n/ removeAllListeners();process.nextTick(() => process.exit(code || 0));\n/g" node_modules/karma/lib/server.js
+        run: cd frontend && sed -i -z "s/ removeAllListeners()\n/ removeAllListeners();process.nextTick(() => process.exit(code || 0));\n/g" node_modules/karma/lib/server.js
 
       - name: Execute Tests for Frontend
         run: cd frontend && npm run test -- --browsers=ChromeHeadless
