@@ -27,7 +27,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v1
         with:
-          node-version: 14
+          node-version: 20
 
         # Frontend CI/CD Process
       - name: Install Dependencies for Frontend
