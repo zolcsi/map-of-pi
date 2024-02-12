@@ -1,6 +1,6 @@
 {
   "name": "map-of-pi",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Map of Pi Team",
   "description": "Map of Pi Frontend App",
   "homepage": "https://mapofpi.com",
@@ -29,6 +29,7 @@
     "@asymmetrik/ngx-leaflet": "^17.0.0",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
+    "@pinetwork-js/sdk": "^0.7.0",
     "leaflet": "^1.9.4",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -43,6 +44,7 @@
     "@angular-eslint/template-parser": "17.2.1",
     "@angular/cli": "^17.1.2",
     "@angular/compiler-cli": "^17.1.0",
+    "@pinetwork-js/api-typing": "^0.7.0",
     "@types/jasmine": "~5.1.0",
     "@types/leaflet": "^1.9.8",
     "@typescript-eslint/eslint-plugin": "6.19.0",

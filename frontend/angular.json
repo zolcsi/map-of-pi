@@ -27,6 +27,7 @@
               "src/favicon.ico",
               "src/assets",
               "src/site.webmanifest",
+              "src/validation-key.txt",
               {
                 "glob": "**/*",
                 "input": "./node_modules/leaflet/dist/images",
