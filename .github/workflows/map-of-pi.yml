@@ -36,12 +36,12 @@ jobs:
       - name: Build Frontend
         run: cd frontend && npm run build -- --configuration=production
 
-        # https://github.com/karma-runner/karma-browserstack-launcher/issues/195
-      - name: Patch Karma Testing for GitHub Actions
-        run: cd frontend && sed -i -z "s/ removeAllListeners()\n/ removeAllListeners();process.nextTick(() => process.exit(code || 0));\n/g" node_modules/karma/lib/server.js
+      #   # https://github.com/karma-runner/karma-browserstack-launcher/issues/195
+      # - name: Patch Karma Testing for GitHub Actions
+      #   run: cd frontend && sed -i -z "s/ removeAllListeners()\n/ removeAllListeners();process.nextTick(() => process.exit(code || 0));\n/g" node_modules/karma/lib/server.js
 
       - name: Execute Tests for Frontend
-        run: cd frontend && npm run test -- --browsers=ChromeHeadless
+        run: cd frontend && npm run test -- --watch=false --browsers=ChromeHeadless
 
         # Backend CI/CD Process
       - name: Install Dependencies for Backend
