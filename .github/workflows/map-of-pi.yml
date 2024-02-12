@@ -37,7 +37,7 @@ jobs:
         run: cd frontend && npm run build -- --configuration=production
 
       - name: Execute Tests for Frontend
-        run: cd frontend && npm run test -- --headless
+        run: cd frontend && npm run test -- --browsers=ChromeHeadless
 
         # Backend CI/CD Process
       - name: Install Dependencies for Backend
