@@ -1,0 +1,98 @@
+.wallet-header {
+    background-color: #6f3d92;
+    color: white;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.2rem 1rem;
+    font-family: 'Lato', sans-serif;
+ 
+    &__back-button,
+    &__center-group,
+    &__dropdown-button {
+       margin-top: 1.5rem;
+    }
+ 
+    &__back-button {
+       background: none;
+       border: none;
+       cursor: pointer;
+       color: #ffffff;
+       opacity: 0.3;
+    }
+ 
+    &__wallet-button, &__logo {
+       background: none;
+       border: none;
+       cursor: pointer;
+ 
+       & img {
+          height: 2rem;
+          border-radius: 0.3rem;
+       }
+    }
+ 
+    &__title {
+       font-size: 1.5rem;
+       font-weight: 300;
+       margin: 0 5px;
+       white-space: nowrap;
+    }
+ 
+    &__logo {
+       width: 2.5em;
+       height: 2.5em;
+    }
+ 
+    &__dropdown-button {
+       color: #ffffff;
+    }
+ 
+    /* Ensures the wallet icon, title, and logo are centered together */
+    &__center-group {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+ 
+       &__wallet-button, &__title, &__logo {
+          margin: 0 1rem;
+       }
+    }
+ 
+    &__back-button,
+    &__dropdown-button {
+       background: none;
+       border: none;
+       padding: 0;
+       cursor: pointer;
+    }
+ 
+    @media (max-width: 768px) {
+       &__wallet-button, &__title, &__logo {
+          margin: 0 0.2rem;
+       }
+ 
+       &__back-button {
+          font-size: 0.7rem;
+       }
+ 
+       &__wallet-button img {
+          height: 1.3rem;
+          border-radius: 0.3rem;
+       }
+ 
+       &__title {
+          font-size: 1rem;
+       }
+ 
+       &__logo {
+          width: 1.8em;
+          height: 1.8em;
+       }
+ 
+       &__dropdown-button {
+          font-size: 0.7rem;
+       }
+    }
+ }
+ 

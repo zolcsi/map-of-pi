@@ -14,6 +14,10 @@ export const routes: Routes = [
     loadChildren: () => import('./shop/shop.routes').then((m) => m.SHOP_ROUTES),
   },
   {
+    path: 'transactions',
+    loadComponent: () => import('./transactions/transactions.component').then((m) => m.TransactionsComponent),
+  },
+  {
     path: 'privacy-policy',
     title: 'Privacy Policy',
     loadComponent: () => import('./privacy-policy/privacy-policy.component').then((m) => m.PrivacyPolicyComponent),
