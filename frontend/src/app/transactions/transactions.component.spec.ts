@@ -20,9 +20,19 @@ describe('TransactionsComponent', () => {
   });
 
   it('should initialize event listeners on ngOnInit', () => {
-    spyOn(component, 'initializeEventListeners').and.callThrough();
+    spyOn(component, 'setupBackButton').and.callThrough();
+    spyOn(component, 'setupWalletButton').and.callThrough();
+    spyOn(component, 'setupDropdownButton').and.callThrough();
+    spyOn(component, 'setupPayButton').and.callThrough();
+    spyOn(component, 'setupCancelPurchaseButton').and.callThrough();
+
     component.ngOnInit();
-    expect(component.initializeEventListeners).toHaveBeenCalled();
+
+    expect(component.setupBackButton).toHaveBeenCalled();
+    expect(component.setupWalletButton).toHaveBeenCalled();
+    expect(component.setupDropdownButton).toHaveBeenCalled();
+    expect(component.setupPayButton).toHaveBeenCalled();
+    expect(component.setupCancelPurchaseButton).toHaveBeenCalled();
   });
 
   it('should setup back button event listener', () => {
