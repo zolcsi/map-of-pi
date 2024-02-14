@@ -14,4 +14,12 @@ export class SnackService {
       verticalPosition: 'top',
     });
   }
+
+  showMessage(message: string): void {
+    this.snackBar.open(message, undefined, {
+      duration: 5000,
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+    });
+  }
 }

@@ -8,10 +8,10 @@
       <img id="logo-img" src="assets/images/logo.svg" alt="map of pi logo" width="48" height="48" />
     </button>
   }
-  <span>{{ 'CORE.APP_NAME' | translate }}</span>
- 
+  <span routerLink="/">{{ 'CORE.APP_NAME' | translate }}</span>
+
   <div class="optional-controls">
-    <app-language-switcher></app-language-switcher>
     <app-dark-mode-toggler></app-dark-mode-toggler>
+    <app-language-switcher></app-language-switcher>
   </div>
 </mat-toolbar>

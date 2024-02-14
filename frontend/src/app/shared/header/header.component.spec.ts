@@ -1,8 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HeaderComponent } from './header.component';
-import { TranslateModule } from '@ngx-translate/core';
 import { DarkModeService } from '../../core/service/dark-mode.service';
+import { TranslateModule } from '@ngx-translate/core';
+import { ActivatedRoute } from '@angular/router';
+
 import { Observable, of } from 'rxjs';
+
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -16,10 +19,19 @@ describe('HeaderComponent', () => {
       darkMode$: darkMode$,
       toggleDarkMode: () => {}
     };
+
+    const activatedRouteStub = {
+      snapshot: {
+        paramMap: new Map<string, string>()
+      }
+    };
     
     await TestBed.configureTestingModule({
       imports: [HeaderComponent, TranslateModule.forRoot()],
-      providers: [{ provide: DarkModeService, useValue: darkModeServiceMock }]
+      providers: [
+        { provide: DarkModeService, useValue: darkModeServiceMock },
+        { provide: ActivatedRoute, useValue: activatedRouteStub }
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(HeaderComponent);

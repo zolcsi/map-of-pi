@@ -8,11 +8,12 @@ import { DarkModeService } from '../../core/service/dark-mode.service';
 import { DarkModeTogglerComponent } from '../dark-mode-toggler/dark-mode-toggler.component';
 import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
 import { UiStateService } from '../../core/service/ui-state.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, MatToolbarModule, MatButtonModule, MatIconModule, DarkModeTogglerComponent, LanguageSwitcherComponent, TranslateModule],
+  imports: [CommonModule, MatToolbarModule, MatButtonModule, MatIconModule, DarkModeTogglerComponent, LanguageSwitcherComponent, TranslateModule, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -24,7 +25,7 @@ export class HeaderComponent {
   constructor(
     private readonly location: Location,
     private readonly uiStateService: UiStateService,
-    public readonly darkModeService: DarkModeService
+    public readonly darkModeService: DarkModeService,
   ) {
     this.showBackButton = this.uiStateService.showBackButton;
   }
