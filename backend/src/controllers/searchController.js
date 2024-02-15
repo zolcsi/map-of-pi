@@ -1,6 +1,7 @@
 // TODO: add isAuthenticated middleware
+// TODO: replace sample data with actual data source
 
-// sample data for sellers (todo: replace with actual data source)
+// sample data for sellers
 const sellers = [
     { id: 1, name: 'Seller 1', type: 'restaurant', distance: 5, priceRange: '$$', acceptsPiCoin: true },
     { id: 2, name: 'Seller 2', type: 'clothing store', distance: 10, priceRange: '$$', acceptsPiCoin: true },
