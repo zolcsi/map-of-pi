@@ -1,4 +1,4 @@
-const isAuthenticated = require('../authMiddleware/isAuthenticated')
+// TODO: add isAuthenticated middleware
 
 // sample data for sellers (todo: replace with actual data source)
 const sellers = [
@@ -35,6 +35,4 @@ const search = async (req, res) => {
     }
 };
 
-module.exports = {
-    search: isAuthenticated(search)
-};
+module.exports = { search };
