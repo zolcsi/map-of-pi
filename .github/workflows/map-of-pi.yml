@@ -41,3 +41,6 @@ jobs:
         # Backend CI/CD Process
       - name: Install Dependencies for Backend
         run: cd backend && npm install
+
+      - name: Execute Tests for Backend
+        run: cd backend && npm run test
