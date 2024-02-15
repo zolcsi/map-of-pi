@@ -1,7 +1,9 @@
 .cart-header {
+    position: relative;
     padding: 0.5rem 1rem;
     text-align: center;
-    position: relative;
+    background-color: #ffffff;
+    font-family: var(--font-family-main);
     border-bottom: 1px solid var(--color-text-color);
 }
 
