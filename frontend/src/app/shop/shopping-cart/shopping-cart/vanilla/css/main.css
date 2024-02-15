@@ -1,4 +1,5 @@
 @import './reset.css';
 @import './fonts.css';
+@import './variables.css';
 
 @import './modules/header.css';
