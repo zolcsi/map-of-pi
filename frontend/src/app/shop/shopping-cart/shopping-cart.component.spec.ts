@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ShoppingCartComponent } from './shopping-cart.component';
 
 describe('ShoppingCartComponent', () => {
@@ -18,5 +17,18 @@ describe('ShoppingCartComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should initialize order button on ngOnInit', () => {
+    spyOn(component, 'setupOrderButton').and.callThrough();
+    component.ngOnInit();
+    expect(component.setupOrderButton).toHaveBeenCalled();
+  });
+
+  it('should handle order button click', () => {
+    const spy = spyOn(component, 'handleOrderButtonClick').and.callThrough();
+    const button = fixture.nativeElement.querySelector('.cart-content__order-button');
+    button.click();
+    expect(spy).toHaveBeenCalled();
   });
 });
