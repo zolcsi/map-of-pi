@@ -1,5 +1,6 @@
 @use "../node_modules/@angular/material/" as mat;
 
+@import './app/shop/shop.component.scss';
 @import "./app/transactions/transactions.component.scss";
 
 @tailwind base;
@@ -8,6 +9,7 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; min-width: 21rem;}
+
 
 // define custom dark theme colors
 $dark-primary: mat.define-palette(mat.$amber-palette);
