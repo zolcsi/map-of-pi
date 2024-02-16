@@ -74,6 +74,7 @@ The Map of Pi Front End Project was generated with [Angular CLI](https://github.
 ###  Frontend Developers
 - Zoltan Magyar
 - Daniel Lee
+- Darin Hajou
 
 ### Backend Developers
 - Rokundo Soleil
