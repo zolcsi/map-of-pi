@@ -4,7 +4,7 @@
     text-align: center;
     background-color: #ffffff;
     font-family: var(--font-family-main);
-    border-bottom: 1px solid var(--color-text-color);
+    border-bottom: 2px solid var(--color-text-color);
 }
 
 .cart-header__back-button,
