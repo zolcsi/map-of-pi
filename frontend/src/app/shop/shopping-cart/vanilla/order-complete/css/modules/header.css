@@ -7,7 +7,6 @@
     border-bottom: 1px solid var(--color-text-color);
 }
 
-
 .order-complete__back-button,
 .order-complete__brand,
 .order-complete__app-name,
@@ -15,9 +14,9 @@
     margin-top: 1rem;
 }
   
-.order-complete__back-button {
+.order-complete__header-back-button {
     position: absolute;
-    top: 25px;
+    top: 40px;
     display: block;
     background: none;
     border: none;
