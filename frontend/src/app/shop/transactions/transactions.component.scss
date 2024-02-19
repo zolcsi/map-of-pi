@@ -1,7 +1,7 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 
-@import './ui-elements/fonts.scss';
-@import './ui-elements/reset.scss';
+@import '../../../assets/styles/fonts.scss';
+@import '../../../assets/styles/reset.scss';
 
-@import './ui-elements/modules/header.scss';
-@import './ui-elements/modules/main.scss';
+@import '../../../assets/styles/shop/transactions/header.scss';
+@import '../../../assets/styles/shop/transactions/main.scss';
