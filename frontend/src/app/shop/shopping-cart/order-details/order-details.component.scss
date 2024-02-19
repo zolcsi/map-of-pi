@@ -1,8 +1,4 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 
-@import './ui-elements/reset.scss';
-@import './ui-elements/fonts.scss';
-@import './ui-elements/variables.scss';
-
-@import './ui-elements/modules/header.scss';
-@import './ui-elements/modules/main.scss';
+@import '../.././../../assets/styles/shop/shopping-cart/header.scss';
+@import '../.././../../assets/styles/shop/shopping-cart/main.scss';
