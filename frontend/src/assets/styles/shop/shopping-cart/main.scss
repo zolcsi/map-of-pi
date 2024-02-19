@@ -8,6 +8,8 @@ body {
     font-family: var(--font-family-main);
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds some shadow for depth */
+    max-width: 400px;
+    border-radius: 10px;
 }
 
 .cart-content__business-name {
@@ -16,6 +18,10 @@ body {
     margin-bottom: 0.5rem; /* Space after the business name */
 }
   
+.cart-content__order-message {
+    margin-bottom: 0.3rem;
+}
+
 .cart-content__cart-item {
     display: flex;
     align-items: center; /* Aligns the icon and text vertically */
@@ -69,13 +75,13 @@ body {
     color: #fff; /* Text color for the button */
     border: none;
     padding: 0.8rem 4rem;
-    font-size: 0-8rem;
+    font-size: 0.8rem;
     cursor: pointer;
     border-radius: 10px;
 }
   
 /* Add any necessary responsive styles */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .cart-content__business-name {
       font-size: 1rem;
     }
@@ -91,6 +97,10 @@ body {
         font-size: 0.7rem;
     }
 
+    .cart-content__order-message {
+        font-size: 1.1rem;
+        }
+
     .cart-content__total-price {
         font-size: 0.8rem;
     }
@@ -103,5 +113,15 @@ body {
         width: 18px;
         height: 18px;
     }
+}
+
+@media (min-width: 1000px) {
+    .cart-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 400px;
+    } 
 }
   
