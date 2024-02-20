@@ -8,3 +8,7 @@
     outline: 2px solid #005fcc;
     outline-offset: 2px; 
 }
+
+body {
+    background-color: var(--color-background-color);
+}
