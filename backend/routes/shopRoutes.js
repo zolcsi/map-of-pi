@@ -4,6 +4,7 @@ const {
   getAllShops,
   deleteShop,
   updateShop,
+  getShopProducts,
 } = require("../controllers/shopController");
 const isAuthenticated = require("../authMiddleware/isAuthenticated");
 const {
@@ -15,10 +16,11 @@ const {
 const router = express.Router();
 
 router.get("/", getAllShops);
-router.post("/register-shop", isAuthenticated, registerShop);
-router.delete("/delete-shop/:shopId", isAuthenticated, deleteShop);
-router.patch("/update-shop/:shopId", isAuthenticated, updateShop);
-router.post("/add-product", isAuthenticated, addProductToShop);
+router.post("/register", isAuthenticated, registerShop);
+router.delete("/:shopId", isAuthenticated, deleteShop);
+router.patch("/:shopId", isAuthenticated, updateShop);
+router.post("/add-product/:shopId", isAuthenticated, addProductToShop);
+router.get("/products/:shopId",isAuthenticated, getShopProducts);
 router.post(
   "/remove-product/:productId",
   isAuthenticated,
