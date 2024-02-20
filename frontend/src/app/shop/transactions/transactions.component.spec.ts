@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { TransactionsComponent } from './transactions.component';
 
 describe('TransactionsComponent', () => {
@@ -7,7 +8,7 @@ describe('TransactionsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TransactionsComponent]
+      imports: [TransactionsComponent, RouterTestingModule]
     }).compileComponents();
     
     fixture = TestBed.createComponent(TransactionsComponent);
@@ -82,6 +83,12 @@ describe('TransactionsComponent', () => {
     payButton.click();
     expect(component.setupPayButton).toHaveBeenCalled();
   });
+
+  it('should have correct routerLink set for the pay button', () => {
+    const button = fixture.nativeElement.querySelector('.actions__button--pay');
+    // Angular attribute added during runtime to reflect the value of the `[routerLink]` directive.
+    expect(button.getAttribute('ng-reflect-router-link')).toEqual('/shop/order-complete');
+  }); 
 
   it('should setup cancel purchase button event listener', () => {
     const cancelPurchaseButton = document.createElement('button');
