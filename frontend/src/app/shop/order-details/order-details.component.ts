@@ -2,15 +2,15 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-shopping-cart',
+  selector: 'app-order-details',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './shopping-cart.component.html',
-  styleUrl: './shopping-cart.component.scss',
+  templateUrl: './order-details.component.html',
+  styleUrl: './order-details.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class ShoppingCartComponent implements OnInit {
+export class OrderDetailsComponent implements OnInit {
   
   ngOnInit(): void {
     this.setupOrderButton();
@@ -25,7 +25,7 @@ export class ShoppingCartComponent implements OnInit {
       orderButton.addEventListener('click', () => this.handleOrderButtonClick());
     }
   }
-
+ 
   /**
    * Handles the click event on the order button.
    * This should trigger the preparation of data for the backend and send it accordingly.
@@ -50,7 +50,7 @@ export class ShoppingCartComponent implements OnInit {
       console.error('One or more required elements not found in the DOM.');
     }
   }
-
+ 
   /**
    * Submits the order details to the backend.
    * @param {Object} orderDetails - The details of the order to submit.

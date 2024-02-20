@@ -1,3 +1,4 @@
+const Product = require("../models/productModel");
 const Shop = require("../models/shopModel");
 
 const getAllShops = async (req, res) => {
@@ -18,9 +19,11 @@ const registerShop = async (req, res) => {
   const currentUser = req.currentUser;
 
   try {
-    const newShop = new Shop({ ...req.body, owner: currentUser.uid });
-    const shop = await newShop.save();
-    return res.status(200).json({ message: "shop created successfully", shop });
+    const newShop = await Shop.create({ ...req.body, owner: currentUser.uid });
+    
+    await currentUser.shops.push(newShop);
+
+    return res.status(200).json({ message: "shop created successfully", newShop,currentUser });
   } catch (error) {
     console.log(
       "internal server error while registering new shop: " + error.message
@@ -94,9 +97,31 @@ const updateShop = async (req, res) => {
   }
 };
 
+
+const getShopProducts = async (req, res) => {
+  const {shopId} = req.params;
+
+  try {
+    const products = await Product.find({ shop: shopId });
+
+    if (products.length > 0) {
+      return res.status(200).json({ products });
+    } else {
+      return res.status(200).json({ message: "Shop doesn't have any products" });
+    }
+  } catch (error) {
+    console.log(
+      "Internal server error while searching products for a shop: " + error.message
+    );
+    return res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+
 module.exports = {
   registerShop,
   getAllShops,
   deleteShop,
   updateShop,
+  getShopProducts
 };
