@@ -13,7 +13,7 @@
 .wallet-header__dropdown-button {
   margin-top: 1.5rem;
 }
- 
+
 .wallet-header__back-button {
    background: none;
    border: none;
@@ -32,23 +32,23 @@
    height: 2rem;
    border-radius: 0.3rem;
 }
- 
+
 .wallet-header__title {
    font-size: 1.5rem;
    font-weight: 300;
    margin: 0 5px;
    white-space: nowrap;
 }
- 
+
 .wallet-header__logo {
    width: 2.5em;
    height: 2.5em;
 }
- 
+
 .wallet-header__dropdown-button {
    color: #ffffff;
 }
- 
+
  /* Ensures the wallet icon, title, and logo are centered together */
 .wallet-header__center-group {
    display: flex;
@@ -81,16 +81,16 @@
       height: 1.3rem;
       border-radius: 0.3rem;
    }
-    
+
    .wallet-header__title {
       font-size: 1rem;
    }
-    
+
     .wallet-header__logo {
       width: 1.8em;
       height: 1.8em;
     }
-    
+
    .wallet-header__dropdown-button {
       font-size: 0.7rem;
    }

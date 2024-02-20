@@ -1,3 +1,4 @@
+const Shop = require("../models/shopModel");
 const User = require("../models/userModel");
 const platformAPIClient = require("../services/platformAPIClient");
 const jwt = require("jsonwebtoken");
@@ -16,23 +17,24 @@ const signInUser = async (req, res) => {
 
   try {
     let currentUser = await User.findOne({ uid: authResult.user.uid });
-
-    if (currentUser) {
-      await User.findOneAndUpdate(
-        { uid: currentUser.uid },
-        { accessToken: authResult.accessToken }
-      );
-    } else {
+    if (!currentUser) {
       const newUser = new User({
         username: authResult.user.username,
         uid: authResult.user.uid,
         roles: authResult.user.roles,
         accessToken: authResult.accessToken,
+        shops: []
       });
 
       currentUser = await newUser.save();
     }
 
+    const userShops = await Shop.find({ owner: currentUser.uid });
+ 
+    currentUser.shops = userShops;
+
+    await currentUser.save(); 
+    
     const token = jwt.sign(
       { userId: currentUser.uid },
       process.env.JWT_SECRET,
@@ -44,6 +46,7 @@ const signInUser = async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 };
+
 
 const signOutUser = async (req, res) => {
   try {

@@ -29,6 +29,7 @@ describe('Shop Routes', () => {
     expect(routePaths).toContain('loyalty-info');
     expect(routePaths).toContain('shop-info');
     expect(routePaths).toContain('shopping-cart');
+    expect(routePaths).toContain('order-progress');
     expect(routePaths).toContain('order-details');
     expect(routePaths).toContain('transactions');
   });

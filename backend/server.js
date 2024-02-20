@@ -13,8 +13,8 @@ dotenv.config();
 
 // routes
 // const userRoutes = require("./handlers/users");
-// const paymentRoutes = require("./handlers/payments");
-// const transactionRoutes = require("./handlers/transactions");
+const paymentRoutes = require("./handlers/payments");
+const transactionRoutes = require("./handlers/transactions");
 const userRoutes = require("./routes/userRoutes");
 const shopRoutes = require("./routes/shopRoutes");
 const app = express();
@@ -45,6 +45,7 @@ app.use(
 app.use("/user", userRoutes);
 app.use("/payments", paymentRoutes);
 app.use("/transactions", transactionRoutes);
+app.use("/shops",shopRoutes)
 
 mongoose
   .connect(`${process.env.MONGODB_URL}`)
