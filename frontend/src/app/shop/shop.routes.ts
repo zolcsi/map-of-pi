@@ -23,8 +23,12 @@ export const SHOP_ROUTES: Routes = [
     loadComponent: () => import('./shopping-cart/shopping-cart.component').then((m) => m.ShoppingCartComponent),
   },
   {
+    path: 'order-progress',
+    loadComponent: () => import('./order-progress/order-progress.component').then((m) => m.OrderProgressComponent),
+  },
+  {
     path: 'order-details',
-    loadComponent: () => import('./shopping-cart/order-details/order-details.component').then((m) => m.OrderDetailsComponent),
+    loadComponent: () => import('./order-details/order-details.component').then((m) => m.OrderDetailsComponent),
   },
   {
     path: 'transactions',

@@ -24,8 +24,9 @@
 .payment__amount {
     font-size: 2.5rem;
     font-weight: bold;
+    margin-bottom: -0.5rem;
 }
-  
+
 .payment__fee {
     margin-bottom: 3.5rem;
     font-size: 0.7rem;
@@ -37,13 +38,13 @@
     justify-content: space-between;
     align-items: center;
 }
-  
+
 .recipient__label {
     font-size: 0.75rem;
     font-weight: lighter;
     font-family: "Signika", sans-serif;
 }
-  
+
 .recipient__address {
     font-size: 0.75rem;
     font-weight: bold;
@@ -77,7 +78,7 @@
     margin-top: 10px;
     cursor: pointer;
 }
-  
+
 .actions__button--pay {
     background-color: #6f3d92;
     color: white;
@@ -87,7 +88,7 @@
 .actions__button--pay:active {
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
-  
+
 .actions__button--cancel {
     font-size: 0.6rem;
     background-color: #ffffff;
@@ -102,8 +103,8 @@
 }
 
 @media (max-width: 576px) {
-    .payment__header {
-       font-size: 1rem;
+    .payment__header, .payment__action {
+       font-size: 0.6rem;
     }
 
     .payment__amount {

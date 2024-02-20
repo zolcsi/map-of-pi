@@ -52,14 +52,14 @@ body {
     display: block;
     margin-top: 2px;
 }
-  
+
 .cart-content__total-label {
     margin-top: 5rem;
     display: flex;
     padding: 1rem 0;
     color: var(--color-text-color);
 }
-  
+
 .cart-content__total-price,
 .cart-content__total-value {
     font-size: 1rem;
@@ -73,13 +73,13 @@ body {
 .cart-content__pi-icon {
     margin-left: 1rem;
 }
-  
+
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
     .cart-content__business-name {
       font-size: 0.8rem;
     }
-    
+
     .minutes, #time-remaining {
         font-size: 0.8rem;
     }
@@ -120,4 +120,3 @@ body {
         min-width: 250px;
     }
 }
-  

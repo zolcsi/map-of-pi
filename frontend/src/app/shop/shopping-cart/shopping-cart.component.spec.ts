@@ -36,6 +36,6 @@ describe('ShoppingCartComponent', () => {
   it('should have correct routerLink set for the order button', () => {
     const button = fixture.nativeElement.querySelector('.cart-content__order-button');
     // Angular attribute added during runtime to reflect the value of the `[routerLink]` directive.
-    expect(button.getAttribute('ng-reflect-router-link')).toEqual('/shop/order-details');
+    expect(button.getAttribute('ng-reflect-router-link')).toEqual('/shop/order-progress');
   });  
 });
