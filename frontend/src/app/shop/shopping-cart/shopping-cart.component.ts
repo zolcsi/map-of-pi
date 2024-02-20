@@ -11,6 +11,7 @@ import { RouterLink } from '@angular/router';
 })
 
 export class ShoppingCartComponent implements OnInit {
+  
   ngOnInit(): void {
     this.setupOrderButton();
   }
