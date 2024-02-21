@@ -34,4 +34,8 @@ export const SHOP_ROUTES: Routes = [
     path: 'transactions',
     loadComponent: () => import('./transactions/transactions.component').then((m) => m.TransactionsComponent),
   },
+  {
+    path: 'order-complete',
+    loadComponent: () => import('./order-complete/order-complete.component').then((m) => m.OrderCompleteComponent),
+  },
 ];

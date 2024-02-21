@@ -32,5 +32,6 @@ describe('Shop Routes', () => {
     expect(routePaths).toContain('order-progress');
     expect(routePaths).toContain('order-details');
     expect(routePaths).toContain('transactions');
+    expect(routePaths).toContain('order-complete');
   });
 });
