@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Product = require("./productModel");
+const User = require("./userModel");
 
 const shopSchema = new mongoose.Schema({
   name: String,
