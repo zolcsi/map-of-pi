@@ -13,10 +13,10 @@ dotenv.config();
 
 // routes
 // const userRoutes = require("./handlers/users");
-const paymentRoutes = require("./handlers/payments");
-const transactionRoutes = require("./handlers/transactions");
-const userRoutes = require("./routes/userRoutes");
-const shopRoutes = require("./routes/shopRoutes");
+const paymentRoutes = require("./src/handlers/payments");
+const transactionRoutes = require("./src/handlers/transactions");
+const userRoutes = require("./src/routes/userRoutes");
+const shopRoutes = require("./src/routes/shopRoutes");
 const app = express();
 
 app.use(express.json());
