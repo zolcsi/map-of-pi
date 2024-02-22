@@ -3,10 +3,7 @@
     "version": "0.0.2",
     "description": "Map of Pi App",
     "scripts": {
+        "install": "npm install --prefix frontend && npm install --prefix backend",
         "start": "npm run -C frontend build && npm run -C backend start"
-    },
-    "devDependencies": {
-        "@angular/cli": "^17.1.2",
-        "@angular-devkit/build-angular": "^17.1.2"
     }
 }
