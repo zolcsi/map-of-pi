@@ -11,7 +11,11 @@ export default function () {
         const paymentToggleDiv = document.querySelector('.menu-settings__toggle:nth-child(3)');
         const addItemButtonSection = document.querySelector('.menu-setting__floating-button-section');
         const floatingButtonSection = document.querySelector('.menu-setting__floating-button');
+<<<<<<< HEAD
         loadToggleStates(); // Load the toggle states as the first action
+=======
+        loadToggleStates(); // Load the toggle based on saved states
+>>>>>>> 732ea1ee1a2d743df8e3ae553816a0082cdfa415
 
         /**
          * Simulates saving the current states of toggle buttons.
@@ -23,7 +27,11 @@ export default function () {
             // Make API call to the backend
         }
         
+<<<<<<< HEAD
         /**
+=======
+         /**
+>>>>>>> 732ea1ee1a2d743df8e3ae553816a0082cdfa415
          * Loads and applies the saved toggle states from the backend.
          */
         function loadToggleStates() {
@@ -31,10 +39,17 @@ export default function () {
             console.log('Loading toggle states...');
             // Simulate fetching data from the backend
             // Make an API call to your backend to fetch saved states
+<<<<<<< HEAD
             // Hardcoded states for demonstration
             const fetchedStates = {
                 menuEnabled: true,
                 orderEnabled: false,
+=======
+            // Hardcoded states for demonstration:
+            const fetchedStates = {
+                menuEnabled: false,
+                orderEnabled: true,
+>>>>>>> 732ea1ee1a2d743df8e3ae553816a0082cdfa415
                 paymentEnabled: true,
             };
         
@@ -63,6 +78,7 @@ export default function () {
                 floatingButtonSection.classList.add('hidden');
             }
         }
+<<<<<<< HEAD
      /**
       * Updates the labels next to toggles to reflect their current state off/on.
       */    
@@ -75,11 +91,30 @@ export default function () {
         orderStatusLabel.textContent = orderToggleDiv.querySelector('input').checked ? 'on' : 'off';
         paymentStatusLabel.textContent = paymentToggleDiv.querySelector('input').checked ? 'on' : 'off';
     }
+=======
+
+          /**
+         * Updates the labels next to toggles to reflect their current state off/on.
+         */
+         function updateToggleLabels() {
+            const menuStatusLabel = document.querySelector('label[for="menu-toggle"] .toggle-status');
+            const orderStatusLabel = document.querySelector('label[for="order-toggle"] .toggle-status');
+            const paymentStatusLabel = document.querySelector('label[for="payment-toggle"] .toggle-status');
+         
+            menuStatusLabel.textContent = menuToggle.checked ? 'on' : 'off';
+            orderStatusLabel.textContent = orderToggleDiv.querySelector('input').checked ? 'on' : 'off';
+            paymentStatusLabel.textContent = paymentToggleDiv.querySelector('input').checked ? 'on' : 'off';
+         }
+>>>>>>> 732ea1ee1a2d743df8e3ae553816a0082cdfa415
 
         // Initialize labels based on the current state
         updateToggleLabels();
         
+<<<<<<< HEAD
         // Update labels on toggle change
+=======
+        // Set label text based on toggle state
+>>>>>>> 732ea1ee1a2d743df8e3ae553816a0082cdfa415
         document.querySelectorAll('.menu-settings__toggle input').forEach(toggle => {
             toggle.addEventListener('change', updateToggleLabels);
         });
@@ -109,6 +144,10 @@ export default function () {
             });
         });
 
+<<<<<<< HEAD
+=======
+        // Setup event listeners for toggles
+>>>>>>> 732ea1ee1a2d743df8e3ae553816a0082cdfa415
         document.querySelectorAll('.menu-settings__toggle input').forEach(toggle => {
             toggle.addEventListener('change', function() {
                 updateSliderAppearance();
@@ -116,7 +155,11 @@ export default function () {
                 saveToggleStates(); // Save the new states after any toggle changes
             });
         });
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 732ea1ee1a2d743df8e3ae553816a0082cdfa415
         function initializeToggles() {
             // Initial state update
             updateSliderAppearance();
@@ -133,19 +176,35 @@ export default function () {
     });
 
     /**
+<<<<<<< HEAD
      * Updates the appearance of sliders to reflect their state.
      */
+=======
+   * Updates the appearance of sliders to reflect their state.
+   */
+>>>>>>> 732ea1ee1a2d743df8e3ae553816a0082cdfa415
     function updateSliderAppearance() {
         const toggles = document.querySelectorAll('.menu-settings__toggle input');
     
         toggles.forEach(toggle => {
             const slider = toggle.nextElementSibling; // Select the slider span related to each toggle
             const sliderCircle = slider.querySelector('.menu-settings__slider:before');
+<<<<<<< HEAD
             if (toggle.checked) {
                 slider.classList.remove('menu-settings__slider--off');
+=======
+
+            if (toggle.checked) {
+             
+>>>>>>> 732ea1ee1a2d743df8e3ae553816a0082cdfa415
             } else {
                 slider.classList.add('menu-settings__slider--off');
             }
         });
     }
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 732ea1ee1a2d743df8e3ae553816a0082cdfa415
