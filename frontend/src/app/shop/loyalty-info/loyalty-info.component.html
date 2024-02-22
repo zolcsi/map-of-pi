@@ -1,1 +1,11 @@
-<p>loyalty-info works!</p>
+<!-- <div class="p-[20px]">
+  <p>loyalty-info works!</p>
+
+  <p>hello there {{ currentUser }}</p>
+</div> -->
+
+@if (currentUser) {
+  <p>hello there {{ currentUser }}</p>
+} @else {
+  <p>there is no current user</p>
+}

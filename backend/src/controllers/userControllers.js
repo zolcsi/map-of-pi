@@ -41,6 +41,7 @@ const signInUser = async (req, res) => {
       { expiresIn: "20m" }
     );
     res.status(200).json({ currentUser, token });
+    console.log(currentUser);
   } catch (error) {
     console.log("Internal server error: " + error.message);
     res.status(500).json({ error: "Internal server error" });
