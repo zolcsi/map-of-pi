@@ -6,6 +6,7 @@
         "start": "npm run -C frontend build && npm run -C backend start"
     },
     "devDependencies": {
-        "@angular/cli": "^17.2.0"
+        "@angular/cli": "^17.1.2",
+        "@angular-devkit/build-angular": "^17.1.2"
     }
 }
