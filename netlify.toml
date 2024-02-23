@@ -1,0 +1,15 @@
+[build]
+  # define build settings
+  command = "cd frontend && ng build"
+
+[[redirects]]
+  # define redirects as needed
+  
+[[headers]]
+  # define headers as needed
+
+# define directories to be deployed
+[[deploy]]
+  directory = "frontend/dist"  
+  publish = "/"
+  
