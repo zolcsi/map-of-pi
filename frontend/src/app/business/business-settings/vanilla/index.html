@@ -51,5 +51,57 @@
 	</section>
 	</main>
 
+   <!-- The modal itself -->
+   <div class="modal" id="add-item-modal">
+      <div class="modal__content">
+
+         <form id="add-item-form" action="/submit-action-url" method="post">
+            <button class="modal__close-button" aria-label="Close">&times;</button>
+
+            <!-- Modal title -->
+            <h2 class="modal__title">Add new item</h2>
+      
+         <!-- Add item name -->
+         <div class="modal__item-name">
+            <label for="item-name" class="modal__label">Item name</label>
+            <input type="text" id="item-name" class="modal__input modal__input-item-name" />
+         </div>
+      
+         <!-- Add item button -->
+         <div class="modal__add-item-button">
+            <button class="modal__add-button" aria-label="Add item">
+               <img src="./order-and-payment-menu-settings/assets/logo/add-item-button.png" alt="Add" />
+            </div>
+         </button>
+
+         <!-- Add price input -->
+         <div class="modal__add-price">
+            <label for="item-price" class="modal__label">Price</label>
+            <input type="number" id="item-price" class="modal__input modal__input--price" />
+            <div class="modal__item-icon">
+            <img src="" alt="">
+            </div>
+         </div>
+      
+         <!-- Preparation time input group -->
+         <div class="modal__prep-time">
+            <label for="prep-time" class="modal__label">How long to prepare this meal?</label>
+            <input type="text" id="prep-time" class="modal__input modal__input-prep-time" />
+         </div>
+      
+         <!-- Description input group -->
+         <div class="modal__description">
+            <label for="description" class="modal__label">Description</label>
+            <input type="text" id="description" class="modal__textarea"></input>
+         </div>
+      
+         <!-- Confirm button -->
+         <div class="modal__confirm">
+            <button class="modal__confirm-btn">Confirm</button>
+      </form>
+         </div>
+         </div>
+   </div>
+   
    </body>
 </html>
