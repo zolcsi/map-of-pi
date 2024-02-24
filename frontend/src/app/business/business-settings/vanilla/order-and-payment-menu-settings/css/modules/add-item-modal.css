@@ -8,6 +8,8 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: auto; 
     max-width: 90%;
+    display: none;
+    z-index: 1000;
 }
 
 .modal__content {
@@ -49,13 +51,12 @@
 .modal__add-button img{
     width: 60px;
     height: 60px;
-    left: 30px;
     border-radius: 10px;
 }
 
 .modal__add-button {
     position: relative;
-    right: 3px;
+    left: -15px;
     border: none;
     background: none;
     right: 20px;
