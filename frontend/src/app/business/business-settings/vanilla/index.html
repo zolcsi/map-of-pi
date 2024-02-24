@@ -69,10 +69,12 @@
       
          <!-- Add item button -->
          <div class="modal__add-item-button">
-            <button class="modal__add-button" aria-label="Add item">
+            <input type="file" id="item-image-upload" class="modal__input-file" accept="image/*" style="display: none;"/>
+            <label for="item-image-upload" class="modal__add-button" aria-label="Add item">
                <img src="./order-and-payment-menu-settings/assets/logo/add-item-button.png" alt="Add item button" />
-            </div>
-         </button>
+            </label>
+            <div id="image-preview" class="modal__image-preview"></div>
+         </div>
 
          <!-- Add price input -->
          <div class="modal__add-price">
