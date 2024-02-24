@@ -13,6 +13,19 @@ export default function addItemsModal() {
         modal.style.display = 'none'; // This will hide the modal
     }
 
+    // Function to handle image file selection and display a preview
+    function handleImageUpload(event) {
+        const [file] = event.target.files;
+        const previewContainer = document.getElementById('image-preview');
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                previewContainer.innerHTML = `<img src="${e.target.result}" alt="Image preview" style="max-width: 100%; height: auto;"/>`;
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
         const floatingButton = document.querySelector('.menu-setting__floating-button');
         const modal = document.getElementById('add-item-modal');
