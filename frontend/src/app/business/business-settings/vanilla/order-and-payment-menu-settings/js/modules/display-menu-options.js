@@ -1,7 +1,7 @@
 /**
  * Initializes and handles the toggle functionality for menu settings.
  */
-export default function () {
+export default function displayMenuOptions() {
    /**
     * Sets up the initial state and event listeners once the DOM content is fully loaded.
     */
@@ -63,7 +63,6 @@ export default function () {
             }
       }
 
-      
       /**
        * Updates the labels next to toggles to reflect their current state off/on.
        */
@@ -140,14 +139,13 @@ export default function () {
       const toggles = document.querySelectorAll('.menu-settings__toggle input');
    
       toggles.forEach(toggle => {
-            const slider = toggle.nextElementSibling; // Accurately select the slider span related to each toggle
-            const sliderCircle = slider.querySelector('.menu-settings__slider:before'); // Assuming you want to target the pseudo-element (note: pseudo-elements cannot be directly manipulated via JS like this)
+            const slider = toggle.nextElementSibling; // Select the slider span related to each toggle
+            const sliderCircle = slider.querySelector('.menu-settings__slider:before');
 
             if (toggle.checked) {
                slider.classList.remove('menu-settings__slider--off');
             } else {
                slider.classList.add('menu-settings__slider--off');
-               // If you have a specific class to indicate the "off" state that affects the appearance, toggle it here
             }
       });
    }
