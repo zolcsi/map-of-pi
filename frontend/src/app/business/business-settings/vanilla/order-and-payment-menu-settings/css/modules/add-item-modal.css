@@ -79,6 +79,21 @@
     margin-left: 4.5rem;
 }
 
+.modal__input--price, .modal__input--price {
+    position: relative;
+    top: 15px;
+} 
+
+.modal__item-icon {
+    position: relative;
+    left: 42px;
+    bottom: 5px;
+}
+
+.modal__item-icon img {
+    width: 15px;
+}
+
 .modal__prep-time {
     display: grid;
     justify-content: center;
