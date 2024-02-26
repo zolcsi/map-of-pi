@@ -42,16 +42,14 @@
     font-size: 0.7rem;
 }
 
+.menu-setting__floating-button {
+    position: absolute;
+}
+
 .modal__input {
     align-items: center;
     height: 25px;
     border-radius: 5px;
-}
-
-.modal__add-button img{
-    width: 60px;
-    height: 60px;
-    border-radius: 10px;
 }
 
 .modal__add-button {
@@ -60,11 +58,41 @@
     border: none;
     background: none;
     right: 20px;
+    cursor: pointer;
 }
 
 .modal__add-item-button {
     position: absolute;
     left: 3.7rem;
+}
+
+.modal__add-button img{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+.modal__image-preview {
+    position: relative;
+    right: 15px;
+    bottom: 65px;
+    height: 0;
+}
+
+.modal__image-preview img {
+    width: 70px;
+    height: 62px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.image-preview__close {
+    display: grid;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    border-radius: 50%;
 }
 
 .modal__input--price {
@@ -74,21 +102,19 @@
 }
 
 .modal__add-price {
-    display: grid;
-    justify-content: center;
-    /* align-items: start; */
-    margin-left: 4.5rem;
+    position: relative;
+    left: 100px;
 }
 
-.modal__input--price, .modal__input--price {
-    position: relative;
-    top: 15px;
-} 
+.modal__add-price {
+    top: 10px;
+}
 
 .modal__item-icon {
     position: relative;
     left: 42px;
-    bottom: 5px;
+    bottom: 20px;
+    cursor: pointer;
 }
 
 .modal__item-icon img {
@@ -107,7 +133,7 @@
 }
 
 .modal__label {
-    display: grid;
+    display: block;
     justify-content: start;
     margin-bottom: 0.3rem;
     font-size: 0.7rem;
@@ -128,4 +154,47 @@
     border-radius: 10px;
     background-color: var(--color-text-color);
     color: white;
+    cursor: pointer;
 }
+
+
+#items-display-area {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px; /* Adds space between the image and the text */
+    margin-bottom: 10px; /* Adds space between each item */
+    padding: 10px; /* Optional: adds padding inside the item */
+    border-radius: 5px; /* Optional: rounds the corners of the item background */
+}
+
+.item-text {
+    display: block; /* This is default, but explicitly stated for clarity */
+}
+
+.item h3 {
+    margin: -0.3rem; /* Removes default margin */
+    font-size: 0.8rem; /* Adjust font size as needed */
+    color: #333; /* Adjust text color as needed */
+    margin-bottom: 0.2rem;
+}
+
+.item p {
+    margin: 0;
+    padding: 2px;
+    max-width: 100px;
+    font-size: 0.6rem; 
+    color: var(--color-text-color);
+}
+
+.delete-item-btn {
+    position: absolute;
+    left: 200px;
+
+}
+
+
