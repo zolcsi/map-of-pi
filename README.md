@@ -69,7 +69,10 @@ The Map of Pi Front End Project was generated with [Angular CLI](https://github.
 
 ## <a name='backend-local-execution'></a>Back End Local Execution
 
-In Progress.
+### Execute Unit Tests
+
+- Change directory to back end using `cd backend`.
+- Run `npm run test` to execute the unit tests via [Jest](https://jestjs.io/).
 
 ## <a name='team'></a>Team 🧑👩‍🦱🧔👨🏾‍🦱👨🏾 
 
@@ -81,7 +84,7 @@ In Progress.
 - Oluwabukola Adesina
 - Folorunsho Omotunde
 
-###  Frontend Developers
+### Frontend Developers
 - Zoltan Magyar
 - Daniel Lee
 - Darin Hajou
