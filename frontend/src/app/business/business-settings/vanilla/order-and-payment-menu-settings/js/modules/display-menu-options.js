@@ -64,6 +64,23 @@ export default function displayMenuOptions() {
       }
 
       /**
+       * Hides the product items display area when the menu toggle is off
+       */
+      function updateItemsDisplayVisibility() {
+         const itemsDisplayArea = document.getElementById('items-display-area');
+         const menuToggle = document.getElementById('menu-toggle');
+     
+         // Check if the menu toggle is checked (on)
+         if (menuToggle.checked) {
+             // If the menu is on, show the items display area
+             itemsDisplayArea.style.display = '';
+         } else {
+             // If the menu is off, hide the items display area
+             itemsDisplayArea.style.display = 'none';
+         }
+     }
+
+      /**
        * Updates the labels next to toggles to reflect their current state off/on.
        */
       function updateToggleLabels() {
@@ -94,6 +111,7 @@ export default function displayMenuOptions() {
       document.querySelectorAll('.menu-settings__toggle input').forEach(toggle => {
             toggle.addEventListener('change', function() {
                updateSliderAppearance();
+               updateItemsDisplayVisibility();
                // Additional logic based on specific toggle
                if (toggle.id === 'menu-toggle') {
                   if (toggle.checked) {
