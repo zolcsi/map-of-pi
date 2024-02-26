@@ -42,10 +42,6 @@
     font-size: 0.7rem;
 }
 
-.menu-setting__floating-button {
-    position: absolute;
-}
-
 .modal__input {
     align-items: center;
     height: 25px;
@@ -139,13 +135,11 @@
     font-size: 0.7rem;
 }
 
-.modal__description {
-    padding: 5px;
-}
 
 .modal__textarea {
     height: 60px;
     border-radius: 10px;
+    border: 2px solid var(--color-text-color);
 }
 
 .modal__confirm-btn {
@@ -157,44 +151,53 @@
     cursor: pointer;
 }
 
-
 #items-display-area {
     padding: 10px;
     border-radius: 5px;
 }
 
 .item {
+    position: relative;
+    background-color: white;
     display: flex;
     align-items: flex-start;
-    gap: 10px; /* Adds space between the image and the text */
-    margin-bottom: 10px; /* Adds space between each item */
-    padding: 10px; /* Optional: adds padding inside the item */
-    border-radius: 5px; /* Optional: rounds the corners of the item background */
+    gap: 10px; 
+    margin-bottom: 10px; 
+    padding: 10px; 
+    border-radius: 5px;
 }
 
 .item-text {
-    display: block; /* This is default, but explicitly stated for clarity */
+    display: block;
+    padding: 10px;
 }
 
 .item h3 {
-    margin: -0.3rem; /* Removes default margin */
-    font-size: 0.8rem; /* Adjust font size as needed */
-    color: #333; /* Adjust text color as needed */
+    margin: -0.3rem; 
+    font-size: 0.8rem; 
+    color: #333; 
     margin-bottom: 0.2rem;
 }
 
 .item p {
     margin: 0;
-    padding: 2px;
+    padding: 0;
     max-width: 100px;
     font-size: 0.6rem; 
     color: var(--color-text-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
 .delete-item-btn {
     position: absolute;
-    left: 200px;
-
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    font-size: 10px;
 }
+
 
 
