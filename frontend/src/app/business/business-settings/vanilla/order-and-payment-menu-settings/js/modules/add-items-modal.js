@@ -82,14 +82,9 @@ export default function addItemsModal() {
     function adjustFloatingButtonPosition() {
         const floatingButton = document.querySelector('.menu-setting__floating-button');
         const itemsDisplayArea = document.getElementById('items-display-area');
-
-        // Ensure we calculate the position after the browser has had time to reflow/repaint
-        setTimeout(() => {
-            let newBottomPosition = window.innerHeight - itemsDisplayArea.getBoundingClientRect().bottom;
-            floatingButton.style.bottom = `${newBottomPosition + -500}px`; // Add some offset if needed
-        }, 0);
+        let newBottomPosition = itemsDisplayArea.getBoundingClientRect().bottom + -630; // Adjust the offset as needed
+        floatingButton.style.bottom = `${newBottomPosition}px`;
     }
-
 
     document.addEventListener('DOMContentLoaded', () => {
         const form = document.getElementById('add-item-form');
