@@ -84,7 +84,7 @@ export default function addItemsModal() {
         const itemsDisplayArea = document.getElementById('items-display-area');
         const displayAreaBottom = itemsDisplayArea.getBoundingClientRect().bottom;
         const viewportHeight = window.innerHeight;
-        let newBottomPosition = viewportHeight - displayAreaBottom + -720; // Add a 20px offset from the bottom of the items display area
+        let newBottomPosition = viewportHeight - displayAreaBottom + -700; // Add a 20px offset from the bottom of the items display area
 
         floatingButton.style.bottom = `${newBottomPosition}px`;
     }
