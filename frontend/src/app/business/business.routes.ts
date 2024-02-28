@@ -17,7 +17,7 @@ export const BUSINESS_ROUTES: Routes = [
   },
   {
     path: 'business-config',
-    loadComponent: () => import('./business-settings/business-configuration/business-configuration.component').then((m) => m.BusinessConfigurationComponent),
+    loadComponent: () => import('./business-settings/business-menu/business-menu.component').then((m) => m.BusinessMenuComponent),
   },
   {
     path: 'business-photos',

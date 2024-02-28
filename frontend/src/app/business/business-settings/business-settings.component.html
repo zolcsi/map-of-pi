@@ -71,10 +71,14 @@
       </div>
       <nav class="business-registration__navigation">
         <ul class="business-registration__list">
-          <li class="business-registration__item"><a [routerLink]="['/business/business-config']" class="business-registration__link">Menu<i class="fa-solid fa-arrow-right"></i></a></li>
-          <li class="business-registration__item"><a href="/loyalty-stamps" class="business-registration__link">Loyalty Stamps<i class="fa-solid fa-arrow-right"></i></a></li>
-          <li class="business-registration__item"><a href="/photos" class="business-registration__link">Business Photos<i class="fa-solid fa-arrow-right"></i></a></li>
-          <li class="business-registration__item"><a href="/get-qr" class="business-registration__link">Get QR code<i class="fa-solid fa-arrow-right"></i></a></li>
+          <li class="business-registration__item"><a [routerLink]="['/business/business-config']"
+              class="business-registration__link">Menu<i class="fa-solid fa-arrow-right"></i></a></li>
+          <li class="business-registration__item"><a (click)="displayPopup()"
+              class="business-registration__link">Loyalty Stamps<i class="fa-solid fa-arrow-right"></i></a></li>
+          <li class="business-registration__item"><a href="#" class="business-registration__link">Business Photos<i
+                class="fa-solid fa-arrow-right"></i></a></li>
+          <li class="business-registration__item"><a (click)="displayPopup()"
+              class="business-registration__link">Get QR code<i class="fa-solid fa-arrow-right"></i></a></li>
         </ul>
       </nav>
       <div class="business-registration__confirmation mt-5">
@@ -83,6 +87,18 @@
         </button>
       </div>
     </form>
+  </section>
+  <!-- Popup -->
+  <div class="popup-container" *ngIf="showPopup">
+    <div class="popup">
+      <span class="close" (click)="hidePopup()">&times;</span>
+      <i class="fas fa-tools fa-3x under-construction-icon"></i>
+      <br/>
+      <p>This functionality is not fully built yet.</p>
+      <button class="btn-ok" (click)="hidePopup()">OK</button>
+    </div>
+  </div>
+</main>
 
 <!-- DEPRECATED
 <div class="container-wrapper">

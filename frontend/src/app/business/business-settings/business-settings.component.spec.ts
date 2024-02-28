@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { BusinessSettingsComponent } from './business-settings.component';
 
 describe('BusinessSettingsComponent', () => {
@@ -7,7 +8,7 @@ describe('BusinessSettingsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BusinessSettingsComponent],
+      imports: [BusinessSettingsComponent, RouterTestingModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(BusinessSettingsComponent);

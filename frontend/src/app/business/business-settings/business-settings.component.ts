@@ -15,9 +15,11 @@ import { ShopService } from '../../core/service/shop.service';
   imports: [TranslateModule, CommonModule, ReactiveFormsModule, MatSlideToggleModule, RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
 export class BusinessSettingsComponent {
   businessTypes: string[] = ['Restaurant', 'Retail Store', 'Servicing', 'Construction', 'Transportation'];
   router: Router = inject(Router);
+  showPopup: boolean = false;
 
   registerShopForm = new FormGroup({
     shopName: new FormControl('', Validators.required),
@@ -29,10 +31,7 @@ export class BusinessSettingsComponent {
     shopDescription: new FormControl('', Validators.required),
   });
 
-  constructor(
-    private snackService: SnackService,
-    private shopServices: ShopService,
-  ) { }
+  constructor(private snackService: SnackService, private shopServices: ShopService) { }
 
   onFileChange(event: any) {
     if (event.target.files) {
@@ -44,6 +43,7 @@ export class BusinessSettingsComponent {
       };
     }
   }
+
   send(): void {
     if (this.registerShopForm.valid) {
       this.shopServices.registerShop(this.registerShopForm.value as any).then((response) => {
@@ -61,5 +61,13 @@ export class BusinessSettingsComponent {
       this.registerShopForm.markAllAsTouched();
       console.log('Invalid data');
     }
+  }
+
+  displayPopup(): void {
+    this.showPopup = true;
+  }
+
+  hidePopup(): void {
+    this.showPopup = false;
   }
 }
