@@ -21,6 +21,7 @@
 .order-menu__header__logo {
     width: 25px;
     height: auto;
+    cursor: pointer;
 }
 
 .order-menu__header__cart-button{
@@ -28,11 +29,12 @@
     background: none;
     border: none;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .order-menu__header__cart-count {
     position: absolute;
-    top: 5px;
+    top: 0;
     right: 5px;
     display: inline-flex;
     justify-content: center;
