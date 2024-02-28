@@ -82,3 +82,21 @@
 .order-menu__switch-button-text-stamps {
     color: #ffffff; 
 }
+
+/* Section for order payment message */
+.order-menu__highlight {
+    position: relative;
+    width: calc(100vw - 7px);
+    max-width: 350px;
+    height: 30px;
+    left: -15px;
+    margin-top: 1.2rem;
+    background-color: #FAD09E;
+}
+
+.order-menu__highlight-text {
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
