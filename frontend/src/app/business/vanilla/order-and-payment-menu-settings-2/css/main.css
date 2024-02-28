@@ -1,0 +1,7 @@
+@import './reset.css';
+@import './fonts.css';
+@import './variables.css';
+
+@import './modules/header.css';
+@import './modules/main-content.css';
+@import './modules/add-item-modal.css';

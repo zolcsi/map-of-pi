@@ -1,196 +1,87 @@
-<header class="business-registration-header">
-  <button
-    class="business-registration-header__back-button"
-    aria-label="Go back">
-    <i class="fa-solid fa-arrow-left-long"></i>
-  </button>
-  <div class="business-registration-header__brand">
-    <img
-      src="../../../assets/images/logo.svg"
-      alt="Logo"
-      class="business-registration-header__logo" />
-    <span class="business-registration-header__app-name">Map of Pi</span>
-  </div>
-  <h1 class="business-registration-header__title">Shop Registration Form</h1>
-</header>
-
 <main class="business-registration">
   <section class="business-registration__section">
     <form [formGroup]="registerShopForm" (ngSubmit)="send()">
       <div class="business-registration__field">
-        <label for="business-name" class="business-registration__label"
-          >Business name</label
-        >
-        <input
-          type="text"
-          formControlName="shopName"
-          id="business-name"
-          name="business_name"
-          class="business-registration__input"
-          placeholder="Enter business name"
-          required />
-        <span
-          class="text-red-500"
-          *ngIf="
+        <label for="business-name" class="business-registration__label">Business name</label>
+        <input type="text" formControlName="shopName" id="business-name" name="business_name"
+          class="business-registration__input" placeholder="Enter business name" required />
+        <span class="text-red-500" *ngIf="
             registerShopForm.get('shopName')?.invalid &&
             registerShopForm.get('shopName')?.touched
-          "
-          >Shop name is required</span
-        >
+          ">Shop name is required</span>
       </div>
       <div class="business-registration__field mt-2">
-        <label for="business-name" class="business-registration__label"
-          >Business Description</label
-        >
-        <input
-          type="text"
-          formControlName="shopDescription"
-          id="business-name"
-          name="business_name"
-          class="business-registration__input"
-          placeholder="Enter simple description about your shop"
-          required />
-        <span
-          class="text-red-500"
-          *ngIf="
+        <label for="business-name" class="business-registration__label">Business Description</label>
+        <input type="text" formControlName="shopDescription" id="business-name" name="business_name"
+          class="business-registration__input" placeholder="Enter simple description about your shop" required />
+        <span class="text-red-500" *ngIf="
             registerShopForm.get('shopDescription')?.invalid &&
             registerShopForm.get('shopDescription')?.touched
-          "
-          >Shop must have unique description like what service u offer</span
-        >
+          ">Shop must have unique description like what service u offer</span>
       </div>
 
-      <div
-        class="business-registration__field business-registration__field-middle">
-        <label for="business-type" class="business-registration__label"
-          >Business type</label
-        >
-        <select
-          id="business-type"
-          name="business_type"
-          formControlName="shopType"
+      <div class="business-registration__field business-registration__field-middle">
+        <label for="business-type" class="business-registration__label">Business type</label>
+        <select id="business-type" name="business_type" formControlName="shopType"
           class="business-registration__select">
-          <option
-            *ngFor="let businessType of businessTypes"
-            [value]="businessType">
+          <option *ngFor="let businessType of businessTypes" [value]="businessType">
             {{ businessType }}
           </option>
         </select>
-        <span
-          class="text-red-500"
-          *ngIf="
+        <span class="text-red-500" *ngIf="
             registerShopForm.get('shopType')?.invalid &&
             registerShopForm.get('shopType')?.touched
-          "
-          >Shop category is required</span
-        >
+          ">Shop category is required</span>
       </div>
 
-      <div
-        class="business-registration__field business-registration__field-bottom">
-        <label for="location" class="business-registration__label"
-          >Location</label
-        >
-        <input
-          type="text"
-          id="location"
-          name="location"
-          formControlName="shopAddress"
-          class="business-registration__input"
-          placeholder="kg 452 st, kimironko, Kigali/Rwanda"
-          required />
-        <span
-          class="text-red-500"
-          *ngIf="
+      <div class="business-registration__field business-registration__field-bottom">
+        <label for="location" class="business-registration__label">Location</label>
+        <input type="text" id="location" name="location" formControlName="shopAddress"
+          class="business-registration__input" placeholder="kg 452 st, kimironko, Kigali/Rwanda" required />
+        <span class="text-red-500" *ngIf="
             registerShopForm.get('shopAddress')?.invalid &&
             registerShopForm.get('shopAddress')?.touched
-          "
-          >Shop address is required</span
-        >
+          ">Shop address is required</span>
       </div>
-      <div
-        class="business-registration__field business-registration__field-bottom">
+      <div class="business-registration__field business-registration__field-bottom">
         <label for="" class="business-registration__label">Shop Image</label>
-        <label
-          for="image"
-          class="business-registration__label flex gap-5 mb-3 items-center bg-blue-200 p-3 rounded-md"
-          ><img
-            src="assets/upload.jpg"
-            alt="upload icon"
-            class="w-[50px] h-[50px]" />
-          <div>Upload Shop Images</div></label
-        >
-        <input
-          type="file"
-          id="image"
-          name="location"
-          (change)="onFileChange($event)"
-          formControlName="shopImage"
-          class="business-registration__input hidden"
-          placeholder="Choose Fancy shop Image"
-          required />
-        <img
-          [src]="registerShopForm.value.shopImage"
-          alt="shop image"
+        <label for="image"
+          class="business-registration__label flex gap-5 mb-3 items-center bg-blue-200 p-3 rounded-md"><img
+            src="assets/upload.jpg" alt="upload icon" class="w-[50px] h-[50px]" />
+          <div>Upload Shop Images</div>
+        </label>
+        <input type="file" id="image" name="location" (change)="onFileChange($event)" formControlName="shopImage"
+          class="business-registration__input hidden" placeholder="Choose Fancy shop Image" required />
+        <img [src]="registerShopForm.value.shopImage" alt="shop image"
           class="w-[130px] h-[150px] flex justify-center items-center" />
-        <span
-          class="text-red-500"
-          *ngIf="
+        <span class="text-red-500" *ngIf="
             registerShopForm.get('shopImage')?.invalid &&
             registerShopForm.get('shopImage')?.touched
-          "
-          >Each shop must have own Image</span
-        >
+          ">Each shop must have own Image</span>
       </div>
 
-      <div
-        class="business-registration__field business-registration__field-bottom">
-        <label for="phone" class="business-registration__label"
-          >Phone number</label
-        >
-        <input
-          type="text"
-          id="phone"
-          name="phone"
-          formControlName="shopPhone"
-          class="business-registration__input"
-          placeholder="+25 078 244 3651"
-          required />
-        <span
-          class="text-red-500"
-          *ngIf="
+      <div class="business-registration__field business-registration__field-bottom">
+        <label for="phone" class="business-registration__label">Phone number</label>
+        <input type="text" id="phone" name="phone" formControlName="shopPhone" class="business-registration__input"
+          placeholder="+25 078 244 3651" required />
+        <span class="text-red-500" *ngIf="
             registerShopForm.get('shopPhone')?.invalid &&
             registerShopForm.get('shopPhone')?.touched
-          "
-          >You must enter phone number</span
-        >
+          ">You must enter phone number</span>
       </div>
 
-      <div
-        class="business-registration__field business-registration__field-bottom">
+      <div class="business-registration__field business-registration__field-bottom">
         <label for="email" class="business-registration__label">Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          formControlName="shopEmail"
-          class="business-registration__input"
-          placeholder="youremail@gmail.com"
-          required />
-        <span
-          class="text-red-500"
-          *ngIf="
+        <input type="email" id="email" name="email" formControlName="shopEmail" class="business-registration__input"
+          placeholder="youremail@gmail.com" required />
+        <span class="text-red-500" *ngIf="
             registerShopForm.get('shopEmail')?.invalid &&
             registerShopForm.get('shopEmail')?.touched
-          "
-          >Valid email address is required</span
-        >
+          ">Valid email address is required</span>
       </div>
 
       <div class="input-field mt-3">
-        <mat-slide-toggle formControlName="isPiPaymentEnabled" color="primary"
-          >enable Pi Transaction</mat-slide-toggle
-        >
+        <mat-slide-toggle formControlName="isPiPaymentEnabled" color="primary">enable Pi Transaction</mat-slide-toggle>
       </div>
 
       <div class="business-registration__confirmation mt-5">
@@ -200,35 +91,42 @@
       </div>
     </form>
 
-    <!-- <nav class="business-registration__navigation">
-      <ul class="business-registration__list">
-        <li class="business-registration__item">
-          <a href="/menu" class="business-registration__link"
-            >Menu<i class="fa-solid fa-arrow-right"></i
-          ></a>
-        </li>
-        <li class="business-registration__item">
-          <a href="/loyalty-stamps" class="business-registration__link"
-            >Loyalty Stamps<i class="fa-solid fa-arrow-right"></i
-          ></a>
-        </li>
-        <li class="business-registration__item">
-          <a href="/photos" class="business-registration__link"
-            >Business Photos<i class="fa-solid fa-arrow-right"></i
-          ></a>
-        </li>
-        <li class="business-registration__item">
-          <a href="/get-qr" class="business-registration__link"
-            >Get QR code<i class="fa-solid fa-arrow-right"></i
-          ></a>
-        </li>
-      </ul>
-    </nav> -->
-  </section>
-</main>
+    <!-- <main class="business-registration">
+      <section class="business-registration__section">
+        <div class="business-registration__field">
+          <label for="business-name" class="business-registration__label">Business name</label>
+          <input type="text" id="business-name" name="business_name" class="business-registration__input" placeholder="Enter business name" required>
+        </div>
+        <div class="business-registration__field business-registration__field-middle">
+          <label for="business-type" class="business-registration__label">Business type</label>
+          <select id="business-type" name="business_type" class="business-registration__select">
+            @for (businessType of businessTypes; track businessTypes) {
+              <option [value]="businessType">{{ businessType }}</option>
+            }
+          </select>
+        </div>
+        <div class="business-registration__field business-registration__field-bottom">
+          <label for="location" class="business-registration__label">Location</label>
+          <input type="text" id="location" name="location" class="business-registration__input" value="" placeholder="123 Main Street, Anytown, AN 12345, Country" required>
+        </div>
+
+        <nav class="business-registration__navigation">
+          <ul class="business-registration__list">
+            <li class="business-registration__item"><a href="/menu" class="business-registration__link">Menu<i class="fa-solid fa-arrow-right"></i></a></li>
+            <li class="business-registration__item"><a href="/loyalty-stamps" class="business-registration__link">Loyalty Stamps<i class="fa-solid fa-arrow-right"></i></a></li>
+            <li class="business-registration__item"><a href="/photos" class="business-registration__link">Business Photos<i class="fa-solid fa-arrow-right"></i></a></li>
+            <li class="business-registration__item"><a href="/get-qr" class="business-registration__link">Get QR code<i class="fa-solid fa-arrow-right"></i></a></li>
+          </ul>
+        </nav>
+
+        <div class="business-registration__confirmation">
+          <button type="submit" class="business-registration__button" [routerLink]="['/business/products']">Confirm</button>
+        </div>
+      </section>
+    </main> -->
 
 <!-- DEPRECATED
-  <div class="container-wrapper">
+<div class="container-wrapper">
   <div class="container">
     <div class="pt-8 text-center italic min-h-16">
       <p>{{ businessForm.controls.name.value }}</p>
@@ -236,7 +134,6 @@
     <div class="pb-8 text-center">
       <h1>{{ 'BUSINESS.CONTACT_INFORMATION' | translate }}</h1>
     </div>
-
     <form [formGroup]="businessForm">
       <div class="input-field">
         <mat-form-field class="w-full">
@@ -244,7 +141,6 @@
           <input matInput formControlName="name" />
         </mat-form-field>
       </div>
-
       <div class="input-field">
         <mat-form-field class="w-full">
           <mat-label>{{ 'BUSINESS.BUSINESS_TYPE' | translate }}</mat-label>
@@ -255,20 +151,17 @@
           </mat-select>
         </mat-form-field>
       </div>
-
       <div class="input-field">
         <mat-form-field class="w-full">
           <mat-label>{{ 'BUSINESS.LOCATION' | translate }}</mat-label>
           <input matInput formControlName="address" />
         </mat-form-field>
       </div>
-
       <div class="input-field">
         <button mat-flat-button color="accent" class="w-full" [routerLink]="['/business/products']">
           {{ 'BUSINESS.PRODUCTS.TITLE' | translate }}
         </button>
       </div>
-
       <div class="w-full pt-16 text-center">
         <button mat-flat-button color="primary" class="w-2/3" (click)="send()">{{ 'BUSINESS.CONFIRM' | translate }}</button>
       </div>
