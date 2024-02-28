@@ -106,7 +106,6 @@
     display: flex;
     align-items:center;
     justify-content: center;
-    margin: 0;
 }
 
 .order-menu__product-text {
@@ -150,6 +149,7 @@
     display: flex;
     align-items:center;
     justify-content: flex-end;
+    margin-bottom: -1.5rem;
 }
 
 .order-menu__quantity-button--decrease, 
@@ -163,15 +163,15 @@
     height: 5px;
     border-radius: 5px;
     border: 2px solid var(--color-text-color);
-    padding: 10px;
+    padding: 8px;
     text-align: center;
 }
 
 .order-menu__quantity-button {
     border-radius: 50px;
     border: 2px solid var(--color-text-color);
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
 }
 
 .order-menu__add-button {
@@ -204,4 +204,10 @@
 .order-menu__delete-button {
     background: none;
     border: none;
+}
+
+.order-menu__delete-buttons {
+
+    width: 30px;
+    height: auto;
 }
