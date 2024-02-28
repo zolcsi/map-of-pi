@@ -1,17 +1,17 @@
 /* Business info and business image section */
 .order-menu__content {
-    margin: 0.7rem;
+    margin: 10px;
 }
 
 .order-menu__business-name {
     font-size: 1.2rem;
+    margin-bottom: 0;
 }
 
 .order-menu__type, .order-menu__location {
     display: flex;
     align-items: center;
-    column-gap: 0.7rem;
-    margin-bottom: 0.7rem;
+    column-gap: 10px;
 }
 
 .order-menu__type img, .order-menu__location img {
@@ -27,7 +27,7 @@
 
 .order-menu__business-images {
     display: flex;
-    column-gap: 0.7rem;
+    column-gap: 10px;
 }
 
 .order-menu__business-image {
@@ -102,10 +102,6 @@
 }
 
 /* Section for menu products and images */
-.order-menu__menu {
-    
-}
-
 .order-menu__product-info {
     display: flex;
     align-items:center;
