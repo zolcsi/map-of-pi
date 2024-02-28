@@ -100,3 +100,112 @@
     font-size: 0.7rem;
     font-weight: bold;
 }
+
+/* Section for menu products and images */
+.order-menu__menu {
+    
+}
+
+.order-menu__product-info {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    margin: 0;
+}
+
+.order-menu__product-text {
+    flex: 1;
+    font-weight: bold;
+    margin-top: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.order-menu__product-amount {
+    margin-right: 1rem;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.order-menu__pi-logo {
+    width: 18px;
+}
+
+.order-menu__product-image {
+    display: flex;
+}
+
+.order-menu__product-image img{
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.order-menu__product-image-text {
+    position: relative;
+    bottom: 1.3rem;
+    padding: 10px;
+    font-size: 0.7rem;
+}
+
+.order-menu__product-quantity {
+    position: relative;
+    bottom: 2rem;
+    display: flex;
+    align-items:center;
+    justify-content: flex-end;
+}
+
+.order-menu__quantity-button--decrease, 
+.order-menu__quantity-input, 
+.order-menu__quantity-button--increase {
+    margin: 3px;
+}
+
+.order-menu__quantity-input {
+    width: 7px;
+    height: 5px;
+    border-radius: 5px;
+    border: 2px solid var(--color-text-color);
+    padding: 10px;
+    text-align: center;
+}
+
+.order-menu__quantity-button {
+    border-radius: 50px;
+    border: 2px solid var(--color-text-color);
+    width: 25px;
+    height: 25px;
+}
+
+.order-menu__add-button {
+    margin-left: 10px;
+    width: 40px;
+    height: 25px;
+    border-radius: 10px;
+    background-color: var(--color-text-color);
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    border: 1px solid;
+}
+
+.order-menu__add-button:hover {
+    background-color: var(--color-highlight-color);
+    transform: translate(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.order-menu_add-button-text {
+    font-size: 12px;
+}
+
+.hidden {
+    display: none;
+}
+
+.order-menu__delete-button {
+    background: none;
+    border: none;
+}
