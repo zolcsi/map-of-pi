@@ -37,3 +37,48 @@
     margin-top: 1rem;
     object-fit: cover;
 }
+
+/* Menu switch section*/
+.order-menu__switch-section {
+    width: 100%;
+    background-color: #ffffff;
+    position: relative;
+    border-radius: 10px;
+    margin-top: 1.2rem;
+    border: 1px solid var(--color-text-color);
+}
+
+.order-menu__switch-buttons {
+    display: flex;
+    /* width: 100%; */   
+}
+
+.order-menu__switch-button {
+    flex: 1;
+    padding: 10px 20px;
+    font-size: 0.6rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent; /* Buttons are transparent */
+    transition: background-color 0.3s;
+    position: relative;
+    z-index: 2; /* Make sure buttons are above the colored pseudo-element */
+}
+
+.order-menu__switch-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    transition: left 0.3s;
+    z-index: 1;
+    background-color: var(--color-highlight-color); 
+}
+
+.order-menu__switch-button-text-stamps {
+    color: #ffffff; 
+}
