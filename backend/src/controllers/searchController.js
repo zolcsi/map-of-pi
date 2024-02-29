@@ -6,7 +6,7 @@ const search = async (req, res) => {
         const { businessType, priceRange, shopName, productName } = req.query;
         
         let shopQuery = {};
-        // let productQuery = {};
+        
 
         if (businessType) {
             shopQuery.businessType = { $regex: new RegExp(businessType, "i") };
