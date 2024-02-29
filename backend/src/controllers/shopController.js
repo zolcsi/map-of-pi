@@ -123,5 +123,6 @@ module.exports = {
   getAllShops,
   deleteShop,
   updateShop,
-  getShopProducts
+  getShopProducts,
+  getSingleShop
 };
