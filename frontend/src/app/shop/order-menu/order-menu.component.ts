@@ -1,9 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-order-menu',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, FormsModule],
   templateUrl: './order-menu.component.html',
   styleUrl: './order-menu.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
