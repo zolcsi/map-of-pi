@@ -1,11 +1,8 @@
-<header class="order-menu__header">
-    <div></div>
-    <div></div>
-    <button class="order-menu__header__cart-button" aria-label="Shopping cart">
-        <img src="../../../assets/images/shopping/Shopping-cart-icon.svg" alt="Shopping cart">
-        <span class="order-menu__header__cart-count">{{ cartItemCount }}</span>
-    </button>
-</header>
+<!-- TODO: Add shopping cart button with count to header
+<button class="order-menu__header__cart-button" aria-label="Shopping cart">
+    <img src="./assets/logo/Shopping-cart-icon.svg" alt="Shopping cart">
+    <span class="order-menu__header__cart-count">0</span>
+</button> -->
 
 <main class="order-menu__content">
     <!-- Business Information Section -->
@@ -67,19 +64,18 @@
 
             <div class="order-menu__product-quantity">
                 <button class="order-menu__quantity-button order-menu__quantity-button--decrease"
-                        aria-label="Decrease quantity" (click)="decreaseQuantity(product)">-</button>
+                    aria-label="Decrease quantity" (click)="decreaseQuantity(product)">-</button>
                 <input type="text" class="order-menu__quantity-input" [(ngModel)]="product.quantity" min="1"
-                        aria-label="Quantity">
+                    aria-label="Quantity">
                 <button class="order-menu__quantity-button order-menu__quantity-button--increase"
-                        aria-label="Increase quantity" (click)="increaseQuantity(product)">+</button>
-                <button class="order-menu__add-button" *ngIf="product.showAddButton" aria-label="Add items to shopping cart"
-                        (click)="addToCart(product)">
-                    <span class="order-menu_add-button-text" aria-label="Add items to shopping cart">Add</span>
-                </button>
-                <button class="order-menu__delete-button" *ngIf="product.showDeleteButton" aria-label="Delete quantity button"
-                        (click)="removeFromCart(product)">
+                    aria-label="Increase quantity" (click)="increaseQuantity(product)">+</button>
+                <button class="order-menu__add-button" (click)="addToCart(product)"><span
+                        class="order-menu_add-button-text" aria-label="Add items to shopping cart">Add</span></button>
+                <!-- Initially hidden delete icon -->
+                <button class="order-menu__delete-button hidden" aria-label="Delete quantity button"
+                    (click)="removeFromCart(product)">
                     <img src="../../../assets/images/shopping/delete-button.svg"
-                            alt="Button to delete added items to the shopping cart" class="order-menu__delete-buttons">
+                        alt="Button to delete added items to the shopping cart" class="order-menu__delete-buttons">
                 </button>
             </div>
         </div>

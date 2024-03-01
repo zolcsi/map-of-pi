@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -11,15 +11,7 @@ import { FormsModule } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class OrderMenuComponent implements OnInit {
-
-  ngOnInit(): void {
-    this.products.forEach(product => {
-      product.showAddButton = true;
-      product.showDeleteButton = false;
-    });
-  }
-
+export class OrderMenuComponent {
   // Placeholder values; TODO: replace with real data from datastore integration.
   cartItemCount: number = 0;
   businessName: string = 'Business Name'; 
@@ -40,29 +32,6 @@ export class OrderMenuComponent implements OnInit {
     { id: 'coffee2', name: 'Coffee 2', amount: 'XX', imageUrl: '../../../assets/images/shopping/mock/coffee-2.webp', imageAlt: 'Image of a cappuccino', description: 'Description Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum exercitationem beatae dignissimos!', quantity: 1 }
   ];
 
-  decreaseQuantity(product: any): void {
-    // Handle decreasing quantity for a product
-    product.quantity = Math.max(0, product.quantity - 1); // Ensure quantity does not go below 0
-  }
-
-  increaseQuantity(product: any): void {
-    // Handle increasing quantity for a product
-    product.quantity++;
-  }
-
-  addToCart(product: any): void {
-    this.updateCartCount(product.quantity);
-    product.showAddButton = false;
-    product.showDeleteButton = true;
-  }
-
-  removeFromCart(product: any): void {
-    this.updateCartCount(-product.quantity);
-    product.quantity = 1;
-    product.showAddButton = true;
-    product.showDeleteButton = false;
-  }
-
   /**
   * Updates the shopping cart count.
   * @param {number} amount - The amount to adjust the cart count by.
@@ -81,5 +50,29 @@ export class OrderMenuComponent implements OnInit {
   }
 
   switchToProductsMenu() {
+    // Placeholder method
+  }
+
+  decreaseQuantity(product: any): void {
+    // Handle decreasing quantity for a product
+    if (product.quantity > 1) {
+      product.quantity--;
+    }
+  }
+
+  increaseQuantity(product: any): void {
+    // Handle increasing quantity for a product
+    product.quantity++;
+  }
+
+  addToCart(product: any): void {
+    // Handle adding a product to the cart
+    this.cartItemCount += product.quantity;
+  }
+
+  removeFromCart(product: any): void {
+    // Handle removing a product from the cart
+    this.cartItemCount -= product.quantity;
+    product.quantity = 1; // Reset quantity
   }
 }
