@@ -18,6 +18,9 @@
     <meta
       http-equiv="Content-Security-Policy"
       content="font-src 'self' https://cdnjs.cloudflare.com/ajax/libs/font-awesome/ https://fonts.gstatic.com/;" />
+      <meta 
+        name="keywords" 
+        content="map, pi, search, business">
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -40,6 +43,16 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet" />
     <!-- <iframe src="https://openstreetmap.org" allow="geolocation"></iframe> -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'YOUR_TRACKING_ID'); /* Replace YOUR_TRACKING_ID with the actual Google Analytics tracking ID */
+    </script>
   </head>
   <body class="mat-typography">
     <app-root></app-root>
