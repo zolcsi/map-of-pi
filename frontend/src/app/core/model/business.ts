@@ -21,7 +21,6 @@ export interface ICoordinate {
 }
 
 /// DUMMY COORDINATES
-
 export const dummyCoordinates: ICoordinate[] = [
   { lat: 28.1234, long: -15.4365 },
   { lat: 28.1256, long: -15.4342 },

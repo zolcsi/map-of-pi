@@ -5,6 +5,7 @@ import { Icon, icon, latLng, MapOptions, tileLayer } from 'leaflet';
 @Injectable({
   providedIn: 'root',
 })
+
 export class GeolocationService {
   private readonly initZoomLevel = 12;
   private readonly initCoords = latLng(28.1, -15.45);
@@ -56,8 +57,8 @@ export class GeolocationService {
   getMarkerIcon(): Icon {
     return icon({
       ...Icon.Default.prototype.options,
-      iconUrl: 'assets/map-of-pi-logo.svg',
-      iconRetinaUrl: 'assets/map-of-pi-logo.svg',
+      iconUrl: 'assets/images/logo.svg',
+      iconRetinaUrl: 'assets/images/logo.svg',
       shadowUrl: 'assets/marker-shadow.png',
     });
   }
