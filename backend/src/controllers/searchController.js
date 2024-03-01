@@ -4,25 +4,25 @@ const Product = require("../models/productModel");
 const search = async (req, res) => {
     try {
         const { businessType, priceRange, shopName, productName } = req.query;
-        
-        let shopQuery = {};
-        
 
-        if (businessType) {
+        let shopQuery = {};
+        let productQuery = {};
+
+        if (businessType != null) {
             shopQuery.businessType = { $regex: new RegExp(businessType, "i") };
         }
 
-        if (shopName) {
+        if (shopName != null) {
             shopQuery.name = { $regex: new RegExp(shopName, "i") };
         }
 
-        if (productName) {
+        if (productName != null) {
             productQuery.name = { $regex: new RegExp(productName, "i") };
         }
 
         let shops = await Shop.find(shopQuery);
 
-        if (priceRange) {
+        if (priceRange != null) {
             const [minPrice, maxPrice] = priceRange.split("-");
             const products = await Product.find({
                 ...productQuery,
@@ -31,10 +31,9 @@ const search = async (req, res) => {
             const shopIds = products.map(product => product.shop);
             shops = await Shop.find({ _id: { $in: shopIds } });
         }
-
         res.status(200).json({ shops });
     } catch (error) {
-        console.log("Internal server error while searching: " + error.message);
+        console.error("Internal server error while searching: " + error.message);
         return res.status(500).json({ error: "Internal server error" });
     }
 };

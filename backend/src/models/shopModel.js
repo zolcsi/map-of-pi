@@ -23,7 +23,7 @@ const shopSchema = new mongoose.Schema({
     default: 0,
   },
   transactionEnabled: { type: Boolean, default: true },
-  orderWithoutPayment: { type: Boolean, default:false},
+  orderWithoutPayment: { type: Boolean, default: false },
   orders: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "Order",
@@ -41,7 +41,7 @@ shopSchema.pre("remove", async function (next) {
     await Product.deleteMany({ shop: this._id });
     next();
   } catch (error) {
-    console.log("product failed to be deleted while shop does");
+    console.error("Product failed to be deleted with shop");
     next(error);
   }
 });

@@ -3,8 +3,8 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { SnackService } from '../../core/service/snack.service';
 import { Router, RouterLink } from '@angular/router';
+import { SnackService } from '../../core/service/snack.service';
 import { ShopService } from '../../core/service/shop.service';
 
 @Component({
@@ -15,6 +15,7 @@ import { ShopService } from '../../core/service/shop.service';
   imports: [TranslateModule, CommonModule, ReactiveFormsModule, MatSlideToggleModule, RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
 export class BusinessSettingsComponent {
   businessTypes: string[] = ['Restaurant', 'Retail Store', 'Servicing', 'Construction', 'Transportation'];
   router: Router = inject(Router);
