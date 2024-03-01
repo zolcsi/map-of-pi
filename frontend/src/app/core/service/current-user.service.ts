@@ -4,14 +4,12 @@ import { AxiosRequestConfig } from 'axios';
 @Injectable({
   providedIn: 'root',
 })
-
 export class CurrentUserService {
   private currentUser: any;
   private tokenKey: string = 'currentUserAccessToken';
   private token: string | null = null;
 
   constructor() {
-    // Retrieve token from local storage on service initialization
     this.token = localStorage.getItem(this.tokenKey);
   }
 
@@ -41,10 +39,12 @@ export class CurrentUserService {
 
   getConfig(): AxiosRequestConfig {
     const config: AxiosRequestConfig = {};
+    if (this.token) {
+      config.headers = {
+        Authorization: `Bearer ${this.token}`,
+      };
+    }
 
-    config.headers = {
-      'Access-Control-Allow-Origin': 'https://mapofpi.com',
-    };
     return config;
   }
 }

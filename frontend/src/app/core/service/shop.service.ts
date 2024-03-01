@@ -7,12 +7,12 @@ import { IShopData } from '../model/business';
   providedIn: 'root',
 })
 export class ShopService {
-  private baseUrl = 'https://api-mapofpi.vercel.app/shops';
+  private baseUrl = 'https://api-mapofpi.vercel.app';
   allShops: any[] = [];
 
   constructor(private currentUserService: CurrentUserService) {}
 
-  private getConfig(): AxiosRequestConfig {
+  getConfig(): AxiosRequestConfig {
     const token = this.currentUserService.getToken();
     const config: AxiosRequestConfig = {};
 
@@ -39,6 +39,7 @@ export class ShopService {
     };
     try {
       const response = await axios.post(`${this.baseUrl}/register`, { ...data }, this.getConfig());
+      console.log('reponse while creating shop : ' + response);
       return response.data;
     } catch (error) {
       throw new Error('Error registering shop: ');
@@ -47,7 +48,7 @@ export class ShopService {
 
   async deleteShop(shopId: string) {
     try {
-      const response = await axios.delete(`${this.baseUrl}/${shopId}`, this.getConfig());
+      const response = await axios.delete(`${this.baseUrl}/shops/${shopId}`, this.getConfig());
       return response.data;
     } catch (error) {
       throw new Error('Error deleting shop: ');
@@ -56,7 +57,7 @@ export class ShopService {
 
   async updateShop(shopId: string, updatedData: any) {
     try {
-      const response = await axios.patch(`${this.baseUrl}/${shopId}`, updatedData, this.getConfig());
+      const response = await axios.patch(`${this.baseUrl}/shops/${shopId}`, updatedData, this.getConfig());
       return response.data;
     } catch (error) {
       throw new Error('Error updating shop: ');
@@ -74,7 +75,7 @@ export class ShopService {
 
   async getShopProducts(shopId: string) {
     try {
-      const response = await axios.get(`${this.baseUrl}/products/${shopId}`, this.getConfig());
+      const response = await axios.get(`${this.baseUrl}/shops/products/${shopId}`, this.getConfig());
       return response.data;
     } catch (error) {
       throw new Error('Error getting shop products: ');
@@ -83,7 +84,7 @@ export class ShopService {
 
   async getAllShops() {
     try {
-      const response = await axios.get(`${this.baseUrl}`);
+      const response = await axios.get(`${this.baseUrl}/shops`);
       console.log(response.data);
 
       return (this.allShops = response.data);
