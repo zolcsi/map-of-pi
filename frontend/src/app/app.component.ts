@@ -32,9 +32,15 @@ export class AppComponent implements OnInit {
     Pi.authenticate(['username', 'wallet_address', 'payments'], (p) => console.log(p))
       .then(async (auth: AuthResult) => {
         try {
-          const response = await axios.post('https://api-mapofpi.vercel.app/user/signin', {
-            authResult: auth,
-          });
+          const config = this.currentUserService.getConfig();
+
+          const response = await axios.post(
+            'https://api-mapofpi.vercel.app/user/signin',
+            {
+              authResult: auth,
+            },
+            config,
+          );
           const { currentUser, token } = response.data;
           this.currentUserService.setToken(token);
           this.currentUserService.setCurrentUser(currentUser);

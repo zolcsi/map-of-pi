@@ -5,7 +5,7 @@ import { AxiosRequestConfig } from 'axios';
   providedIn: 'root',
 })
 export class CurrentUserService {
-  private baseUrl: string = 'http://localhost:8000/user';
+  private baseUrl: string = 'https://api-mapofpi.vercel.app/user';
   private currentUser: any;
   private tokenKey: string = 'currentUserAccessToken';
   private token: string | null = null;
