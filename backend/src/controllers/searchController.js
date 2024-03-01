@@ -31,6 +31,11 @@ const search = async (req, res) => {
             const shopIds = products.map(product => product.shop);
             shops = await Shop.find({ _id: { $in: shopIds } });
         }
+        
+        if (shops.length === 0) {
+            return res.status(404).json({ message: 'No shops found matching the criteria.' });
+        }
+
         res.status(200).json({ shops });
     } catch (error) {
         console.error("Internal server error while searching: " + error.message);
