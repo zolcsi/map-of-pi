@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import { Map, marker, Marker, LayerGroup, Layer } from 'leaflet';
+import { Map, marker, Layer } from 'leaflet';
 import { GeolocationService } from '../../core/service/geolocation.service';
 import { SnackService } from '../../core/service/snack.service';
 import { take } from 'rxjs';
@@ -14,7 +14,8 @@ import { ICoordinate, dummyCoordinates } from '../../core/model/business';
   styleUrl: './map.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MapComponent implements OnInit {
+
+export class MapComponent {
   layer?: Layer;
   map!: Map;
   options;
@@ -33,6 +34,8 @@ export class MapComponent implements OnInit {
 
   onMapReady(map: Map): void {
     this.map = map;
+    // Add all coordinates to the map on component initialization
+    this.addAllCoordinatesToMap();
   }
 
   locateMe(): void {
@@ -70,10 +73,5 @@ export class MapComponent implements OnInit {
         .bindPopup('Your custom popup content here')
         .addTo(this.map);
     });
-  }
-
-  ngOnInit(): void {
-    // Add all coordinates to the map on component initialization
-    this.addAllCoordinatesToMap();
   }
 }
