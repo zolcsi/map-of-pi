@@ -56,8 +56,16 @@ export class GeolocationService {
   getMarkerIcon(): Icon {
     return icon({
       ...Icon.Default.prototype.options,
+      iconUrl: 'assets/map-of-pi-logo.svg',
+      iconRetinaUrl: 'assets/map-of-pi-logo.svg',
+      shadowUrl: 'assets/marker-shadow.png',
+    });
+  }
+  getUserMarkerIcon(): Icon {
+    return icon({
+      ...Icon.Default.prototype.options,
       iconUrl: 'assets/marker-icon.png',
-      iconRetinaUrl: 'assets/marker-icon-2x.png',
+      iconRetinaUrl: 'assets/marker-icon.png',
       shadowUrl: 'assets/marker-shadow.png',
     });
   }
