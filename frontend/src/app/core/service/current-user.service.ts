@@ -4,8 +4,8 @@ import { AxiosRequestConfig } from 'axios';
 @Injectable({
   providedIn: 'root',
 })
+
 export class CurrentUserService {
-  private baseUrl: string = 'https://api-mapofpi.vercel.app/user';
   private currentUser: any;
   private tokenKey: string = 'currentUserAccessToken';
   private token: string | null = null;
@@ -45,7 +45,6 @@ export class CurrentUserService {
     config.headers = {
       'Access-Control-Allow-Origin': 'https://mapofpi.com',
     };
-
     return config;
   }
 }
