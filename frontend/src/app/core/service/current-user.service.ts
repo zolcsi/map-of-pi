@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { AxiosRequestConfig } from 'axios';
 
 @Injectable({
   providedIn: 'root',
@@ -36,5 +37,15 @@ export class CurrentUserService {
   setCurrentUser(user: any): void {
     this.currentUser = user;
     console.log('from current user : ', this.currentUser);
+  }
+
+  getConfig(): AxiosRequestConfig {
+    const config: AxiosRequestConfig = {};
+
+    config.headers = {
+      'Access-Control-Allow-Origin': 'https://mapofpi.com',
+    };
+
+    return config;
   }
 }
