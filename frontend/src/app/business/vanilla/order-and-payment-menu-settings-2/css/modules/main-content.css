@@ -40,7 +40,6 @@
     color: #1d724b;
 }
 
-
 .menu-setting__floating-button:active {
     transform: translateY(4px);
 }
@@ -57,8 +56,6 @@
     width: 0;
     height: 0;
 }
-
-
 
 .menu-settings__slider {
     position: absolute;
