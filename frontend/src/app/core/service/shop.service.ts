@@ -39,7 +39,7 @@ export class ShopService {
       coardinates: [-1.455, 34],
     };
     try {
-      const response = await axios.post(`${this.baseUrl}/register`, { ...data }, this.getConfig());
+      const response = await axios.post(`${this.baseUrl}/shops/register`, { ...data }, this.getConfig());
       console.log('Reponse while creating shop : ' + response);
       return response.data;
     } catch (error) {
@@ -80,6 +80,16 @@ export class ShopService {
       return response.data;
     } catch (error) {
       throw new Error('Error getting shop products: ');
+    }
+  }
+
+  async getShop(shopId: string) {
+    try {
+      const response = await axios.get(`${this.baseUrl}/shops/${shopId}`);
+      // console.log(' new created shop is : ', JSON.stringify(response.data.data));
+      return response.data;
+    } catch (err) {
+      throw new Error('Error getting shop: ');
     }
   }
 
