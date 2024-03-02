@@ -33,6 +33,8 @@ mat-toolbar {
   transform: translate(-100%, -50%);
   padding: 10px;
   transition: left 0.3s ease, opacity 1s ease 1s;
+  outline: none;
+  cursor: help;
 }
 
 .image-container:hover #logo-img {
