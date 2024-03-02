@@ -31,9 +31,9 @@
 ## <a name='tech-stack'></a>Tech Stack 📊
 
 - **Frontend**: Angular, TypeScript, HTML, SCSS, CSS
-- **Backend**: Node.js
+- **Backend**: Node.js, REST API
 - **Database**: MongoDB
-- **DevOps**: Dockerfile, Shell
+- **DevOps**: GitHub Actions, Netlify
 
 ## <a name='frontend-local-execution'></a>Frontend Local Execution
 
@@ -70,6 +70,11 @@ The Map of Pi Front End Project was generated with [Angular CLI](https://github.
 
 ## <a name='backend-local-execution'></a>Back End Local Execution
 
+### Execute the Development Server
+
+- Change directory to back end using `cd backend`.
+- Execute `npm run start` to connect to nodemon and MongoDB server.
+
 ### Execute Unit Tests
 
 - Change directory to back end using `cd backend`.
@@ -80,19 +85,24 @@ The Map of Pi Front End Project was generated with [Angular CLI](https://github.
 ### Project Manager
 - Philip Jennings
 
+### Marketing
+- Bonnie Ford
+- Joseph Ciccone 
+
 ### Solution Design / UX
 - Femma Ashraf
 - Oluwabukola Adesina
 - Folorunsho Omotunde
 
+### DevOps
+- Danny Lee
+
 ### Frontend Developers
-- Zoltan Magyar
-- Daniel Lee
 - Darin Hajou
+- Zoltan Magyar
 
 ### Backend Developers
 - Rokundo Soleil
-- Dhaval Bhatti
 
 ## <a name='contributions'></a>Contributions
 
