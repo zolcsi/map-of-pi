@@ -17,7 +17,6 @@ import { CurrentUserService } from './core/service/current-user.service';
   styleUrl: './app.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-
 export class AppComponent implements OnInit {
   constructor(
     private readonly snackService: SnackService,

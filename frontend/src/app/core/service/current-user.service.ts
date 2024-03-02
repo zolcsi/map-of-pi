@@ -5,13 +5,19 @@ import { AxiosRequestConfig } from 'axios';
   providedIn: 'root',
 })
 export class CurrentUserService {
-  private currentUser: any;
+  private currentUserKey: string = 'currentUser';
   private tokenKey: string = 'currentUserAccessToken';
   private token: string | null = null;
 
   constructor() {
     this.token = localStorage.getItem(this.tokenKey);
+    const storedUser = localStorage.getItem(this.currentUserKey);
+    if (storedUser) {
+      this.currentUser = JSON.parse(storedUser);
+    }
   }
+
+  private currentUser: any;
 
   getToken(): string | null {
     return this.token;
@@ -20,12 +26,13 @@ export class CurrentUserService {
   setToken(token: string): void {
     this.token = token;
     localStorage.setItem(this.tokenKey, token);
-    console.log('token from backedn : ' + token);
+    console.log('token from backend : ' + token);
   }
 
   clearToken(): void {
     this.token = null;
     localStorage.removeItem(this.tokenKey);
+    localStorage.removeItem(this.currentUserKey); // Remove user data when token is cleared
   }
 
   getCurrentUser(): any {
@@ -34,6 +41,7 @@ export class CurrentUserService {
 
   setCurrentUser(user: any): void {
     this.currentUser = user;
+    localStorage.setItem(this.currentUserKey, JSON.stringify(user)); // Store user data in localStorage
     console.log('from current user : ', this.currentUser);
   }
 

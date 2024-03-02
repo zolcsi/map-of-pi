@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { Map, marker, Layer } from 'leaflet';
 import { GeolocationService } from '../../core/service/geolocation.service';
@@ -14,7 +14,6 @@ import { ICoordinate, dummyCoordinates } from '../../core/model/business';
   styleUrl: './map.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-
 export class MapComponent {
   layer?: Layer;
   map!: Map;
@@ -44,11 +43,10 @@ export class MapComponent {
       .pipe(take(1))
       .subscribe({
         next: (coords: GeolocationCoordinates) => {
-          // Add user's location marker
           this.layer = marker([coords.latitude, coords.longitude], {
-            icon: this.geolocationService.getUserMarkerIcon(),
+            icon: this.geolocationService.getMarkerIcon(),
           })
-            .bindPopup('my name here is soleil')
+            .bindPopup('A pretty CSS popup.<br> Easily customizable.')
             .openPopup();
 
           this.map.addLayer(this.layer);
