@@ -50,6 +50,7 @@
     margin-bottom: 1.5rem; 
     border-radius: 10px;
     background-color: #ffc153;
+    background-color: #ffc153;
 }
 
 .business-registration__link {
@@ -66,6 +67,10 @@
     background-color: #1d724b;
     color: #ffffff;
     font-size: 0.9rem;
+    padding: 0.7rem;
+    background-color: #1d724b;
+    color: #ffffff;
+    font-size: 0.9rem;
     border-radius: 10px;
     outline: none;
     border: none;
@@ -76,6 +81,5 @@
 
 .business-registration__button:active {
     background-color: #164c36; 
-    transform: translateY(-2px);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  }
+
+}
