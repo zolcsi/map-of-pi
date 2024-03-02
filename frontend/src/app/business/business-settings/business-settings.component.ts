@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -19,6 +19,7 @@ export class BusinessSettingsComponent {
   businessTypes: string[] = ['Restaurant', 'Retail Store', 'Servicing', 'Construction', 'Transportation'];
   router: Router = inject(Router);
   showPopup: boolean = false;
+  selectedImages: any[] = [];
 
   registerShopForm = new FormGroup({
     shopName: new FormControl('', Validators.required),
@@ -26,7 +27,7 @@ export class BusinessSettingsComponent {
     shopAddress: new FormControl('', Validators.required),
     shopPhone: new FormControl('', [Validators.required, Validators.minLength(10)]),
     shopEmail: new FormControl('', [Validators.required, Validators.email]),
-    // shopImage: new FormControl(''),
+    shopImage: new FormArray([]),
     shopDescription: new FormControl('', Validators.required),
   });
 
@@ -35,13 +36,35 @@ export class BusinessSettingsComponent {
     private shopServices: ShopService,
   ) {}
 
+  onFileChange(event: any) {
+    if (event.target.files) {
+      const reader = new FileReader();
+      reader.readAsDataURL(event.target.files[0]);
+
+      reader.onload = (e: any) => {
+        this.selectedImages.push(e.target.result);
+        const shopImageFormArray = this.registerShopForm.get('shopImage') as FormArray;
+        if (shopImageFormArray.controls.length < 1) {
+          shopImageFormArray.push(new FormControl(e.target.result));
+        }
+      };
+    }
+  }
+
   // onFileChange(event: any) {
-  //   if (event.target.files) {
+  //   if (event.target.files && event.target.files.length > 0) {
   //     const reader = new FileReader();
   //     reader.readAsDataURL(event.target.files[0]);
 
-  //     reader.onload = (event: any) => {
-  //       this.registerShopForm.value.shopImage = event.target.result;
+  //     reader.onload = (e: any) => {
+  //       const imageData = e.target.result;
+  //       this.selectedImages = [imageData]; // Store only the first image
+  //       const shopImageFormArray = this.registerShopForm.get('shopImage') as FormArray;
+  //       if (shopImageFormArray.length === 0) {
+  //         shopImageFormArray.push(imageData); // Add only if the array is empty
+  //       } else {
+  //         shopImageFormArray.at(0).setValue(imageData); // Update only the first element
+  //       }
   //     };
   //   }
   // }
@@ -49,7 +72,6 @@ export class BusinessSettingsComponent {
   send(): void {
     if (this.registerShopForm.valid) {
       this.shopServices.registerShop(this.registerShopForm.value as any).then((response) => {
-        // console.log('reponse from server : ' + JSON.stringify(response));
         if (response.success) {
           this.snackService.showMessage('Business successfully registered');
           this.router.navigate(['manage-business', response.data._id]);
@@ -59,6 +81,8 @@ export class BusinessSettingsComponent {
           console.log(response);
         }
       });
+      // console.log(this.selectedImages[0]);
+      // console.log('registered shop : ', this.registerShopForm.value);
     } else {
       this.registerShopForm.markAllAsTouched();
       console.log('Invalid data');

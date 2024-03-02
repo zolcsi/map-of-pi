@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import axios, { AxiosRequestConfig } from 'axios';
-import { CurrentUserService } from './current-user.service';
 import { IShopData } from '../model/business';
 
 @Injectable({
@@ -10,19 +9,26 @@ export class ShopService {
   private baseUrl = 'https://api-mapofpi.vercel.app';
   allShops: any[] = [];
 
-  constructor(private currentUserService: CurrentUserService) {}
+  coordinates: number[] = [];
+
+  constructor() {}
 
   getConfig(): AxiosRequestConfig {
-    const token = this.currentUserService.getToken();
+    const token = localStorage.getItem('accessToken');
     const config: AxiosRequestConfig = {};
 
     config.headers = {
-      'Access-Control-Allow-Origin': 'https://mapofpi.com',
+      'Access-Control-Allow-Origin': '*',
+      // 'Access-Control-Allow-Origin': 'https://mapofpi.com',
     };
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
+  }
+
+  setUserPosition(arr: number[]) {
+    this.coordinates = arr;
   }
 
   async registerShop(shopData: IShopData) {
@@ -31,12 +37,14 @@ export class ShopService {
       type: shopData.shopType,
       address: shopData.shopAddress,
       description: shopData.shopDescription,
-      image: shopData.shopImage,
+      image: shopData.shopImage[0],
       phone: shopData.shopPhone,
       email: shopData.shopEmail,
       transactionEnabled: shopData.isPiPaymentEnabled,
-      coardinates: [-1.455, 34],
+      coordinates: this.coordinates,
     };
+
+    console.log('registered image : ', data.image);
     try {
       const response = await axios.post(`${this.baseUrl}/shops/register`, { ...data }, this.getConfig());
       console.log('reponse while creating shop : ' + response);
@@ -87,7 +95,7 @@ export class ShopService {
       const response = await axios.get(`${this.baseUrl}/shops`);
       console.log(response.data);
 
-      return (this.allShops = response.data);
+      return (this.allShops = response.data.data);
     } catch (error) {
       throw new Error('Error getting all shops: ');
     }

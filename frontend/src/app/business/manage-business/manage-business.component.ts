@@ -2,6 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink, RouterModule } from '@angular/router';
 import { ShopService } from '../../core/service/shop.service';
 import { CurrentUserService } from '../../core/service/current-user.service';
+import { PaymentsService } from '../../core/service/payments.service';
 
 @Component({
   selector: 'app-manage-business',
@@ -19,6 +20,7 @@ export class ManageBusinessComponent implements OnInit {
   constructor(
     private shopServices: ShopService,
     private currentUserService: CurrentUserService,
+    private paymentService: PaymentsService,
   ) {
     this.shopId = this.params.snapshot.params['id'];
     // this.currentuser = this.currentUserService.getCurrentUser();
@@ -26,6 +28,14 @@ export class ManageBusinessComponent implements OnInit {
 
   goToBusiness() {
     this.router.navigate(['add-product']);
+  }
+
+  order() {
+    this.paymentService.orderProductFromShop('Iphone12', 23, {
+      productId: 'user-ordered-product',
+      shopId: this.shopId,
+      shop: this.shop,
+    });
   }
 
   ngOnInit(): void {
