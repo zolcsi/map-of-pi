@@ -213,7 +213,6 @@
     height: auto;
 }
 
-
 /* Responsiveness for larger screens */
 @media (min-width: 576px) {
     .order-menu__content {
