@@ -1,63 +1,46 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Map of Pi</title>
-    <base href="/" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta
-      property="og:title"
-      content="Map of Pi, Searchable places accepting Pi put on a map" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://mapofpi.concretecode.ch" />
-    <meta
-      property="og:image"
-      content="https://mapofpi.concretecode.ch/assets/images/logo.svg" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="font-src 'self' https://cdnjs.cloudflare.com/ajax/libs/font-awesome/ https://fonts.gstatic.com/;" />
-      <meta 
-        name="keywords" 
-        content="map, pi, search, business">
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/favicon/apple-touch-icon.png" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/favicon/favicon-32x32.png" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="assets/favicon/favicon-16x16.png" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
-      rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet" />
-    <!-- <iframe src="https://openstreetmap.org" allow="geolocation"></iframe> -->
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<head>
+  <meta charset="utf-8" />
+  <title>Map of Pi</title>
+  <base href="/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta property="og:title"
+    content="Map of Pi, Searchable map for buyers and sellers supporting Pi currency for products and services exchange" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mapofpi.concretecode.ch" />
+  <meta property="og:image" content="https://mapofpi.concretecode.ch/assets/images/logo.svg" />
+  <meta http-equiv="Content-Security-Policy"
+    content="font-src 'self' https://cdnjs.cloudflare.com/ajax/libs/font-awesome/ https://fonts.gstatic.com/;" />
+  <meta name="description" content="Map of Pi is a business app for buying and selling with Pi currency">
+  <meta name="keywords" content="map, pi, search, business, app, crypto, global, products, services">
+  <meta name="author" content="Map of Pi Team">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- <iframe src="https://openstreetmap.org" allow="geolocation"></iframe> -->
 
-      gtag('config', 'YOUR_TRACKING_ID'); /* Replace YOUR_TRACKING_ID with the actual Google Analytics tracking ID */
-    </script>
-  </head>
-  <body class="mat-typography">
-    <app-root></app-root>
-    <noscript
-      >Please enable JavaScript to continue using this application.</noscript
-    >
-  </body>
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WKTKZZBG');
+  </script>
+  <!-- End Google Tag Manager -->
+</head>
+
+<body class="mat-typography">
+  <app-root></app-root>
+  <noscript>Please enable JavaScript to continue using this application.</noscript>
+</body>
+
 </html>
