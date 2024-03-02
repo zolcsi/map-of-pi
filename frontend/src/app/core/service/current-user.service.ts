@@ -11,7 +11,6 @@ export class CurrentUserService {
   private token: string | null = null;
 
   constructor() {
-    // Retrieve token from local storage on service initialization
     this.token = localStorage.getItem(this.tokenKey);
   }
 
@@ -41,10 +40,11 @@ export class CurrentUserService {
 
   getConfig(): AxiosRequestConfig {
     const config: AxiosRequestConfig = {};
-
-    config.headers = {
-      'Access-Control-Allow-Origin': 'https://mapofpi.com',
-    };
+    if (this.token) {
+      config.headers = {
+        Authorization: `Bearer ${this.token}`,
+      };
+    }
     return config;
   }
 }
