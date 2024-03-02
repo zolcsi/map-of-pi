@@ -41,6 +41,7 @@
 /* Menu switch section*/
 .order-menu__switch-section {
     max-width: 300px;
+    max-width: 300px;
     background-color: #ffffff;
     position: relative;
     border-radius: 10px;
@@ -87,6 +88,7 @@
 .order-menu__highlight {
     position: relative;
     max-width: 300px;
+    max-width: 300px;
     height: 30px;
     margin-top: 1.2rem;
     background-color: #FAD09E;
@@ -100,6 +102,10 @@
 }
 
 /* Section for menu products and images */
+.order-menu__products {
+    max-width: 300PX;
+}
+
 .order-menu__products {
     max-width: 300PX;
 }
@@ -182,14 +188,19 @@
     height: 25px;
     border-radius: 10px;
     background-color: var(--color-highlight-color);
+    background-color: var(--color-highlight-color);
     color: #ffffff;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     border: none;
+    border: none;
 }
 
 .order-menu__add-button:hover {
+    background-color: #164c36;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     background-color: #164c36;
     transform: translateY(-2px);
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
