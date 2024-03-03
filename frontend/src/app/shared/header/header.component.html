@@ -24,7 +24,32 @@
   </div>
 
   <div class="group-controls">
+    <button mat-icon-button (click)="displayPopup()">
+      <mat-icon>thumb_up</mat-icon>
+    </button>
     <app-dark-mode-toggler></app-dark-mode-toggler>
     <app-language-switcher></app-language-switcher>
   </div>
 </mat-toolbar>
+
+<!-- Popup -->
+<div class="popup-container" *ngIf="showPopup">
+  <div class="popup">
+    <span class="close" (click)="hidePopup()">&times;</span>
+    <br />
+      <a href="mailto:info@mapofpi.com" class="social-media-link">
+        <i class="fas fa-envelope"></i> Email
+      </a>
+      <a href="https://facebook.com/mapofpi" class="social-media-link">
+        <i class="fab fa-facebook-square"></i> Facebook
+      </a>
+      <a href="https://instagram.com/mapofpi" class="social-media-link">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://twitter.com/mapofpi" class="social-media-link">
+        <i class="fab fa-twitter"></i> Twitter
+      </a>
+    <p>This functionality is not fully built yet.</p>
+    <button class="btn-ok" (click)="hidePopup()">OK</button>
+  </div>
+</div>

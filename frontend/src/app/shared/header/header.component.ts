@@ -22,6 +22,7 @@ export class HeaderComponent {
   imageUrl: string = 'assets/images/logo.svg';
   hoveredImageUrl: string = 'assets/images/logo-header.svg';
   isHovered: boolean = false;
+  showPopup: boolean = false;
 
   @ViewChild(DarkModeTogglerComponent) darkModeToggler!: DarkModeTogglerComponent;
   showBackButton: Signal<boolean>;
@@ -44,5 +45,13 @@ export class HeaderComponent {
 
   onMouseLeave() {
     this.isHovered = false;
+  }
+
+  displayPopup(): void {
+    this.showPopup = true;
+  }
+
+  hidePopup(): void {
+    this.showPopup = false;
   }
 }
