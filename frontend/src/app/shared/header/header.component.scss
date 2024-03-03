@@ -16,7 +16,7 @@ mat-toolbar {
   align-items: center;
 }
 
-.image-container {
+/** TODO -> [IMAGE W/ TEXT EFFECT] .image-container {
   position: relative;
   display: inline-block;
 }
@@ -45,4 +45,31 @@ mat-toolbar {
   display: block;
   left: calc(100% + 10px);
   opacity: 1;
+} **/
+
+.image-container {
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+
+.text-container {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.image-container:hover .text-container {
+  opacity: 1;
+}
+
+#logo-img {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.image-container:hover #logo-img {
+  opacity: 0;
 }
