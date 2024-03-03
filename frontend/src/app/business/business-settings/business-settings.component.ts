@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -15,6 +15,7 @@ import { ShopService } from '../../core/service/shop.service';
   imports: [TranslateModule, CommonModule, ReactiveFormsModule, MatSlideToggleModule, RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
 export class BusinessSettingsComponent {
   businessTypes: string[] = ['Restaurant', 'Retail Store', 'Servicing', 'Construction', 'Transportation'];
   router: Router = inject(Router);
@@ -50,7 +51,7 @@ export class BusinessSettingsComponent {
       };
     }
   }
-
+  
   // onFileChange(event: any) {
   //   if (event.target.files && event.target.files.length > 0) {
   //     const reader = new FileReader();

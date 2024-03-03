@@ -44,10 +44,10 @@ export class ShopService {
       coordinates: this.coordinates,
     };
 
-    console.log('registered image : ', data.image);
+    console.log('Registered image : ', data.image);
     try {
       const response = await axios.post(`${this.baseUrl}/shops/register`, { ...data }, this.getConfig());
-      console.log('reponse while creating shop : ' + response);
+      console.log('Response while creating shop : ' + response);
       return response.data;
     } catch (error) {
       throw new Error('Error registering shop: ');

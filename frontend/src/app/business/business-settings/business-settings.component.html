@@ -2,193 +2,96 @@
   <section class="business-registration__section">
     <form [formGroup]="registerShopForm" (ngSubmit)="send()">
       <div class="business-registration__field">
-        <label for="business-name" class="business-registration__label"
-          >Business Name</label
-        >
-        <input
-          type="text"
-          formControlName="shopName"
-          id="business-name"
-          name="business_name"
-          class="business-registration__input"
-          placeholder="Enter the name of your business"
-          required />
-        <span
-          class="text-red-500"
-          *ngIf="
+        <label for="business-name" class="business-registration__label">Business Name</label>
+        <input type="text" formControlName="shopName" id="business-name" name="business_name"
+          class="business-registration__input" placeholder="Enter the name of your business" required />
+        <span class="text-red-500" *ngIf="
             registerShopForm.get('shopName')?.invalid &&
             registerShopForm.get('shopName')?.touched
-          "
-          >Business Name is required</span
-        >
+          ">Business Name is required</span>
       </div>
       <div class="business-registration__field mt-2">
-        <label for="business-description" class="business-registration__label"
-          >Business Description</label
-        >
-        <input
-          type="text"
-          formControlName="shopDescription"
-          id="business-description"
-          name="business_description"
-          class="business-registration__input"
-          placeholder="Enter a simple description about your business"
-          required />
-        <span
-          class="text-red-500"
-          *ngIf="
+        <label for="business-description" class="business-registration__label">Business Description</label>
+        <input type="text" formControlName="shopDescription" id="business-description" name="business_description"
+          class="business-registration__input" placeholder="Enter a simple description about your business" required />
+        <span class="text-red-500" *ngIf="
             registerShopForm.get('shopDescription')?.invalid &&
             registerShopForm.get('shopDescription')?.touched
-          "
-          >Business Description is required</span
-        >
+          ">Business Description is required</span>
       </div>
-      <div
-        class="business-registration__field business-registration__field-middle">
-        <label for="business-type" class="business-registration__label"
-          >Business Type</label
-        >
-        <select
-          id="business-type"
-          name="business_type"
-          formControlName="shopType"
+      <div class="business-registration__field business-registration__field-middle">
+        <label for="business-type" class="business-registration__label">Business Type</label>
+        <select id="business-type" name="business_type" formControlName="shopType"
           class="business-registration__select">
-          <option
-            *ngFor="let businessType of businessTypes"
-            [value]="businessType">
+          <option *ngFor="let businessType of businessTypes" [value]="businessType">
             {{ businessType }}
           </option>
         </select>
-        <span
-          class="text-red-500"
-          *ngIf="
+        <span class="text-red-500" *ngIf="
             registerShopForm.get('shopType')?.invalid &&
             registerShopForm.get('shopType')?.touched
-          "
-          >Business Type is required</span
-        >
+          ">Business Type is required</span>
       </div>
-      <div
-        class="business-registration__field business-registration__field-bottom">
-        <label for="location" class="business-registration__label"
-          >Business Location</label
-        >
-        <input
-          type="text"
-          id="location"
-          name="location"
-          formControlName="shopAddress"
-          class="business-registration__input"
-          placeholder="Enter the location of your business"
-          required />
-        <span
-          class="text-red-500"
-          *ngIf="
+      <div class="business-registration__field business-registration__field-bottom">
+        <label for="location" class="business-registration__label">Business Location</label>
+        <input type="text" id="location" name="location" formControlName="shopAddress"
+          class="business-registration__input" placeholder="Enter the location of your business" required />
+        <span class="text-red-500" *ngIf="
             registerShopForm.get('shopAddress')?.invalid &&
             registerShopForm.get('shopAddress')?.touched
-          "
-          >Business address is required</span
-        >
+          ">Business address is required</span>
       </div>
-      <div
-        class="business-registration__field business-registration__field-bottom">
+      <div class="business-registration__field business-registration__field-bottom">
         <label for="" class="business-registration__label"></label>
-        <label
-          for="image"
-          class="business-registration__label flex gap-5 mb-3 items-center bg-blue-200 p-3 rounded-md"
-          ><img
-            src="../../../assets/images/business/upload.jpg"
-            alt="upload icon"
-            class="w-[50px] h-[50px]" />
+        <label for="image"
+          class="business-registration__label flex gap-5 mb-3 items-center bg-blue-200 p-3 rounded-md"><img
+            src="../../../assets/images/business/upload.jpg" alt="upload icon" class="w-[50px] h-[50px]" />
           <div>Upload your images here</div>
         </label>
-        <input
-          type="file"
-          id="image"
-          name="image"
-          (change)="onFileChange($event)"
-          formControlName="shopImage"
-          class="business-registration__input hidden"
-          placeholder="Upload your images here"
-          required />
-        <!-- <img
-          [src]="registerShopForm.value.shopImage"
-          alt="shop image"
+        <input type="file" id="image" name="image" (change)="onFileChange($event)" formControlName="shopImage"
+          class="business-registration__input hidden" placeholder="Upload your images here" required />
+        <!-- <img [src]="registerShopForm.value.shopImage" alt="shop image"
           class="w-[130px] h-[150px] flex justify-center items-center" /> -->
-        <span
-          class="text-red-500"
-          *ngIf="
+        <span class="text-red-500" *ngIf="
             registerShopForm.get('shopImage')?.invalid &&
             registerShopForm.get('shopImage')?.touched
-          "
-          >Business must have an associated image</span
-        >
+          ">Business must have an associated image</span>
       </div>
-      <div
-        class="business-registration__field business-registration__field-bottom">
-        <label for="phone" class="business-registration__label"
-          >Business Phone Number</label
-        >
-        <input
-          type="text"
-          id="phone"
-          name="phone"
-          formControlName="shopPhone"
-          class="business-registration__input"
-          placeholder="+25 078 244 3651"
-          required />
-        <span
-          class="text-red-500"
-          *ngIf="
+      <div class="business-registration__field business-registration__field-bottom">
+        <label for="phone" class="business-registration__label">Business Phone Number</label>
+        <input type="text" id="phone" name="phone" formControlName="shopPhone" class="business-registration__input"
+          placeholder="+25 078 244 3651" required />
+        <span class="text-red-500" *ngIf="
             registerShopForm.get('shopPhone')?.invalid &&
             registerShopForm.get('shopPhone')?.touched
-          "
-          >Business phone number is required</span
-        >
+          ">Business phone number is required</span>
       </div>
-      <div
-        class="business-registration__field business-registration__field-bottom">
-        <label for="email" class="business-registration__label"
-          >Business Email Address</label
-        >
-        <input
-          type="email"
-          id="email"
-          name="email"
-          formControlName="shopEmail"
-          class="business-registration__input"
-          placeholder="youremail@gmail.com"
-          required />
-        <span
-          class="text-red-500"
-          *ngIf="
-            registerShopForm.get('shopEmail')?.invalid &&
-            registerShopForm.get('shopEmail')?.touched
-          "
-          >A valid business email address is required</span
-        >
+      <div class="business-registration__field business-registration__field-bottom">
+        <label for="email" class="business-registration__label">Business Email Address</label>
+        <input type="email" id="email" name="email" formControlName="shopEmail" class="business-registration__input"
+          placeholder="youremail@gmail.com" required />
+        <span class="text-red-500" *ngIf="
+          registerShopForm.get('shopEmail')?.invalid &&
+          registerShopForm.get('shopEmail')?.touched
+        ">A valid business email address is required</span>
       </div>
       <nav class="business-registration__navigation">
         <ul class="business-registration__list">
           <li class="business-registration__item">
-            <a (click)="displayPopup()" class="business-registration__link"
-              >Menu<i class="fa-solid fa-arrow-right"></i
-            ></a>
+            <a (click)="displayPopup()" class="business-registration__link">Menu<i
+                class="fa-solid fa-arrow-right"></i></a>
           </li>
           <li class="business-registration__item">
-            <a (click)="displayPopup()" class="business-registration__link"
-              >Loyalty Stamps<i class="fa-solid fa-arrow-right"></i
-            ></a>
+            <a (click)="displayPopup()" class="business-registration__link">Loyalty Stamps<i
+                class="fa-solid fa-arrow-right"></i></a>
           </li>
           <li class="business-registration__item">
-            <a (click)="displayPopup()" class="business-registration__link"
-              >Business Photos<i class="fa-solid fa-arrow-right"></i
-            ></a>
+            <a (click)="displayPopup()" class="business-registration__link">Business Photos<i
+                class="fa-solid fa-arrow-right"></i></a>
           </li>
           <li class="business-registration__item">
-            <a (click)="displayPopup()" class="business-registration__link"
-              >Get QR code<i class="fa-solid fa-arrow-right"></i
-            ></a>
+            <a (click)="displayPopup()" class="business-registration__link">Get QR code<i
+                class="fa-solid fa-arrow-right"></i></a>
           </li>
         </ul>
       </nav>

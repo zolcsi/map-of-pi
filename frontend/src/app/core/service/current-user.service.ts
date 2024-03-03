@@ -26,7 +26,7 @@ export class CurrentUserService {
   setToken(token: string): void {
     this.token = token;
     localStorage.setItem(this.tokenKey, token);
-    console.log('token from backend : ' + token);
+    console.log('Token from backend : ' + token);
   }
 
   clearToken(): void {
@@ -42,7 +42,7 @@ export class CurrentUserService {
   setCurrentUser(user: any): void {
     this.currentUser = user;
     localStorage.setItem(this.currentUserKey, JSON.stringify(user)); // Store user data in localStorage
-    console.log('from current user : ', this.currentUser);
+    console.log('From current user : ', this.currentUser);
   }
 
   getConfig(): AxiosRequestConfig {

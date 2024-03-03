@@ -17,6 +17,7 @@ import axios from 'axios';
   styleUrl: './map.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
 export class MapComponent implements OnInit {
   layer?: Layer;
   map!: Map;
@@ -128,7 +129,7 @@ export class MapComponent implements OnInit {
           const commingBtn = document.querySelectorAll('#comming');
           commingBtn.forEach((btn) => {
             btn.addEventListener('click', () => {
-              this.snackService.showMessage('This Feature is in Development');
+              this.snackService.showMessage('This feature is in development');
             });
           });
 
@@ -148,7 +149,7 @@ export class MapComponent implements OnInit {
     try {
       const response = await axios.get('https://api-mapofpi.vercel.app/shops');
 
-      console.log('from map of pi : ', response.data?.data);
+      console.log('From Map of Pi : ', response.data?.data);
 
       const shops: any[] = response.data?.data;
 
@@ -156,7 +157,7 @@ export class MapComponent implements OnInit {
       this.addAllCoordinatesToMap();
 
       console.log(
-        'all shop after fetching them from db ',
+        'All shop after fetching them from DB ',
         this.allShops.map((shop) => shop.coordinates),
       );
     } catch (error) {
