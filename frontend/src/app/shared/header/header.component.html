@@ -1,30 +1,78 @@
 <mat-toolbar class="justify-between">
   @if (showBackButton()) {
-    <div class="group-controls">
-      <button mat-icon-button (click)="navigateBack()">
-        <mat-icon>arrow_back</mat-icon>
-      </button>
-      <span [routerLink]="['/home']">
-        <button mat-icon-button>
-          <mat-icon>home</mat-icon>
-        </button>
-      </span>
-    </div>
-  } @else {
-    <button mat-icon-button>
-      <mat-icon>home</mat-icon>
+  <div class="group-controls">
+    <button mat-icon-button (click)="navigateBack()">
+      <mat-icon>arrow_back</mat-icon>
     </button>
+    <span [routerLink]="['/home']">
+      <button mat-icon-button>
+        <mat-icon>home</mat-icon>
+      </button>
+    </span>
+  </div>
+  } @else {
+  <button mat-icon-button>
+    <mat-icon>home</mat-icon>
+  </button>
   }
 
   <div class="image-container" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
     <img id="logo-img" [src]="imageUrl" alt="Map of Pi" width="48" height="48" [class.hovered-img]="isHovered" />
     <div class="text-container">
-        <p>Map of Pi</p>
+      <p>Map of Pi</p>
     </div>
   </div>
 
   <div class="group-controls">
+    <button mat-icon-button (click)="displayPopup()">
+      <mat-icon>help</mat-icon>
+    </button>
     <app-dark-mode-toggler></app-dark-mode-toggler>
     <app-language-switcher></app-language-switcher>
   </div>
 </mat-toolbar>
+
+<!-- Popup -->
+<div class="popup-container" *ngIf="showPopup">
+  <div class="popup">
+    <span class="close" (click)="hidePopup()">&times;</span>
+    <h2>Welcome to Map of Pi</h2>
+    <h4>[Alpha Version]</h4>
+    <br />
+    <p (click)="showPrivacyPolicyPopup()" class="privacy-policy-link">Privacy Policy</p>
+    <br />
+    <div *ngIf="!showPrivacyPolicy">
+      <br />
+      <div class="social-media-links">
+        <a href="mailto:info@mapofpi.com" class="social-media-link" target="_blank">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://facebook.com/mapofpi" class="social-media-link" target="_blank">
+          <i class="fab fa-facebook-square"></i>
+        </a>
+        <a href="https://instagram.com/mapofpi" class="social-media-link" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://twitter.com/mapofpi" class="social-media-link" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+      <button class="btn-ok" (click)="hidePopup()">OK</button>
+    </div>
+    <div *ngIf="showPrivacyPolicy" class="privacy-policy-content">
+      <!-- Privacy policy content -->
+      <br />
+      <p>Privacy Policy</p>
+      <p>This is the privacy policy content. It can be long and scrollable.</p>
+      <p>This is the privacy policy content. It can be long and scrollable.</p>
+      <p>This is the privacy policy content. It can be long and scrollable.</p>
+      <p>This is the privacy policy content. It can be long and scrollable.</p>
+      <p>This is the privacy policy content. It can be long and scrollable.</p>
+      <p>This is the privacy policy content. It can be long and scrollable.</p>
+      <p>This is the privacy policy content. It can be long and scrollable.</p>
+      <p>This is the privacy policy content. It can be long and scrollable.</p>
+      <p>This is the privacy policy content. It can be long and scrollable.</p>
+      <button class="btn-ok" (click)="hidePrivacyPolicyPopup()">OK</button>
+    </div>
+  </div>
+</div>
