@@ -24,6 +24,7 @@ export class LanguageSwitcherComponent {
     { code: 'en', name: 'English' },
     { code: 'de', name: 'German' },
     { code: 'hu', name: 'Hungarian' },
+    { code: 'ko', name: 'Korean' }
   ];
 
   constructor(private readonly translateService: TranslateService) {}
