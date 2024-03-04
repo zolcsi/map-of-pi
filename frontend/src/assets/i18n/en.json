@@ -11,7 +11,8 @@
       "LABELS": {
         "BUSINESS_NAME": "Business Name",
         "BUSINESS_DESCRIPTION": "Business Description",
-        "BUSINESS_TYPE": {
+        "BUSINESS_TYPE": "Business Type",
+        "BUSINESS_TYPES": {
           "RESTAURANT": "Restaurant",
           "RETAIL_STORE": "Retail Store",
           "SERVICE": "Service",
@@ -19,6 +20,7 @@
           "TRANSPORTATION": "Transportation"
         },
         "BUSINESS_LOCATION": "Business Location",
+        "BUSINESS_IMAGES": "Business Images",
         "BUSINESS_PHONE_NUMBER": "Business Phone Number",
         "BUSINESS_EMAIL_ADDRESS": "Business Email Address"
       },
@@ -26,6 +28,7 @@
         "BUSINESS_NAME": "Enter the name of your business",
         "BUSINESS_DESCRIPTION": "Enter a simple description about your business",
         "BUSINESS_LOCATION": "Enter the location of your business",
+        "BUSINESS_IMAGES": "Upload your images here",
         "BUSINESS_PHONE_NUMBER": "Enter the phone number of your business",
         "BUSINESS_EMAIL_ADDRESS": "Enter the email address of your business"
       },
@@ -34,6 +37,7 @@
         "BUSINESS_DESCRIPTION": "Business Description is required",
         "BUSINESS_TYPE": "Business Type is required",
         "BUSINESS_LOCATION": "Business address is required",
+        "BUSINESS_IMAGES": "Business must have an associated image",
         "BUSINESS_PHONE_NUMBER": "Business phone number is required",
         "BUSINESS_EMAIL_ADDRESS": "Business email address is required"
       },

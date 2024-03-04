@@ -19,6 +19,7 @@
           "TRANSPORTATION": "Transport"
         },
         "BUSINESS_LOCATION": "Standort des Unternehmens",
+        "BUSINESS_IMAGES": "Unternehmensbilder",
         "BUSINESS_PHONE_NUMBER": "Telefonnummer des Unternehmens",
         "BUSINESS_EMAIL_ADDRESS": "E-Mail-Adresse des Unternehmens"
       },
@@ -26,6 +27,7 @@
         "BUSINESS_NAME": "Geben Sie den Namen Ihres Unternehmens ein",
         "BUSINESS_DESCRIPTION": "Geben Sie eine kurze Beschreibung Ihres Unternehmens ein",
         "BUSINESS_LOCATION": "Geben Sie den Standort Ihres Unternehmens ein",
+        "BUSINESS_IMAGES": "Laden Sie hier Ihre Bilder hoch",
         "BUSINESS_PHONE_NUMBER": "Geben Sie die Telefonnummer Ihres Unternehmens ein",
         "BUSINESS_EMAIL_ADDRESS": "Geben Sie die E-Mail-Adresse Ihres Unternehmens ein"
       },

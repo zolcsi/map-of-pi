@@ -19,6 +19,7 @@
           "TRANSPORTATION": "Transportation"
         },
         "BUSINESS_LOCATION": "Business Location",
+        "BUSINESS_IMAGES": "Vállalkozás képek",
         "BUSINESS_PHONE_NUMBER": "Business Phone Number",
         "BUSINESS_EMAIL_ADDRESS": "Business Email Address"
       },
@@ -26,6 +27,7 @@
         "BUSINESS_NAME": "Enter the name of your business",
         "BUSINESS_DESCRIPTION": "Enter a simple description about your business",
         "BUSINESS_LOCATION": "Enter the location of your business",
+        "BUSINESS_IMAGES": "Töltsd fel ide a képeidet",
         "BUSINESS_PHONE_NUMBER": "Enter the phone number of your business",
         "BUSINESS_EMAIL_ADDRESS": "Enter the email address of your business"
       },
