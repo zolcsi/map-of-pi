@@ -66,8 +66,8 @@
 
         <body>
           <h2><strong>Map of Pi Privacy Policy</strong></h2>
-          <h4>Last Updated: 3/2/2024</h4>
-          <h4>Email Address: info&#64;mapofpi.com</h4>
+          <h4>Last Updated: {{ lastUpdated }}</h4>
+          <h4>Email Address: {{ emailAddress }}</h4>
           <br />
 
           <h2>1. Introduction</h2>
@@ -160,6 +160,13 @@
               within
               the app.</li>
           </ul>
+
+          <h2>8. Contact Us</h2>
+          <ul>
+            <li>If you have any questions or concerns about this Privacy Policy, please contact us &#64; <strong><a
+                  href="mailto:contact@email.com">Map of Pi</a></strong>.</li>
+          </ul>
+
         </body>
       </div>
       <button class="btn-ok" (click)="hidePrivacyPolicyPopup()">OK</button>
