@@ -4,8 +4,8 @@ import { Map, marker, Layer } from 'leaflet';
 import { GeolocationService } from '../../core/service/geolocation.service';
 import { SnackService } from '../../core/service/snack.service';
 import { take } from 'rxjs';
-import { ICoordinate, dummyCoordinates } from '../../core/model/business';
-import { Router, RouterLink, RouterModule } from '@angular/router';
+import { dummyCoordinates } from '../../core/model/business';
+import { Router, RouterModule } from '@angular/router';
 import { ShopService } from '../../core/service/shop.service';
 import axios from 'axios';
 
@@ -75,9 +75,9 @@ export class MapComponent implements OnInit {
   }
 
   async track() {
-    this.snackService.showMessage(`We're taking u to ur position`);
+    this.snackService.showMessage(`Locating your position`);
 
-    console.log('cordinates from shop in track : ', this.shopService.getUserPosition());
+    console.log('Coordinates from shop in track: ', this.shopService.getUserPosition());
 
     const location = await axios.get('https://ipapi.co/json/');
 
@@ -95,9 +95,6 @@ export class MapComponent implements OnInit {
       this.map.addLayer(userMarker);
       this.map.flyTo([coord[0], coord[1]], 15);
     });
-    // this.map.flyTo([-1.9300352, 30.1432832], 15);
-
-    // this.map.flyTo([...coordinates], 15);
   }
 
   addAllCoordinatesToMap(): void {
@@ -147,10 +144,7 @@ export class MapComponent implements OnInit {
   <div class="bg-red-400 w-[100px]  text-center rounded-md text-white py-1 mt-1" id="${shop._id}">Visit Shop</div>
   <div class="bg-blue-400 w-[100px]  text-center rounded-md text-white py-1 mt-1" id="comming">Take Route</div>
 </div>
-</div>
-
-
-`,
+</div>`,
         )
         .addTo(this.map)
         .addEventListener('click', (e) => {
@@ -185,7 +179,7 @@ export class MapComponent implements OnInit {
       this.addAllCoordinatesToMap();
 
       console.log(
-        'All shop after fetching them from DB ',
+        'All shops after fetching them from DB ',
         this.allShops.map((shop) => shop.coordinates),
       );
     } catch (error) {
