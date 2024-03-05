@@ -17,7 +17,6 @@ import axios from 'axios';
   styleUrl: './map.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-
 export class MapComponent implements OnInit {
   layer?: Layer;
   map!: Map;
@@ -26,6 +25,7 @@ export class MapComponent implements OnInit {
   navigator: Router = inject(Router);
   showPopup: boolean = false;
   allShops: any[] = [];
+  userPositions: any[] = [];
 
   coordinates = dummyCoordinates;
   constructor(
@@ -38,6 +38,8 @@ export class MapComponent implements OnInit {
     this.geolocationService.geolocationTriggerEvent$.subscribe(() => {
       this.locateMe();
     });
+
+    this.userPositions = this.shopService.getUserPosition();
   }
 
   onMapReady(map: Map): void {
@@ -53,7 +55,7 @@ export class MapComponent implements OnInit {
       .subscribe({
         next: (coords: GeolocationCoordinates) => {
           this.layer = marker([coords.latitude, coords.longitude], {
-            icon: this.geolocationService.getMarkerIcon(),
+            icon: this.geolocationService.getUserMarkerIcon(),
           })
             .bindPopup('A pretty CSS popup.<br> Easily customizable.')
             .openPopup();
@@ -72,6 +74,32 @@ export class MapComponent implements OnInit {
       });
   }
 
+  async track() {
+    this.snackService.showMessage(`We're taking u to ur position`);
+
+    console.log('cordinates from shop in track : ', this.shopService.getUserPosition());
+
+    const location = await axios.get('https://ipapi.co/json/');
+
+    const { data } = location;
+
+    const coordinates = [[data.latitude, data.longitude]];
+
+    coordinates.map((coord) => {
+      const userMarker = marker([coord[0], coord[1]], {
+        icon: this.geolocationService.getUserMarkerIcon(),
+      })
+        .bindPopup('User location')
+        .openPopup();
+
+      this.map.addLayer(userMarker);
+      this.map.flyTo([coord[0], coord[1]], 15);
+    });
+    // this.map.flyTo([-1.9300352, 30.1432832], 15);
+
+    // this.map.flyTo([...coordinates], 15);
+  }
+
   addAllCoordinatesToMap(): void {
     this.allShops.forEach((shop: any, index: number) => {
       const markerLayer = marker([shop.coordinates[0], shop.coordinates[1]], {
@@ -79,7 +107,7 @@ export class MapComponent implements OnInit {
       })
         .bindPopup(
           `<div class="max-w-sm rounded-md overflow-hidden">
-  <img class="w-full" src="https://newsway.com.ng/wp-content/uploads/2023/10/Screenshot_20231015-144313-1024x555.jpg" alt="Shop Image">
+  <img class="w-full" src="${shop.image}" alt="Shop Image">
   <div class="flex items-center justify-between my-2">
     <div class="font-bold text-md ">${shop.name}</div>
     <img src="assets/shops/star.png" alt="rating"  class="max-w-[50px] w-full"/>
@@ -163,5 +191,7 @@ export class MapComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
+
+    this.track();
   }
 }
