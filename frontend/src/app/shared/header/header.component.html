@@ -32,7 +32,11 @@
   </div>
 </mat-toolbar>
 
-<!-- Popup -->
+<div class="popup-container" *ngIf="showPopup">
+  <app-information></app-information>
+</div>
+
+<!-- <Popup
 <div class="popup-container" *ngIf="showPopup">
   <div class="popup">
     <span class="close" (click)="hidePopup()">&times;</span>
@@ -60,7 +64,7 @@
       <button class="btn-ok" (click)="hidePopup()">OK</button>
     </div>
     <div *ngIf="showPrivacyPolicy" class="privacy-policy-content">
-      <!-- Privacy policy content -->
+      Privacy policy content
       <br />
 
       <body>
@@ -148,4 +152,4 @@
     </div>
     <button class="btn-ok" *ngIf="showPrivacyPolicy" (click)="hidePrivacyPolicyPopup()">OK</button>
   </div>
-</div>
+</div> -->

@@ -7,13 +7,14 @@ import { TranslateModule } from '@ngx-translate/core';
 import { DarkModeService } from '../../core/service/dark-mode.service';
 import { DarkModeTogglerComponent } from '../dark-mode-toggler/dark-mode-toggler.component';
 import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
+import { InformationComponent } from '../../dialogs/information/information.component';
 import { UiStateService } from '../../core/service/ui-state.service';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, MatToolbarModule, MatButtonModule, MatIconModule, DarkModeTogglerComponent, LanguageSwitcherComponent, TranslateModule, RouterLink],
+  imports: [CommonModule, MatToolbarModule, MatButtonModule, MatIconModule, DarkModeTogglerComponent, LanguageSwitcherComponent, InformationComponent, TranslateModule, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

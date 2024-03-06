@@ -1,0 +1,65 @@
+.container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    cursor: crosshair;
+    border-radius: 20px;
+}
+  
+.logo-container {
+    position: relative;
+    flex: 1;
+    border-right: 1px solid #000;
+}
+
+.title {
+    position: relative;
+    bottom: -25px;
+    left: 0;
+    background-color: #1D724B;
+    padding: 5px 10px;
+    border-bottom: 3px solid #FFC153;
+}
+.title h1 {
+    color: #FFC153;
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+.version {
+    position: relative;
+    margin-top: 25px;
+    color: #000;
+    padding: 5px 5px;
+}
+.version h3 {
+    color: #000;
+    text-align: center;
+}
+  
+.policy {
+    margin-top: 10px;
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.social-media-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-left: 1px solid #ccc;
+    padding-left: 10px;
+}
+  
+.icon {
+    margin-bottom: 25px;
+}
+  
+.icon img {
+    width: 40px;
+    height: auto;
+}
