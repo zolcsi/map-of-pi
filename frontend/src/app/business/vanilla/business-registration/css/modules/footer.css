@@ -70,8 +70,8 @@ body {
     }
 
     .footer__icon {
-        width: 24px;
-        height: 24px;
+        width: 22px;
+        height: 22px;
     }
 
     .footer__legal-link {
@@ -79,13 +79,13 @@ body {
     }
     
     .footer__logo {
-        width: 24px;
+        width: 20px;
         height: auto;
     }
 
     .footer__link,
     .footer__icon {
-        padding: 4px; /* Increases the touchable area */
-        margin: 0 5px; /* Adjusts spacing around links */
-}
+        padding: 4px;
+        margin: 0 5px; 
+    }
 }
