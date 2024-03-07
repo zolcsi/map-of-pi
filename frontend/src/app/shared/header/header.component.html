@@ -16,15 +16,15 @@
   </button>
   }
 
-  <div class="image-container" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
-    <img id="logo-img" [src]="imageUrl" alt="Map of Pi" width="48" height="48" [class.hovered-img]="isHovered" />
+  <div class="image-container" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" (click)="displayPopup()">
+    <img id="logo-img" [src]="imageUrl" alt="Map of Pi" width="50" height="50" [class.hovered-img]="isHovered" />
     <div class="text-container">
       <p>{{ 'CORE.APP_NAME' | translate }}</p>
     </div>
   </div>
 
   <div class="group-controls">
-    <button mat-icon-button (click)="displayPopup()">
+    <button mat-icon-button>
       <mat-icon>help</mat-icon>
     </button>
     <app-dark-mode-toggler></app-dark-mode-toggler>
