@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './information.component.scss'
 })
 export class InformationComponent {
-  version: string = 'Alpha Version'
+  version: string = 'Alpha V1.0'
 
   logo: string = "../../assets/images/logo.svg";
   email_icon: string = "../../assets/images/shared/Email_Logo.svg";

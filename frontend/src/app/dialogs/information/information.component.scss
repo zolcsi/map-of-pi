@@ -1,69 +1,79 @@
-.container {
-    display: flex;
-    align-items: center;
-    background-color: #ffffff;
-    border-radius: 15px;
-    width: 325px;
+.popup {
+    width: 300px;
+    max-width: 300px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
     cursor: crosshair;
-}
-  
-.logo-container {
-    position: relative;
-    border-right: 1px solid #000;
-    background-color: #FFC153;
-}
-.logo-container img {
-    width: 150px;
-    height: auto;
-}
 
-.title {
-    position: relative;
-    bottom: -25px;
-    left: 0;
-    background-color: #1D724B;
-    padding: 5px 10px;
-    border-bottom: 3px solid #FFC153;
-}
-.title h1 {
-    color: #FFC153;
-    margin: 0;
-    font-size: 24px;
-    text-align: center;
-}
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+  
+        img {
+            max-width: 150px;
+            max-height: auto;
+        }
+    }
+  
+    .title {
+        font-size: 24px;
+        font-weight: bold;
+        background-color: #1D724B;
+        padding: 5px 10px;
+        border-bottom: 3px solid #FFC153;
 
-.version {
-    position: relative;
-    margin-top: 25px;
-    padding: 5px 5px;
-    background-color: #1D724B;
-}
-.version h3 {
-    color: #ffffff;
-    text-align: center;
-}
+        h1 {
+            color: #FFC153;
+            margin: 0;
+            font-size: 24px;
+            text-align: center; 
+        }
+    }
   
-.policy-container {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
+    .version {
+        font-size: 18px;
+        font-weight: bold;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+  
+    .links {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    
+        .privacy-policy,
+        .terms-of-service {
+            flex: 1;
 
-.social-media-container {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
+            :hover {
+                font-weight: bold;
+            }
+        }
+    }
   
-.icon {
-    margin-bottom: 25px;
-}
-  
-.icon img {
-    width: 30px;
-    height: auto;
+    .social-media {
+        display: flex;
+        justify-content: space-evenly;
+    
+        a {
+            margin: 0 5px;
+    
+            img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+      width: 300px;
+    }
 }
