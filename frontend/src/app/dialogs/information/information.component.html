@@ -1,4 +1,4 @@
-<div class="popup">
+<div class="popup" *ngIf="showPopup" (click)="stopPropagation($event)">
   <div class="logo">
     <img src="{{ logo }}" alt="Map of Pi">
   </div>
@@ -10,10 +10,10 @@
   </div>
   <div class="links">
     <div class="privacy-policy">
-      <a href="{{ privacyPolicyLink  }}">Privacy Policy</a>
+      <a [routerLink]="['/privacy-policy']">Privacy Policy</a>
     </div>
     <div class="terms-of-service">
-      <a href="{{ privacyPolicyLink  }}">Terms of Service</a>
+      <a [routerLink]="['/privacy-policy']">Terms of Service</a>
     </div>
   </div>
   <div class="social-media">

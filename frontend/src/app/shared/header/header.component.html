@@ -16,7 +16,7 @@
   </button>
   }
 
-  <div class="image-container" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" (click)="displayPopup()">
+  <div class="image-container" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" (click)="displayInfoPopup()">
     <img id="logo-img" [src]="imageUrl" alt="Map of Pi" width="50" height="50" [class.hovered-img]="isHovered" />
     <div class="text-container">
       <p>{{ 'CORE.APP_NAME' | translate }}</p>
@@ -32,7 +32,7 @@
   </div>
 </mat-toolbar>
 
-<div class="popup-container" *ngIf="showPopup">
+<div class="popup-container" *ngIf="showPopup" (click)="closeInfoPopup()">
   <app-information></app-information>
 </div>
 

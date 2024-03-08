@@ -55,21 +55,11 @@ export class HeaderComponent {
     this.isHovered = false;
   }
 
-  displayPopup(): void {
+  displayInfoPopup(): void {
     this.showPopup = true;
   }
 
-  hidePopup(): void {
+  closeInfoPopup(): void {
     this.showPopup = false;
-    this.showPrivacyPolicy = false;
-  }
-
-  showPrivacyPolicyPopup() {
-    this.showPopup = true;
-    this.showPrivacyPolicy = true;
-  }
-
-  hidePrivacyPolicyPopup() {
-    this.showPrivacyPolicy = false;
   }
 }
