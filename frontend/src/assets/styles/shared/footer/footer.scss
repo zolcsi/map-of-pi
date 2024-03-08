@@ -14,13 +14,9 @@ body {
 }
 
 .footer { 
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%);
     width: 100%;
     bottom: 0;
-    padding: 20px;
+    padding: 10px;
     background: linear-gradient(to right, var(--color-background-color), #eaeaea);
     text-align: center;
     font-family: var(--font-family-main);
