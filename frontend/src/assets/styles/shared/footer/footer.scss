@@ -14,6 +14,7 @@ body {
 }
 
 .footer { 
+    position: absolute;
     width: 100%;
     bottom: 0;
     padding: 10px;
@@ -43,8 +44,8 @@ body {
 }
 
 .footer__icon {
-    width: 16px;
-    height: 16px;
+    width: 25px;
+    height: 25px;
 }
 
 .footer__legal-link {
@@ -66,8 +67,8 @@ body {
 
 @media (min-width: 567px) {
     .footer__icon {
-        width: 22px;
-        height: 22px;
+        width: 25px;
+        height: 25px;
     }
 
     .footer__legal-link {
