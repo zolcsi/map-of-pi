@@ -2,16 +2,18 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { HeaderComponent } from '../../shared/header/header.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 @Component({
   selector: 'app-information',
   standalone: true,
-  imports: [CommonModule, RouterLink, HeaderComponent],
+  imports: [CommonModule, RouterLink, HeaderComponent, PrivacyPolicyComponent],
   templateUrl: './information.component.html',
   styleUrl: './information.component.scss'
 })
 export class InformationComponent {
   showPopup: boolean = true;
+  showPrivacyPolicyPopup: boolean = false;
 
   version: string = 'Alpha V1.0'
 
@@ -29,5 +31,14 @@ export class InformationComponent {
   stopPropagation(event: MouseEvent): void {
     // prevent the click event from reaching the parent container.
     event.stopPropagation();
+  }
+
+  displayPrivacyPolicyPopup(): void {   
+    console.log('displayPrivacyPolicy() called');
+    //this.showPopup = false; // Set showPopup to false when displaying privacy policy popup
+    this.showPrivacyPolicyPopup = true;
+    this.showPopup = false;
+    console.log('showPrivacyPolicyPopup:', this.showPrivacyPolicyPopup);
+    console.log('showPopup:', this.showPopup);
   }
 }

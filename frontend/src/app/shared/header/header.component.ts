@@ -8,13 +8,14 @@ import { DarkModeService } from '../../core/service/dark-mode.service';
 import { DarkModeTogglerComponent } from '../dark-mode-toggler/dark-mode-toggler.component';
 import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
 import { InformationComponent } from '../../dialogs/information/information.component';
+import { PrivacyPolicyComponent } from '../../dialogs/information/privacy-policy/privacy-policy.component';
 import { UiStateService } from '../../core/service/ui-state.service';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, MatToolbarModule, MatButtonModule, MatIconModule, DarkModeTogglerComponent, LanguageSwitcherComponent, InformationComponent, TranslateModule, RouterLink],
+  imports: [CommonModule, MatToolbarModule, MatButtonModule, MatIconModule, DarkModeTogglerComponent, LanguageSwitcherComponent, InformationComponent, PrivacyPolicyComponent, TranslateModule, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -24,11 +25,9 @@ export class HeaderComponent {
   imageUrl: string = 'assets/images/logo.svg';
   hoveredImageUrl: string = 'assets/images/logo-header.svg';
   isHovered: boolean = false;
+  
   showPopup: boolean = false;
-  showPrivacyPolicy: boolean = false;
-
-  lastUpdated!: string;
-  emailAddress!: string;
+  showPrivacyPolicyPopup: boolean = false;
 
   @ViewChild(DarkModeTogglerComponent) darkModeToggler!: DarkModeTogglerComponent;
   showBackButton: Signal<boolean>;
@@ -39,8 +38,6 @@ export class HeaderComponent {
     public readonly darkModeService: DarkModeService,
   ) {
     this.showBackButton = this.uiStateService.showBackButton;
-    this.lastUpdated = "3/1/2024";
-    this.emailAddress = "info@mapofpi.com";
   }
 
   navigateBack(): void {
@@ -60,6 +57,17 @@ export class HeaderComponent {
   }
 
   closeInfoPopup(): void {
+    console.log('closeInfoPopup method called');
     this.showPopup = false;
+    this.showPrivacyPolicyPopup = false;
   }
+
+  // displayPrivacyPolicyPopup(): void {
+  //   this.showPrivacyPolicyPopup = true;
+  //   this.showPopup = true;
+  // }
+
+  // closePrivacyPolicyPopup(): void {
+  //   this.showPrivacyPolicyPopup = false;
+  // }
 }

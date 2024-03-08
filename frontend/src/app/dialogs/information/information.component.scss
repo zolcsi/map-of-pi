@@ -9,6 +9,7 @@
     padding-top: 20px;
     padding-bottom: 20px;
     z-index: 700;
+    overflow-y: auto;
     cursor: crosshair;
 
     .logo {
@@ -60,6 +61,7 @@
 
             :hover {
                 font-weight: bold;
+                color: #1D724B;
             }
         }
     }
@@ -82,4 +84,13 @@
     @media (max-width: 768px) {
       width: 300px;
     }
+}
+
+.privacy-policy-popup {
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
+    text-align: left;
+    max-height: 400px;
+    overflow-y: auto;
+    word-wrap: break-word;
 }
