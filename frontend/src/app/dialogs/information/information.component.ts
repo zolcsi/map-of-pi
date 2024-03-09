@@ -1,19 +1,17 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { HeaderComponent } from '../../shared/header/header.component';
 
 @Component({
   selector: 'app-information',
   standalone: true,
-  imports: [CommonModule, RouterLink, HeaderComponent],
+  imports: [CommonModule, RouterLink],
   templateUrl: './information.component.html',
   styleUrl: './information.component.scss'
 })
 
 export class InformationComponent {
   showPopup: boolean = true;
-  showPrivacyPolicyPopup: boolean = false;
 
   version: string = 'Alpha V1.0';
   logo: string = "../../assets/images/logo.svg";
