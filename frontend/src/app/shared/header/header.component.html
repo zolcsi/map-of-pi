@@ -16,7 +16,7 @@
   </button>
   }
 
-  <div class="image-container" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" (click)="displayInfoPopup()">
+  <div class="image-container" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
     <img id="logo-img" [src]="imageUrl" alt="Map of Pi" width="50" height="50" [class.hovered-img]="isHovered" />
     <div class="text-container">
       <p>{{ 'CORE.APP_NAME' | translate }}</p>
@@ -24,31 +24,14 @@
   </div>
 
   <div class="group-controls">
-    <button mat-icon-button>
-      <mat-icon>help</mat-icon>
+    <button mat-icon-button (click)="displayInfoPopup()">
+      <mat-icon >update</mat-icon>
     </button>
     <app-dark-mode-toggler></app-dark-mode-toggler>
     <app-language-switcher></app-language-switcher>
   </div>
 </mat-toolbar>
 
-<!-- <div class="popup-container" *ngIf="showPopup || showPrivacyPolicyPopup" (click)="closeInfoPopup()">
-  <div *ngIf="showPopup && !showPrivacyPolicyPopup">
-    <app-information></app-information>
-  </div>
-  <div *ngIf="showPrivacyPolicyPopup && !showPopup">
-    <app-privacy-policy></app-privacy-policy>
-  </div>
-</div> -->
-
-<div class="popup-container" *ngIf="showPopup || showPrivacyPolicyPopup" (click)="closeInfoPopup()">
+<div class="popup-container" *ngIf="showPopup" (click)="closeInfoPopup()">
   <app-information></app-information>
 </div>
-
-<!-- <div class="popup-container" *ngIf="showPopup || showPrivacyPolicyPopup" (click)="closeInfoPopup()">  
-  @if (showPopup && !showPrivacyPolicyPopup) {
-    <app-information></app-information>
-  } @else if (showPrivacyPolicyPopup ) {
-    <app-privacy-policy></app-privacy-policy>
-  }
-</div> -->

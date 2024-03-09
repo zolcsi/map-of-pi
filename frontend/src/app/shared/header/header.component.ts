@@ -8,14 +8,13 @@ import { DarkModeService } from '../../core/service/dark-mode.service';
 import { DarkModeTogglerComponent } from '../dark-mode-toggler/dark-mode-toggler.component';
 import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
 import { InformationComponent } from '../../dialogs/information/information.component';
-import { PrivacyPolicyComponent } from '../../dialogs/information/privacy-policy/privacy-policy.component';
 import { UiStateService } from '../../core/service/ui-state.service';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, MatToolbarModule, MatButtonModule, MatIconModule, DarkModeTogglerComponent, LanguageSwitcherComponent, InformationComponent, PrivacyPolicyComponent, TranslateModule, RouterLink],
+  imports: [CommonModule, MatToolbarModule, MatButtonModule, MatIconModule, DarkModeTogglerComponent, LanguageSwitcherComponent, InformationComponent, TranslateModule, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -57,17 +56,6 @@ export class HeaderComponent {
   }
 
   closeInfoPopup(): void {
-    console.log('closeInfoPopup method called');
     this.showPopup = false;
-    this.showPrivacyPolicyPopup = false;
   }
-
-  // displayPrivacyPolicyPopup(): void {
-  //   this.showPrivacyPolicyPopup = true;
-  //   this.showPopup = true;
-  // }
-
-  // closePrivacyPolicyPopup(): void {
-  //   this.showPrivacyPolicyPopup = false;
-  // }
 }
