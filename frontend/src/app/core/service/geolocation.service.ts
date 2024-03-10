@@ -77,7 +77,7 @@ export class GeolocationService {
   getMiddleIcon(): Icon {
     return icon({
       ...Icon.Default.prototype.options,
-      iconUrl: 'assets/yellow.png',
+      iconUrl: 'assets/images/map/yellow.png',
       iconRetinaUrl: 'assets/marker-icon.png',
       shadowUrl: 'assets/marker-shadow.png',
       iconSize: [41, 41],
