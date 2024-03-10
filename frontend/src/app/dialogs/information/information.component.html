@@ -11,10 +11,14 @@
   <div class="update-notes">
     <h3>Latest Updates</h3>
     <div class="items">
-      <h4>{{ date }}</h4>
-      <ul>
-        <li *ngFor="let item of updateItems">{{ item }}</li>
-      </ul>
+      <div *ngFor="let item of updateItems">
+        <div class="update-item">
+          <h4>{{ item.date }}</h4>
+          <ul>
+            <li *ngFor="let update of item.updates">{{ update }}</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
   <div class="defects-contact"><span>Please report defects to <a href="mailto:info@mapofpi.com" target="_blank">{{ email }}</a></span></div>
