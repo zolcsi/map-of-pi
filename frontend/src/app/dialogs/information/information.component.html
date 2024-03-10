@@ -9,7 +9,7 @@
     <h3>{{ version }}</h3>
   </div>
   <div class="update-notes">
-    <h3>Latest Updates</h3>
+    <h3>{{ 'INFORMATION_DIALOG.LATEST_UPDATES' | translate }}</h3>
     <div class="items">
       <div *ngFor="let item of updateItems">
         <div class="update-item">
@@ -21,5 +21,5 @@
       </div>
     </div>
   </div>
-  <div class="defects-contact"><span>Please report defects to <a href="mailto:info@mapofpi.com" target="_blank">{{ email }}</a></span></div>
+  <div class="defects-contact"><span>{{ 'INFORMATION_DIALOG.REPORTING_MESSAGE' | translate }} <a href="mailto:info@mapofpi.com" target="_blank">{{ email }}</a></span></div>
 </div>

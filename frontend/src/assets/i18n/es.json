@@ -6,6 +6,14 @@
     "ADD_MY_BUSINESS": "Agregar mi negocio",
     "SEARCH_BAR_PLACEHOLDER": "Buscar negocio..."
   },
+  "FOOTER": {
+    "PRIVACY_POLICY": "Política de privacidad",
+    "TERMS_OF_SERVICE": "Condiciones de servicio"
+  },
+  "INFORMATION_DIALOG": {
+    "LATEST_UPDATES": "Últimas actualizaciones",
+    "REPORTING_MESSAGE": "Por favor, reporte defectos a"
+  },
   "BUSINESS": {
     "REGISTRATION": {
       "LABELS": {

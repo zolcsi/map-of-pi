@@ -6,6 +6,14 @@
     "ADD_MY_BUSINESS": "내 비즈니스 추가",
     "SEARCH_BAR_PLACEHOLDER": "비즈니스 검색..."
   },
+  "FOOTER": {
+    "PRIVACY_POLICY": "개인정보 처리방침",
+    "TERMS_OF_SERVICE": "서비스 이용 약관"
+  },
+  "INFORMATION_DIALOG": {
+    "LATEST_UPDATES": "최신 업데이트",
+    "REPORTING_MESSAGE": "결함을 보고해주세요"
+  }, 
   "BUSINESS": {
     "REGISTRATION": {
       "LABELS": {
