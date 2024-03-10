@@ -17,6 +17,12 @@ export class InformationComponent {
 
   updateItems: { date: string, updates: string[] }[] = [
     {
+      date: '3/10/2024',
+      updates: [
+        'Added Terms of Service section.'
+      ]
+    },
+    {
       date: '3/9/2024',
       updates: [
         'Added GPS navigation feature.',
@@ -26,8 +32,8 @@ export class InformationComponent {
     {
       date: '3/8/2024',
       updates: [
-        'Added footer.',
-        'Added information popup for latest updates.'
+        'Added Footer.',
+        'Added Information Popup to share latest updates.'
       ]
     }
   ];
