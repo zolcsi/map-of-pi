@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-terms-of-service',
   standalone: true,
-  imports: [TranslateModule, RouterModule],
+  imports: [TranslateModule],
   templateUrl: './terms-of-service.component.html',
   styleUrl: './terms-of-service.component.scss'
 })
