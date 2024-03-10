@@ -19,7 +19,8 @@ export class InformationComponent {
     {
       date: '3/9/2024',
       updates: [
-        'Added GPS navigation feature.'
+        'Added GPS navigation feature.',
+        'Added Privacy Policy section.'
       ]
     },
     {

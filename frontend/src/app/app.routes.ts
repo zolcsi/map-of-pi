@@ -17,6 +17,11 @@ export const routes: Routes = [
     loadChildren: () => import('./shop/shop.routes').then((m) => m.SHOP_ROUTES),
   },
   {
+    path: 'privacy-policy',
+    title: 'Privacy Policy',
+    loadComponent: () => import('./shared/privacy-policy/privacy-policy.component').then((m) => m.PrivacyPolicyComponent),
+  },
+  {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full',
