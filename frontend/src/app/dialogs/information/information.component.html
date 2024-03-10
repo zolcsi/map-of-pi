@@ -1,0 +1,25 @@
+<div class="popup" *ngIf="showPopup" (click)="stopPropagation($event)">
+  <div class="logo">
+    <img src="{{ logo }}" alt="Map of Pi">
+  </div>
+  <div class="title">
+    <h1>Map of Pi</h1>
+  </div>
+  <div class="version">
+    <h3>{{ version }}</h3>
+  </div>
+  <div class="update-notes">
+    <h3>{{ 'INFORMATION_DIALOG.LATEST_UPDATES' | translate }}</h3>
+    <div class="items">
+      <div *ngFor="let item of updateItems">
+        <div class="update-item">
+          <h4>{{ item.date }}</h4>
+          <ul>
+            <li *ngFor="let update of item.updates">{{ update }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="defects-contact"><span>{{ 'INFORMATION_DIALOG.REPORTING_MESSAGE' | translate }} <a href="mailto:info@mapofpi.com" target="_blank">{{ email }}</a></span></div>
+</div>
