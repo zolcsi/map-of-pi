@@ -11,6 +11,7 @@ import { GeolocationService } from './geolocation.service';
 })
 export class PaymentsService {
   baseUrl: string = 'https://api-mapofpi.vercel.app';
+  // baseUrl: string = 'http://localhost:8001';
   currentUser: any;
 
   constructor(
@@ -26,15 +27,6 @@ export class PaymentsService {
     const authResult = await Pi.authenticate(['username', 'payments', 'wallet_address'], this.onIncompletePaymentFound);
 
     try {
-      const response = await axios.post(`${this.baseUrl}/user/signin`, {
-        authResult,
-      });
-      const { currentUser, token } = response.data;
-      this.currentUserService.setCurrentUser(currentUser);
-      localStorage.setItem('accessToken', token);
-
-      this.snackService.showMessage(`Welcome ${currentUser.username}, 😊 we were expecting you!`);
-
       const location = await axios.get('https://ipapi.co/json/');
 
       const { data } = location;
@@ -42,7 +34,26 @@ export class PaymentsService {
       const coordinates = [data.latitude, data.longitude];
 
       this.shopServices.setUserPosition(coordinates);
+      this.shopServices.setCountry(data.country_name);
+      this.shopServices.setCity(data.city);
+      this.shopServices.setRegion(data.region);
       this.geolocationService.setInitialCoordinates(coordinates);
+
+      const userData = {
+        country: data.country_name,
+        city: data.city,
+        region: data.region,
+      };
+
+      const response = await axios.post(`${this.baseUrl}/user/signin`, {
+        authResult,
+        userData,
+      });
+      const { currentUser, token } = response.data;
+      this.currentUserService.setCurrentUser(currentUser);
+      localStorage.setItem('accessToken', token);
+
+      this.snackService.showMessage(`Welcome ${currentUser.username}, 😊 we were expecting you!`);
 
       return { currentUser, token };
     } catch (error) {
@@ -130,7 +141,7 @@ export class PaymentsService {
       amount,
       memo,
       metadata: paymentMetadata,
-      uid: this.currentUser.uid,
+      uid: 'tyes',
     };
 
     const callbacks = {
