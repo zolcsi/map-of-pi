@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { ShopService } from '../../core/service/shop.service';
 import { CurrentUserService } from '../../core/service/current-user.service';
 import { PaymentsService } from '../../core/service/payments.service';
@@ -9,7 +9,7 @@ import { PaymentsService } from '../../core/service/payments.service';
 @Component({
   selector: 'app-order-menu',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './order-menu.component.html',
   styleUrl: './order-menu.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -119,7 +119,7 @@ export class OrderMenuComponent implements OnInit {
   switchToProductsMenu() {}
 
   consoleShop(): void {
-    console.log('her is ther shop', this.shop);
+    console.log('Here is the shop', this.shop);
   }
 
   ngOnInit(): void {
@@ -128,7 +128,7 @@ export class OrderMenuComponent implements OnInit {
       product.showDeleteButton = false;
     });
 
-    console.log('here is the shop', this.shop);
+    console.log('Here is the shop', this.shop);
 
     this.shopServices
       .getShop(this.shopId)
@@ -136,10 +136,10 @@ export class OrderMenuComponent implements OnInit {
         this.isShop = true;
         this.shop = response.data;
         this.currentUser = this.currentUserService.getCurrentUser();
-        console.log(' here is the real shop  and prods: ', this.shop.products);
+        console.log('Here is the real shop and associated products: ', this.shop.products);
       })
       .catch((err) => {
-        console.log(' error while setting shop : ', err);
+        console.log('Error while setting up shop : ', err);
       });
   }
 

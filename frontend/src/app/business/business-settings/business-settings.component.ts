@@ -79,7 +79,7 @@ export class BusinessSettingsComponent {
           // this.router.navigate(['manage-business', response.data._id]);
           this.snackService.showMessage(` redirecting to ${response.data.name} shop`);
         } else {
-          this.snackService.showError(`Email address is already registered to a shop. Please try a different email address.🙏`);
+          this.snackService.showError(`Email address is already registered to a business. Please try a different email address.🙏`);
           console.log(response);
         }
       });

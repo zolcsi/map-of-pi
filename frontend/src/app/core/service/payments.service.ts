@@ -53,7 +53,7 @@ export class PaymentsService {
       this.currentUserService.setCurrentUser(currentUser);
       localStorage.setItem('accessToken', token);
 
-      this.snackService.showMessage(`Welcome ${currentUser.username}, 😊 we were expecting you!`);
+      this.snackService.showMessage(`Welcome ${currentUser.username}! We have been expecting you. 😊`);
 
       return { currentUser, token };
     } catch (error) {
@@ -153,7 +153,7 @@ export class PaymentsService {
 
     try {
       const payment = Pi.createPayment(paymentData, callbacks);
-      console.log('this is payment created : ', payment);
+      console.log('This is payment created : ', payment);
 
       return payment;
     } catch (error) {

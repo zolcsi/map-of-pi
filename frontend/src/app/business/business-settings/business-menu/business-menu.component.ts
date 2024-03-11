@@ -1,14 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, AfterViewInit, ViewChild, ElementRef, ChangeDetectionStrategy, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { ShopService } from '../../../core/service/shop.service';
 import { SnackService } from '../../../core/service/snack.service';
 
 @Component({
   selector: 'app-business-menu',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './business-menu.component.html',
   styleUrl: './business-menu.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -311,12 +311,12 @@ export class BusinessMenuComponent implements AfterViewInit, OnInit {
       this.snackService.showMessage('Something went wrong 😟😥');
     }
 
-    console.log('from adding  product to shop', response);
+    console.log('From adding product to shop', response);
   }
 
   deleteProductFromShop(id: string) {
     const response: any = this.shopServices.deleteProductFromShop(id);
-    console.log('from delete :', response.data);
+    console.log('From delete :', response.data);
 
     this.loadShopProduct();
 
@@ -332,7 +332,7 @@ export class BusinessMenuComponent implements AfterViewInit, OnInit {
 
       res.data.products.map((product: any) => this.addItemToDisplayArea(product));
 
-      console.log('populated product from shop', res.data);
+      console.log('Populated product from shop', res.data);
     });
   }
 
@@ -341,7 +341,7 @@ export class BusinessMenuComponent implements AfterViewInit, OnInit {
       this.shop = res.data;
       this.length = res.data.products.length;
 
-      console.log('populated product from shop', res.data.products);
+      console.log('Populated product from shop', res.data.products);
       this.loadShopProduct();
     });
   }
