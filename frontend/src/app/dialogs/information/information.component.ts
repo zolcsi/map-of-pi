@@ -22,7 +22,8 @@ export class InformationComponent {
       updates: [
         'Added Translation for Business Marker Dialog.',
         'Added Translation for Shopping Order Menu.',
-        'Updated Social Media links.'
+        'Updated Social Media links.',
+        'Fixed horizontal scrolling issue.'
       ]
     },
     {
