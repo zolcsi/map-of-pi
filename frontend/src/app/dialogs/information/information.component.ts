@@ -20,6 +20,7 @@ export class InformationComponent {
     {
       date: '3/13/2024',
       updates: [
+        'Temporary removal of Dark Mode feature.',
         'Added Translation for Business Configuration Menu.',
         'Added Translation for Add Products Menu.'
       ]
