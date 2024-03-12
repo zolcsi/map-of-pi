@@ -96,6 +96,14 @@
       }
     }
   },
+  "SHOPPING": {
+    "ORDER_SCREEN": {
+      "MENU": "Menú",
+      "HIGHLIGHT_MESSAGE": "Puedes ordenar en línea y pagar en persona",
+      "BUY_NOW_MESSAGE": "Comprar Ahora",
+      "NO_PRODUCTS_MESSAGE": "Este negocio no tiene productos."
+    }
+  },
   "PRIVACY_POLICY": {
     "TITLE": "Política de privacidad",
     "LAST_UPDATED": "Última actualización",

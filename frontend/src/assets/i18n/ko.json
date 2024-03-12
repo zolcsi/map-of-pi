@@ -96,6 +96,14 @@
       }
     }
   },
+  "SHOPPING": {
+    "ORDER_SCREEN": {
+      "MENU": "메뉴",
+      "HIGHLIGHT_MESSAGE": "온라인으로 주문하고 직접 결제할 수 있습니다",
+      "BUY_NOW_MESSAGE": "지금 구매하기",
+      "NO_PRODUCTS_MESSAGE": "이 비즈니스에는 제품이 없습니다."
+    }
+  },
   "PRIVACY_POLICY": {
     "TITLE": "개인정보 처리방침",
     "LAST_UPDATED": "최근 업데이트",
