@@ -18,15 +18,16 @@ export class InformationComponent {
 
   updateItems: { date: string, updates: string[] }[] = [
     {
-      date: '3/13/2024',
+      date: '3/12/2024',
       updates: [
         'Temporary removal of Dark Mode feature.',
         'Added Translation for Business Configuration Menu.',
-        'Added Translation for Add Products Menu.'
+        'Added Translation for Add Products Menu.',
+        'Added Business Search functionality.'
       ]
     },
     {
-      date: '3/12/2024',
+      date: '3/11/2024',
       updates: [
         'Added Translation for Business Marker Dialog.',
         'Added Translation for Shopping Order Menu.',
