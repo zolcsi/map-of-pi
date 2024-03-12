@@ -18,6 +18,14 @@ export class InformationComponent {
 
   updateItems: { date: string, updates: string[] }[] = [
     {
+      date: '3/12/2024',
+      updates: [
+        'Added Translation for Business Marker Dialog.',
+        'Added Translation for Shopping Order Menu.',
+        'Updated Social Media links.'
+      ]
+    },
+    {
       date: '3/10/2024',
       updates: [
         'Added Terms of Service section.'
