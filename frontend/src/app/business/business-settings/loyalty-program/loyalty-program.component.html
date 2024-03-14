@@ -1,1 +1,31 @@
-<p>loyalty-program works!</p>
+<div class="loyalty-card-container">
+  <header>
+    <a href="#" class="back-button">&#x3c;</a> <!-- Replace with Angular routerLink -->
+    <h2>Loyalty card</h2>
+  </header>
+
+  <form [formGroup]="loyaltyForm" (ngSubmit)="onSave()">
+    <div class="form-control">
+      <label for="toggle-loyalty">Loyalty card is on</label>
+      <input type="checkbox" formControlName="isActive" id="toggle-loyalty" />
+    </div>
+
+    <div class="form-control">
+      <label for="stamps-needed">Stamps needed for free item</label>
+      <input type="number" formControlName="stampsNeeded" id="stamps-needed" />
+    </div>
+
+    <div class="form-control">
+      <label for="free-item-name">Name of free item</label>
+      <input type="text" formControlName="freeItemName" id="free-item-name" />
+    </div>
+
+    <div class="form-control">
+      <label for="number-of-items">Number of free items</label>
+      <input type="number" formControlName="numberOfFreeItems" id="number-of-items" />
+    </div>
+
+    <button type="submit" class="save-button">Save</button>
+  </form>
+</div>
+
