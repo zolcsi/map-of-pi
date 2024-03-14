@@ -61,8 +61,10 @@ export class GeolocationService {
         }),
       ],
       zoom: this.initZoomLevel,
+      zoomControl: false,
       center: [37.5665, 126.978],
       maxBounds: bounds,
+      attributionControl: false,
     };
   }
 
