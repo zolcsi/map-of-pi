@@ -62,7 +62,13 @@ export class ActionRowComponent implements OnInit {
       return;
     } else {
       setTimeout(() => {
-        this.openDialog();
+        // Load current user asynchronously and open dialog once loaded
+        this.currentUserService.getCurrentUser().subscribe((user: any) => {
+          if (user) {
+            this.currentUser = user;
+            this.openDialog();
+          }
+        });
       }, 6000);
     }
   }
