@@ -40,6 +40,8 @@ export class BusinessSettingsComponent {
     private shopServices: ShopService,
     private translateService: TranslateService
   ) {
+    // initialize business types.
+    this.translateBusinessTypes();
     this.translateService.onLangChange.subscribe(() => {
       this.translateBusinessTypes();
     });
