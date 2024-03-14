@@ -34,7 +34,7 @@ body {
 .dark-mode {
   @include mat.all-component-colors($app-dark-theme);
 
-  // business registration screen
+  // account for non-mat elements.
   .business-registration__input,
   .business-registration__select {
     background-color: #666060;

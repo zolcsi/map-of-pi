@@ -103,7 +103,6 @@ $dark-mode-warn-map: (
 $dark-mode-primary-palette: mat.define-palette($dark-mode-primary-map, 400, 900);
 $dark-mode-accent-palette: mat.define-palette($dark-mode-accent-map);
 $dark-mode-warn-palette: mat.define-palette($dark-mode-warn-map);
-// $dark-mode-background-color: mat.define-palette()
 
 // create 'theme' from palettes
 $app-dark-theme: mat.define-dark-theme((
