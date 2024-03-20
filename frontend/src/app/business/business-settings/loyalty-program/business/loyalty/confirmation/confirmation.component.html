@@ -16,9 +16,9 @@
     </span>
   </div>
     
-    <div class="confirmation-stamps__action-buttons">
-      <button class="confirmation-stamps__button confirmation-stamps__button--edit">Edit</button>
-      <button class="confirmation-stamps__button confirmation-stamps__button--confirm">Confirm</button>
+    <div *ngIf="isActive" class="confirmation-stamps__action-buttons">
+      <button (click)="onEdit()" class="confirmation-stamps__button confirmation-stamps__button--edit">Edit</button>
+      <button (click)="onConfirm()" class="confirmation-stamps__button confirmation-stamps__button--confirm">Confirm</button>
     </div>
   </div>
   
