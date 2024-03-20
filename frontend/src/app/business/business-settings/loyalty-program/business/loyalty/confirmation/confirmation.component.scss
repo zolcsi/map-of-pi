@@ -1,0 +1,201 @@
+/* Loyalty Card Styling */
+.confirmation-stamps {
+    width: 100%;
+    padding: 3rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    max-width: 300px;
+    background-color: #F1F7FF;
+    margin-top: 4rem;
+    border-radius: 10px;
+    letter-spacing: 1.5px;
+    line-height: 1.5;
+    font-family: var( --font-family-main);
+}
+
+/* Header Styling */
+.confirmation-stamps__header {
+    position: relative;
+    width: 100%;
+    margin-bottom: 1rem;
+    letter-spacing: 1.5px;
+}
+
+.confirmation-stamps__header-back-button {
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+.confirmation-stamps__header-title {
+    flex-grow: 1;
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: 1.5px;
+}
+
+/* Toggle Section */
+.confirmation-stamps__toggle-container {
+    display: flex;
+    align-items: center;
+}
+
+.confirmation-stamps__toggle-checkbox {
+    opacity: 0;
+    position: absolute;
+    z-index: 3;
+    width: 60px;
+    height: 34px;
+    margin: 0;
+}
+  
+.confirmation-stamps__toggle-label {
+    position: relative;
+    display: block;
+    width: 46px;
+    height: 22px;
+    background-color: #ccc;
+    border-radius: 34px;
+    cursor: pointer;
+    transition: background-color .4s;
+}
+
+.confirmation-stamps__toggle-label::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    width: 24px;
+    height: 24px;
+    background-color: #9e9e9e;
+    border-radius: 50%;
+    transition: transform .4s;
+}
+
+.confirmation-stamps__toggle-text {
+    margin-left: 1rem;
+}
+
+.confirmation-stamps__toggle-checkbox:checked + .confirmation-stamps__toggle-label {
+    background-color: #FFFFFF;
+    border: 1px solid #1d724b;
+}
+
+.confirmation-stamps__toggle-checkbox:checked + .confirmation-stamps__toggle-label::before {
+    transform: translateX(26px);
+    background-color: #ffffff;
+    border: 7px solid #1d724b;
+}
+
+.confirmation-stamps__toggle-checkbox + .confirmation-stamps__toggle-label {
+    border: 1px solid #9e9e9e;
+}
+
+/* Stamp Section */
+.confirmation-stamps__container, .confirmation-stamps__stamp-badge {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.confirmation-stamps__info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.confirmation-stamps__stamp-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #1d724b;
+    color: #FAD09E;
+    padding: 2.5rem;
+    border-radius: 10px;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.confirmation-stamps__text {
+    color: #ffffff;
+    letter-spacing: 2.5px;
+}
+
+.stamp-badge__count {
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+  
+.confirmation-stamps__item-name {
+    font-size: 1.5em;
+    letter-spacing: 1.5px;
+}
+
+/* Action buttons */  
+.confirmation-stamps__action-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.confirmation-stamps__button--confirm {
+    width: 100%;
+    height: auto;
+    margin-top: 1.2rem;
+    padding: 0.7rem;
+    background-color: #1d724b;
+    color: #ffffff;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: 1.5px;
+}
+
+.confirmation-stamps__button--edit {
+    width: 100%;
+    height: auto;
+    margin-top: 1.2rem;
+    padding: 0.7rem;
+    border: 1px solid var(--color-text-color) ;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: 1.5px;
+}
+
+.confirmation-stamps__button--confirm:hover {
+    background-color: #28a745;
+}
+
+.confirmation-stamps__button--confirm:active {
+    background-color: #0e411e;
+    transform: translateY(2px);
+}
+
+.confirmation-stamps__button--edit:hover {
+    background-color: #fafafa;
+}
+
+.confirmation-stamps__button--edit:active {
+    background-color: #ebeaea;
+    transform: translateY(2px);
+}
+
+.visually-hidden {
+    display: none;
+}
+  
