@@ -1,31 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
+import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-confirmation',
   standalone: true,
   templateUrl: './confirmation.component.html',
-  styleUrls: ['./confirmation.component.scss']
+  styleUrls: ['./confirmation.component.scss'],
+  imports: [CommonModule, RouterLink, ReactiveFormsModule],
 })
-export class ConfirmationComponent implements OnInit {
+export class ConfirmationComponent {
+  isActive = false;
   stampsNeeded?: number;
   itemName?: string;
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router // Inject the Router service
+    private router: Router 
   ) {}
 
-  ngOnInit(): void {
-    // Retrieve the current navigation from the Router service
-    const navigation = this.router.getCurrentNavigation();
-    const state = navigation?.extras.state as { stampsNeeded: number; itemName: string };
 
-    if (state) {
-      this.stampsNeeded = state.stampsNeeded;
-      this.itemName = state.itemName;
-    }
+  toggleLoyaltyCard(): void {
+    this.isActive = !this.isActive; // This toggles the state of isActive
   }
 
   onEdit() {
@@ -36,4 +34,3 @@ export class ConfirmationComponent implements OnInit {
     // Implement the confirm logic or navigation
   }
 }
-
