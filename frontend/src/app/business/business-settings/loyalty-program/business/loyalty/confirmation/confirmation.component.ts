@@ -27,6 +27,7 @@ export class ConfirmationComponent {
 
   onEdit() {
     // Implement the edit logic or navigation
+    this.router.navigate(['/business/loyalty-program']);
   }
 
   onConfirm() {
