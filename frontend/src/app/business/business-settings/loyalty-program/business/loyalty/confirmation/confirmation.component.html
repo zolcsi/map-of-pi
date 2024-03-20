@@ -7,29 +7,31 @@
   </header>
 
   <!-- Toggle Display Section -->
-  <div class="confirmation-stamps__toggle-container">
-    <legend class="visually-hidden">Loyalty Card Activation</legend>
-    <input type="checkbox" id="toggle-loyalty" class="confirmation-stamps__toggle-checkbox" [checked]="isActive" (change)="toggleLoyaltyCard()"/>
-    <label for="toggle-loyalty" class="confirmation-stamps__toggle-label"></label>
-    <span id="toggle-description" class="confirmation-stamps__toggle-text">
-      Loyalty card is {{ isActive ? 'on' : 'off' }}
-    </span>
-  </div>
+  <main class="confirmation-stamps__main">
+    <div class="confirmation-stamps__toggle-container">
+      <legend class="visually-hidden">Loyalty Card Activation</legend>
+      <input type="checkbox" id="toggle-loyalty" class="confirmation-stamps__toggle-checkbox" [checked]="isActive" (change)="toggleLoyaltyCard()"/>
+      <label for="toggle-loyalty" class="confirmation-stamps__toggle-label"></label>
+      <span id="toggle-description" class="confirmation-stamps__toggle-text">
+        Loyalty card is {{ isActive ? 'on' : 'off' }}
+      </span>
+    </div>
 
-  <!-- Conditional Display Section Based on Toggle -->
-  <div *ngIf="isActive" class="confirmation-stamps__container">
-    <div class="confirmation-stamps__info">
-      <div class="stamp-badge confirmation-stamps__stamp-badge">
-        <span class="stamp-badge__count">{{ stampsNeeded }}<span class="stamp-badge confirmation-stamps__count">7</span></span> <span class="confirmation-stamps__text" >stamps</span>
+    <!-- Conditional Display Section Based on Toggle -->
+    <section *ngIf="isActive" class="confirmation-stamps__container">
+      <div class="confirmation-stamps__info">
+        <div class="stamp-badge confirmation-stamps__stamp-badge">
+          <span class="stamp-badge__count">{{ stampsNeeded }}<span class="stamp-badge confirmation-stamps__count">7</span></span> <span class="confirmation-stamps__text" >stamps</span>
+        </div>
+        needed for
+          <span class="confirmation-stamps__item-name">{{ itemName }}</span>
       </div>
-      needed for
-        <span class="confirmation-stamps__item-name">{{ itemName }}</span>
-    </div>
-  </div>
-    
-    <div *ngIf="isActive" class="confirmation-stamps__action-buttons">
-      <button (click)="onEdit()" class="confirmation-stamps__button confirmation-stamps__button--edit">Edit</button>
-      <button (click)="onConfirm()" class="confirmation-stamps__button confirmation-stamps__button--confirm">Confirm</button>
-    </div>
-  </div>
+    </section>
+      
+      <div *ngIf="isActive" class="confirmation-stamps__action-buttons">
+        <button (click)="onEdit()" class="confirmation-stamps__button confirmation-stamps__button--edit">Edit</button>
+        <button (click)="onConfirm()" class="confirmation-stamps__button confirmation-stamps__button--confirm">Confirm</button>
+      </div>
+  </main>
+</div>
   
