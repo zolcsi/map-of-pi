@@ -15,6 +15,17 @@
       Loyalty card is {{ isActive ? 'on' : 'off' }}
     </span>
   </div>
+
+  <!-- Conditional Display Section Based on Toggle -->
+  <div *ngIf="isActive" class="confirmation-stamps__container">
+    <div class="confirmation-stamps__info">
+      <div class="stamp-badge confirmation-stamps__stamp-badge">
+        <span class="stamp-badge__count">{{ stampsNeeded }}<span class="stamp-badge confirmation-stamps__count">7</span></span> <span class="confirmation-stamps__text" >stamps</span>
+      </div>
+      needed for
+        <span class="confirmation-stamps__item-name">{{ itemName }}</span>
+    </div>
+  </div>
     
     <div *ngIf="isActive" class="confirmation-stamps__action-buttons">
       <button (click)="onEdit()" class="confirmation-stamps__button confirmation-stamps__button--edit">Edit</button>
