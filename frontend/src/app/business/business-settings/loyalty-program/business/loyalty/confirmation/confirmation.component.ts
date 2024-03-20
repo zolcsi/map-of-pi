@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule, RouterLink, ReactiveFormsModule],
 })
 export class ConfirmationComponent {
-  isActive = false;
+  isActive = true;
   stampsNeeded?: number;
   itemName?: string;
 
@@ -20,7 +20,6 @@ export class ConfirmationComponent {
     private route: ActivatedRoute,
     private router: Router 
   ) {}
-
 
   toggleLoyaltyCard(): void {
     this.isActive = !this.isActive; // This toggles the state of isActive

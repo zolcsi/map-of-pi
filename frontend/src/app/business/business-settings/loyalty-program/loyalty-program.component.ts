@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 export class LoyaltyProgramComponent {
   // Create a form group for the loyalty program form
   loyaltyForm = new FormGroup({
-    isActive: new FormControl(false), // For toggle switch
+    isActive: new FormControl(true), // For toggle switch
     stampsNeeded: new FormControl('', Validators.required), // Input for stamps needed
     freeItemName: new FormControl('', Validators.required), // Input for the name of the free item
     numberOfFreeItems: new FormControl(1, Validators.required) // Input for the number of free items
