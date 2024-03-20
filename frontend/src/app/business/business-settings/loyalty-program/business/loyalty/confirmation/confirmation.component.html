@@ -1,1 +1,24 @@
-<p>confirmation works!</p>
+<div class="confirmation-stamps">
+
+  <!-- Header -->
+  <header class="confirmation-stamps__header">
+    <a href="#" class="confirmation-stamps__header-back-button" aria-label="Go back">&#x3c;</a>
+    <h1 class="confirmation-stamps__header-title">Loyalty card</h1>
+  </header>
+
+  <!-- Toggle Display Section -->
+  <div class="confirmation-stamps__toggle-container">
+    <legend class="visually-hidden">Loyalty Card Activation</legend>
+    <input type="checkbox" id="toggle-loyalty" class="confirmation-stamps__toggle-checkbox" [checked]="isActive" (change)="toggleLoyaltyCard()"/>
+    <label for="toggle-loyalty" class="confirmation-stamps__toggle-label"></label>
+    <span id="toggle-description" class="confirmation-stamps__toggle-text">
+      Loyalty card is {{ isActive ? 'on' : 'off' }}
+    </span>
+  </div>
+    
+    <div class="confirmation-stamps__action-buttons">
+      <button class="confirmation-stamps__button confirmation-stamps__button--edit">Edit</button>
+      <button class="confirmation-stamps__button confirmation-stamps__button--confirm">Confirm</button>
+    </div>
+  </div>
+  
