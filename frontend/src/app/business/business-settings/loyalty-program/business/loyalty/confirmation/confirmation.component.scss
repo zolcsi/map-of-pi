@@ -91,7 +91,8 @@
 }
 
 /* Stamp Section */
-.confirmation-stamps__container, .confirmation-stamps__stamp-badge {
+.confirmation-stamps__container, 
+.confirmation-stamps__stamp-badge {
     margin-top: 1rem;
     display: flex;
     align-items: center;
@@ -182,7 +183,7 @@
 }
 
 .confirmation-stamps__button--confirm:active {
-    background-color: #0e411e;
+    background-color: #135d2b;
     transform: translateY(2px);
 }
 
@@ -197,5 +198,67 @@
 
 .visually-hidden {
     display: none;
+}
+
+@media(min-width: 768px) {
+    .confirmation-stamps {
+        max-width: 500px;
+        margin-bottom: 10rem;
+    }
+
+    .confirmation-stamps__header-back-button {
+        left: 0;
+        top: 0;
+        font-size: 1.5rem;
+    }
+
+    .confirmation-stamps__header-title {
+        font-size: 2rem;
+    }
+
+    .confirmation-stamps__toggle-container {
+        margin-top: 3rem;
+    }
+
+    .confirmation-stamps__toggle-text {
+        margin-left: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .confirmation-stamps__toggle-label::before {
+        width: 36px;
+        height: 36px;
+    }
+
+    .confirmation-stamps__toggle-label {
+        width: 56px;
+        height: 32px;
+    }
+
+    .confirmation-stamps__stamp-badge {
+        padding: 2.5rem;
+        width: 120px;
+        height: 120px;
+        margin-top: 2rem;
+    }
+
+    .confirmation-stamps__count {
+        font-size: 2rem;
+    }
+
+    .confirmation-stamps__text {
+        font-size: 1.5rem;
+    }
+    
+    .confirmation-stamps__info {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .confirmation-stamps__button--edit, 
+    .confirmation-stamps__button--confirm {
+        font-size: 1.3rem;
+      
+    }
 }
   
